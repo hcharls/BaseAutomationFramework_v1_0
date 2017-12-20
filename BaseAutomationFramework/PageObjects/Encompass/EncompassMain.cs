@@ -18,6 +18,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("MainForm");
 		public static SearchCriteria[] scArray = { scWindow };
 		public const bool SET_MAXIMIZED = false;
+		private AutomationElement aePanel = null;
 
 		private AutomationElement MenuParent { get; set; }
 
@@ -32,7 +33,6 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new EncompassMain();
 		}
 
-
 		public EncompassMain Resize()
 		{
 			Screen.DisplayState = TestStack.White.UIItems.WindowItems.DisplayState.Restored;
@@ -43,7 +43,6 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new EncompassMain();
 		}
 
-
 		#region Menus & Menu Items
 
 		private SearchCriteria mnu_MenuBar = SearchCriteria.ByAutomationId("mainMenu");
@@ -51,8 +50,6 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition mnu_TitleAndClosing = new PropertyCondition(AutomationElement.NameProperty, "Title & Closing");
 		private PropertyCondition mnu_ProductAndPricing = new PropertyCondition(AutomationElement.NameProperty, "Product and Pricing");
 		private PropertyCondition mnu_Services = new PropertyCondition(AutomationElement.NameProperty, "Services");
-		//private SearchCriteria mnu_ProductAndPricing = SearchCriteria.ByText("Product and Pricing");
-		//private SearchCriteria mnu_Services = SearchCriteria.ByText("Services");		
 		//
 		public EncompassMain mnu_TitleAndClosing_Click()
 		{
@@ -100,18 +97,32 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		#endregion
 
-		#region Buttons
+		#region Functions
 
-		private PropertyCondition btn_Close = new PropertyCondition(AutomationElement.AutomationIdProperty, "closeBtn");
-		//
-		public EncompassMain btn_Close_Click()
+		public void SaveAndExitLoan()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Close);
-			aElement.ClickCenterOfBounds();
-
-			return new EncompassMain();
+			tab_MainTabs_Return().SelectTabPage("Loan");
+			Thread.Sleep(250);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.ALT);
+			Keyboard.Instance.Enter("l");
+			Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(250);
+			Keyboard.Instance.Enter("x");
+			Thread.Sleep(1000);
 		}
-		
+
+		public void Open_eFolder()
+		{
+			tab_MainTabs_Return().SelectTabPage("Loan");
+			Thread.Sleep(250);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.SHIFT);
+			Keyboard.Instance.Enter("f");
+			Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(250);
+		}
+
 		#endregion
+
 	}
 }

@@ -1,0 +1,102 @@
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.config
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.pdb
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Castle.Core.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Excel.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Interop.UIAutomationClient.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\nunit.framework.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\UIAComWrapper.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.Support.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Castle.Core.xml
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Excel.pdb
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.xml
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\nunit.framework.xml
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.pdb
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.xml
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\UIAComWrapper.pdb
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.xml
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.Support.xml
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.dll
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb
+C:\Users\michael.hetzer\documents\visual studio 2013\Projects\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojResolveAssemblyReference.cache
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.config
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.pdb
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Castle.Core.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Excel.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Interop.UIAutomationClient.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\nunit.framework.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\UIAComWrapper.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.Support.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Castle.Core.xml
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Excel.pdb
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.xml
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\nunit.framework.xml
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.pdb
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.xml
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\UIAComWrapper.pdb
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.xml
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.Support.xml
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.dll
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb
+C:\Users\hcharls\Downloads\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojResolveAssemblyReference.cache
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.config
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Castle.Core.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Excel.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Interop.UIAutomationClient.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\nunit.framework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\UIAComWrapper.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.Support.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Castle.Core.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\Excel.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\NLog.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\nunit.framework.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\TestStack.White.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\UIAComWrapper.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\bin\Debug\WebDriver.Support.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojResolveAssemblyReference.cache
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\NLog.config
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Castle.Core.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Excel.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Interop.UIAutomationClient.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\NLog.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\nunit.framework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\TestStack.White.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\UIAComWrapper.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.Support.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Castle.Core.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Excel.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\NLog.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\nunit.framework.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\TestStack.White.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\TestStack.White.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\UIAComWrapper.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.Support.xml
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.dll
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb

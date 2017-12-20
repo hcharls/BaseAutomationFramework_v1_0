@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.Utility;
+using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
@@ -38,7 +42,6 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_Application()
 		{
-
 			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvLog"));
 
 			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 25), Convert.ToInt32(thing.Bounds.TopLeft.Y + 27));
@@ -50,16 +53,32 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 
 		public void SelectItem_PreProcReview()
+		//{
+		//	Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvLog"));
+
+		//	Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 25), Convert.ToInt32(thing.Bounds.TopLeft.Y + 44));
+
+		//	Mouse.Instance.Location = point;
+		//	System.Threading.Thread.Sleep(500);
+		//	Mouse.Instance.Click(MouseButton.Left);
+		//	System.Threading.Thread.Sleep(1000);
+		//}
 		{
-			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvLog"));
+			Point LogTab = new Point(182, 182);
+			Point PreProcReview = new Point(82, 262);
 
-			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 25), Convert.ToInt32(thing.Bounds.TopLeft.Y + 44));
+			Mouse.Instance.Location = LogTab;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(1000);
+			Mouse.Instance.Location = PreProcReview;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
 
-			Mouse.Instance.Location = point;
-			System.Threading.Thread.Sleep(500);
-			Mouse.Instance.Click(MouseButton.Left);
-			System.Threading.Thread.Sleep(1000);
 		}
+
+
 
 		public void SelectItem_InitialUWDecision()
 		{

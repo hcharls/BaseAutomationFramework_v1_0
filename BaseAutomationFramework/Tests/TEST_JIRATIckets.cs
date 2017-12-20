@@ -21,7 +21,7 @@ using BaseAutomationFramework.HTML_Report;
 namespace BaseAutomationFramework.Tests.Encompass
 {
 	[TestFixture]
-	public class TEST_JIRATickets : BaseTest
+	public class JIRATickets : BaseTest
 	{
 		private StreamWriter SW;
 		private StatusReport SR;
@@ -48,7 +48,8 @@ namespace BaseAutomationFramework.Tests.Encompass
 			{
 				AttachToProcess(Processes.Encompass, 5);
 
-				#region EITQ-3095 Impounds (Screenshots at 1003 Pge 1, 2015 Itemization line 904, and line 1001/Aggregate Setup)
+				#region Impounds (Screenshots at 1003 Page 1, 2015 Itemization line 904, and line 1001/Aggregate Setup)
+				// EITQ-3095 (GA), EITQ-3093 (PA)
 
 				//LaunchApplication(DesktopApps.Encompass);
 
@@ -83,7 +84,7 @@ namespace BaseAutomationFramework.Tests.Encompass
 					.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
 					//.ChangeSubjectProperty(MasterData.County, MasterData.City, MasterData.Zip);
 
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Automation_Data\Test_Screenshots\EITQ-3093\" + MasterData.TestID);
+				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Documents\Ticket Notes\29. January 7, 2018\EITQ-3136 PA County Impounds\EITQ-3136 Test Screenshots\" + MasterData.TestID);
 
 				RegZCD
 					.OpenForm_FromFormsTab()
@@ -93,13 +94,13 @@ namespace BaseAutomationFramework.Tests.Encompass
 					.OpenForm_FromFormsTab()
 					.btn_ScrollDown900_Click();
 
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Automation_Data\Test_Screenshots\EITQ-3093\" + MasterData.TestID + "line 904 populated");
+				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Documents\Ticket Notes\29. January 7, 2018\EITQ-3136 PA County Impounds\EITQ-3136 Test Screenshots\" + MasterData.TestID + "line 904 populated");
 
 				Itemization
 					.Initialize()
 					.txt_PropertyTaxesMths_SendKeys(" ");
 
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Automation_Data\Test_Screenshots\EITQ-3093\" + MasterData.TestID + "line 904 blank");
+				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Documents\Ticket Notes\29. January 7, 2018\EITQ-3136 PA County Impounds\EITQ-3136 Test Screenshots\" + MasterData.TestID + "line 904 blank");
 
 				Itemization
 					.Initialize()
@@ -110,7 +111,7 @@ namespace BaseAutomationFramework.Tests.Encompass
 					.Initialize()
 					.DragWindow_AggregateSetup();
 
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Automation_Data\Test_Screenshots\EITQ-3093\" + MasterData.TestID + MasterData.TestDescription);
+				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Documents\Ticket Notes\29. January 7, 2018\EITQ-3136 PA County Impounds\EITQ-3136 Test Screenshots\" + MasterData.TestID + MasterData.TestDescription);
 
 				#endregion EITQ-3095 Impounds (Screenshots at 1003 Pge 1, 2015 Itemization line 904, and line 1001/Aggregate Setup)
 			}

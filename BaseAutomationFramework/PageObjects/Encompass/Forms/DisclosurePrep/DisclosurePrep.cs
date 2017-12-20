@@ -43,43 +43,62 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 
 		#region Combo Boxes
-		private PropertyCondition cmb_WilltherebeSubordination = new PropertyCondition(AutomationElement.AutomationIdProperty, "subDropdown");
+		private PropertyCondition cmb_WillThereBeSubordination = new PropertyCondition(AutomationElement.AutomationIdProperty, "subDropdown");
 		private PropertyCondition cmb_BetterRateWarranty = new PropertyCondition(AutomationElement.AutomationIdProperty, "betterRateWarrantyDropDown");
-		private PropertyCondition cmb_ImpoundsWaivedorNotWaived = new PropertyCondition(AutomationElement.AutomationIdProperty, "impoundRequiredDropdown");
-		private PropertyCondition cmb_Impoundswillbefor = new PropertyCondition(AutomationElement.AutomationIdProperty, "impoundTypesDropdown");
+		private PropertyCondition cmb_ImpoundsWaivedOrNotWaived = new PropertyCondition(AutomationElement.AutomationIdProperty, "impoundRequiredDropdown");
+		private PropertyCondition cmb_ImpoundsWillBeFor = new PropertyCondition(AutomationElement.AutomationIdProperty, "impoundTypesDropdown");
 		private PropertyCondition cmb_AddingRemovingSomeoneFromTitle = new PropertyCondition(AutomationElement.AutomationIdProperty, "addRemoveTitleDropdown");
 		private PropertyCondition cmb_DocumentDeliveryPreference = new PropertyCondition(AutomationElement.AutomationIdProperty, "docPrefBox");
 		//
 
-		public DisclosurePrep cmb_WilltherebeSubordination_SendKeys(string Input)
+		public DisclosurePrep cmb_WillThereBeSubordination_SendKeys(string Input)
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_WilltherebeSubordination);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_WillThereBeSubordination);
 			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
 			Keyboard.Instance.Enter(Input);
+			Thread.Sleep(1000);
 
 			return this;
 		}
+
+		//public DisclosurePrep cmb_WillThereBeSubordination_SendKeys(string Input)
+		//{
+		//	aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_WilltherebeSubordination);
+		//	aElement.SetFocus();
+		//	Keyboard.Instance.Enter(Input);
+
+		//	return this;
+		//}
 		public DisclosurePrep cmb_BetterRateWarranty_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_BetterRateWarranty);
 			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
 			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+			Thread.Sleep(1000);
 
 			return this;
 		}
-		public DisclosurePrep cmb_ImpoundsWaivedorNotWaived_SendKeys(string Input)
+		public DisclosurePrep cmb_ImpoundsWaivedOrNotWaived_SendKeys(string Input)
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ImpoundsWaivedorNotWaived);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ImpoundsWaivedOrNotWaived);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+			Thread.Sleep(1000);
 
 			return this;
 		}
-		public DisclosurePrep cmb_Impoundswillbefor_SendKeys(string Input)
+		public DisclosurePrep cmb_ImpoundsWillBeFor_SendKeys(string Input)
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_Impoundswillbefor);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ImpoundsWillBeFor);
 			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
 			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+			Thread.Sleep(4000);
 
 			return this;
 		}
@@ -87,7 +106,10 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_AddingRemovingSomeoneFromTitle);
 			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
 			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+			Thread.Sleep(4000);
 
 			return this;
 		}
@@ -96,6 +118,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_DocumentDeliveryPreference);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+			Thread.Sleep(1000);
 
 			return this;
 		}
@@ -103,7 +127,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		#region Buttons
 		private PropertyCondition btn_GenerateEstimatedClosingDatesandStandardFees = new PropertyCondition(AutomationElement.AutomationIdProperty, "disclosureDatesButton");
-		private PropertyCondition btn_RunWestVM = new PropertyCondition(AutomationElement.AutomationIdProperty, "gfeButton");
+		private PropertyCondition btn_SmartGFE = new PropertyCondition(AutomationElement.AutomationIdProperty, "gfeButton");
 		private PropertyCondition btn_Review2015Itemization = new PropertyCondition(AutomationElement.AutomationIdProperty, "reviewItemizationButton");
 		private PropertyCondition btn_RunComplianceReport = new PropertyCondition(AutomationElement.AutomationIdProperty, "complianceButton");
 		private PropertyCondition btn_RunDUorLP = new PropertyCondition(AutomationElement.AutomationIdProperty, "undButton");
@@ -115,14 +139,18 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_GenerateEstimatedClosingDatesandStandardFees);
 			aElement.ClickCenterOfBounds();
-			Thread.Sleep(10000);
+			new DisclosurePrep();
+			Thread.Sleep(15000);
 
 			return new DisclosurePrep();
 		}
-		public DisclosurePrep btn_RunWestVM_Click()
+		public DisclosurePrep btn_SmartGFE_Click()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_RunWestVM);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_SmartGFE);
 			aElement.ClickCenterOfBounds();
+			Thread.Sleep(10000);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
+			Thread.Sleep(3000);
 
 			return new DisclosurePrep();
 		}

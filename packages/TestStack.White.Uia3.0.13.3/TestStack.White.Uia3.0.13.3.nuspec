@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>TestStack.White.Uia3</id>
+    <version>0.13.3</version>
+    <title>TestStack.White.Uia3</title>
+    <authors>Vivek Singh, Jake Ginnivan</authors>
+    <owners>Vivek Singh, Jake Ginnivan</owners>
+    <licenseUrl>https://github.com/TestStack/White/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/TestStack/White</projectUrl>
+    <iconUrl>https://raw.github.com/TestStack/White/master/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>White is a framework for automating rich client applications based on Win32, WinForms, WPF, Silverlight and SWT (Java) platforms. It is .NET based and does not require the use of any proprietary scripting languages. Tests/automation programs using White can be written with whatever .NET language, IDE and tools you are already using. White provides a consistent object-oriented API, hiding the complexity of Microsoft's UIAutomation library (on which White is based) and windows messages.
+
+UIAv3 works better with WPF and newer technologies and supports new UIA Patterns appeared in Windows 8.1. For WinForms and Win32 apps it is better to use normal TestStack.White package.
+
+* TestStack.White is the official replacement for White *</description>
+    <summary>TestStack.White is the official replacement for the White UI automation framework. Uia3 flavor works with UIAv3</summary>
+    <copyright>Copyright Jake Ginnivan 2012</copyright>
+    <tags>White UIAutomation Testing UIA WPF Silverlight Win32 Automation UIAv3</tags>
+    <dependencies>
+      <dependency id="Castle.Core" version="3.3.0" />
+      <dependency id="UIAComWrapper" version="1.1.0.14" />
+    </dependencies>
+  </metadata>
+</package>

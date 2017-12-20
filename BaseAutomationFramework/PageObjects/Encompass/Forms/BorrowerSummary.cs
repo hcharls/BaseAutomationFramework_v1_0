@@ -359,8 +359,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement.ClickCenterOfBounds();
 			Keyboard.Instance.Enter(Input);
 			Thread.Sleep(500);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 
-			return this;
+            return this;
 		}
 		public BorrowerSummary txt_AppraisedValue_SendKeys(string Input)
 		{
@@ -434,11 +435,15 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement.SetFocus();
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(250);
-			Keyboard.Instance.Enter(Input);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("a");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(250);
+            Keyboard.Instance.Enter(Input);
 			Thread.Sleep(500);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 
-			return this;
+            return this;
 		}
 		//Purchase - Additional Information
 		public BorrowerSummary txt_SellingAgentName_SendKeys(string Input)

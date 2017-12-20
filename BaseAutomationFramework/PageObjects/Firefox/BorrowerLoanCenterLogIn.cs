@@ -34,15 +34,13 @@ namespace BaseAutomationFramework.PageObjects.Firefox
 
 		#region Buttons
 
-		private PropertyCondition btn_Login = new PropertyCondition(AutomationElement.NameProperty, "Login");
-		//
 		public BorrowerLoanCenterLogIn btn_Login_Click()
 		{
 			AndCondition andCond = new AndCondition(
+					new PropertyCondition(AutomationElement.NameProperty, "Login"),
 					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "hyperlink")
 				);
 			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Login);
 			if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "jump")
 				DoDefaultAction(aElement);
 			aElement.ClickCenterOfBounds();

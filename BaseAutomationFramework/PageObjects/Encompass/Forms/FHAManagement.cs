@@ -33,19 +33,39 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			new FormsTab()
 				.lstbx_Forms_SelectForm("FHA Management");
+                Thread.Sleep(250);
 
 			return new FHAManagement();
 		}
 
-		#region Tabs
+        #region Tabs
 
+        private PropertyCondition tab_Tracking = new PropertyCondition(AutomationElement.NameProperty, "Tracking");
 
+        public FHAManagement tab_Tracking_Click()
+        {
+            //AndCondition andCond = new AndCondition(
+            //        new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "tab item")
+            //    );
+            //aElement = aeScreen.FindFirst(TreeScope.Descendants, tab_Tracking);
+            //AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+            //item.ClickCenterOfBounds();
+            //new FHAManagement();
+            //Thread.Sleep(2000);
 
-		#endregion
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, tab_Tracking);
+            aElement.ClickCenterOfBounds();
+            new FHAManagement();
+            Thread.Sleep(2000);
 
-		#region Text Boxes
+            return new FHAManagement();
+        }
 
-		private PropertyCondition txt_FHACaseNumber = new PropertyCondition(AutomationElement.NameProperty, "1040: The loan tracking number for the loan. For FHA loans, enter the case number retrieved from the FHA Connections website. For VA loans, enter the case number supplied by the VA.");
+        #endregion
+
+        #region Text Boxes
+
+        private PropertyCondition txt_FHACaseNumber = new PropertyCondition(AutomationElement.NameProperty, "1040: The loan tracking number for the loan. For FHA loans, enter the case number retrieved from the FHA Connections website. For VA loans, enter the case number supplied by the VA.");
 		private PropertyCondition txt_FHACaseNumberDate = new PropertyCondition(AutomationElement.NameProperty, "3042: The date entered in this field determines which mortgage insurance pricing scenario to use.");
 
 		public FHAManagement txt_FHACaseNumber_SendKeys(string Input)

@@ -33,7 +33,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			new FormsTab()
 				.lstbx_Forms_SelectForm("Banker Loan Submission Form");
-				Thread.Sleep(10000);
+				Thread.Sleep(5000);
 
 			return new BankerLoanSubmission();
 		}
@@ -42,8 +42,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		private PropertyCondition txt_LastMortgagePayment = new PropertyCondition(AutomationElement.AutomationIdProperty, "TextBox5");
 		private PropertyCondition txt_ClosingMonthPayment = new PropertyCondition(AutomationElement.AutomationIdProperty, "MultilineTextBox14");
+        private PropertyCondition txt_PestInspection = new PropertyCondition(AutomationElement.AutomationIdProperty, "MultilineTextBox14");
 
-		public BankerLoanSubmission txt_LastMortgagePayment_SendKeys(string Input)
+        public BankerLoanSubmission txt_LastMortgagePayment_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_LastMortgagePayment);
 			aElement.SetFocus();
@@ -62,12 +63,22 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return this;
 		}
-		
-		#endregion
+        public BankerLoanSubmission txt_PestInspection_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_PestInspection);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
 
-		#region Buttons
+            return this;
+        }
 
-		private PropertyCondition btn_BankerCertificationBLS = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button3");
+
+        #endregion
+
+        #region Buttons
+
+        private PropertyCondition btn_BankerCertificationBLS = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button3");
 		//
 		public BankerLoanSubmission btn_BankerCertificationBLS_Click()
 		{

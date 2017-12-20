@@ -85,7 +85,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_SellerState = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_1249");
 		private PropertyCondition txt_SellerName = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_638");
 
-		
+
 
 		public ConditionsSent txt_HazardInsCoName_SendKeys(string Input)
 		{

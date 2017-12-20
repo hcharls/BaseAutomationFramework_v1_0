@@ -8,6 +8,7 @@ using System.Windows.Automation;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
@@ -52,6 +53,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_Username);
 			aElement.SetFocus();
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter("a");
+			Keyboard.Instance.LeaveAllKeys();
 			Keyboard.Instance.Enter(Input);
 			Thread.Sleep(500);
 

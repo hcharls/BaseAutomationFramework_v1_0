@@ -10,10 +10,10 @@ using NUnit.Framework;
 namespace BaseAutomationFramework.Tests.Encompass
 {
 	[TestFixture]
-	public class TEST_OpenAllForms : BaseTest
+	public class OpenAllForms : BaseTest
 	{
 		[Test]
-		public void OpenAllForms()
+		public void OpenAllFormsandTools()
 		{
 			AttachToProcess(Processes.Encompass, 5);
 

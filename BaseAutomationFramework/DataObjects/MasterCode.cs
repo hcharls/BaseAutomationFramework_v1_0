@@ -9,17 +9,17 @@ namespace BaseAutomationFramework.DataObjects
 {
 	public class objMasterData
 	{
-		public const string MasterCodeFileLocalDirectory = @"C:\Users\hcharls\Desktop\Automation_Data\";
+		public const string MasterCodeFileLocalDirectory = @"C:\Automation_Data\";
 
 		#region Excel Sheet Headers
 
 		private string colTestID = @"Test ID";
 		private string colTestDescription = @"Test Description";
 		private string colEnvironmentID = @"Environment ID";
-		private string colUserID = @"User ID";
-		private string colUserPassword = @"User Password";
+		private string colLoanNumber = @"[364] Loan Number";
 		private string colOB_Login = @"OB Login";
 		private string colOB_Password = @"OB Password";
+		private string colLoanProgram = @"[1401] Loan Program";
 		private string colBorrowerFirstName = @"[4000] Borrower First Name";
 		private string colBorrowerLastName = @"[4002] Borrower Last Name";
 		private string colBorrowerSSN = @"[65] Borrower SSN";
@@ -38,7 +38,6 @@ namespace BaseAutomationFramework.DataObjects
 		private string colCreditScore = @"Credit Score";
 		private string colEstimatedValue = @"[1821] Estimated Value";
 		private string colAppraisedValue = @"[356] Appraised Value";
-		private string colLoanPurpose = @"[19] Loan Purpose";
 		private string colPropertyWillBe = @"[1811] Property Will Be";
 		private string colAmortizationType = @"[608] Amortization Type";
 		private string colPurchasePrice = @"[136] Purchase Price";
@@ -61,10 +60,10 @@ namespace BaseAutomationFramework.DataObjects
 		public string TestDescription { get; set; }
 		public string Environment { get; private set; }
 		public string EnvironmentID { get; set; }
-		public string UserID { get; set; }
-		public string UserPassword { get; set; }
+		public string LoanNumber { get; set; }
 		public string OB_Login { get; set; }
 		public string OB_Password { get; set; }
+		public string LoanProgram { get; set; }
 		public string BorrowerFirstName { get; set; }
 		public string BorrowerLastName { get; set; }
 		public string BorrowerSSN { get; set; }
@@ -83,7 +82,6 @@ namespace BaseAutomationFramework.DataObjects
 		public string CreditScore { get; set; }
 		public string EstimatedValue { get; set; }
 		public string AppraisedValue { get; set; }
-		public string LoanPurpose { get; set; }
 		public string PropertyWillBe { get; set; }
 		public string AmortizationType { get; set; }
 		public string PurchasePrice { get; set; }
@@ -103,10 +101,10 @@ namespace BaseAutomationFramework.DataObjects
 			this.TestID = TestData[colTestID];
 			this.TestDescription = TestData[colTestDescription];
 			this.EnvironmentID = TestData[colEnvironmentID];
-			this.UserID = TestData[colUserID];
-			this.UserPassword = TestData[colUserPassword];
+			this.LoanNumber = TestData[colLoanNumber];
 			this.OB_Login = TestData[colOB_Login];
 			this.OB_Password = TestData[colOB_Password];
+			this.LoanProgram = TestData[colLoanProgram];
 			this.BorrowerFirstName = TestData[colBorrowerFirstName];
 			this.BorrowerLastName = TestData[colBorrowerLastName];
 			this.BorrowerSSN = TestData[colBorrowerSSN];
@@ -125,7 +123,6 @@ namespace BaseAutomationFramework.DataObjects
 			this.CreditScore = TestData[colCreditScore];
 			this.EstimatedValue = TestData[colEstimatedValue];
 			this.AppraisedValue = TestData[colAppraisedValue];
-			this.LoanPurpose = TestData[colLoanPurpose];
 			this.PropertyWillBe = TestData[colPropertyWillBe];
 			this.AmortizationType = TestData[colAmortizationType];
 			this.PurchasePrice = TestData[colPurchasePrice];

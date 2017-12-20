@@ -9,6 +9,7 @@ using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.Utility;
+using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
@@ -31,7 +32,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 				aeScreen = aeScreen.FindFirst(TreeScope.Descendants, pcsubWindow);
 				if (aeScreen != null)
 					break;
-			}		
+			}
 
 			if (aeScreen == null)
 				throw new Exception("Screen is null!!!");
@@ -42,7 +43,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new OB_SearchResults();
 		}
 
-		private PropertyCondition tbl_Rates = new PropertyCondition(AutomationElement.AutomationIdProperty, "ctl00_CPH_ctl52");
+		private PropertyCondition tbl_Rates = new PropertyCondition(AutomationElement.AutomationIdProperty, "ctl00_CPH_ctl100");
 		//
 		public void SelectRateClosestToZero()
 		{
@@ -75,7 +76,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			foreach (AutomationElement cell in cells)
 			{
-				setGridPattern(cell);				
+				setGridPattern(cell);
 				if (patt_GridItemPattern.Current.Column == colRates && patt_GridItemPattern.Current.Row > 0)
 					cellRates.Add(cell);
 				if (patt_GridItemPattern.Current.Column == colSelect && patt_GridItemPattern.Current.Row > 0)
@@ -99,9 +100,40 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 
 
+		#region Loan Programs
+
+		//private PropertyCondition SelectLoanProgram = new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "text");
+		//
+		//public OB_SearchResults lp_PEMCONF30YRFIXED_Click()
+		//{
+		//	aElement = aeScreen.FindFirst(TreeScope.Descendants, lp_PEMCONF30YRFIXED);
+		//	aElement.ClickCenterOfBounds();
+		//	Thread.Sleep(500);
+
+		//	return this;
+		//}
+
+		public OB_SearchResults SelectLoanProgram_Click(string Input)
+		{			
+			AndCondition andCond = new AndCondition(
+					new PropertyCondition(AutomationElement.NameProperty, Input),
+					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "text")
+					);
+
+			//aElement = aeScreen.FindFirst(TreeScope.Descendants, SelectLoanProgram);
+			//aElement.SetFocus();
+			//aElement.ClickCenterOfBounds();
+			//Thread.Sleep(1000);
+			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+			item.ClickCenterOfBounds();
+			Thread.Sleep(500);
+
+			return new OB_SearchResults();
+
+			#endregion
 
 
-
+		}
 	}
 }
 

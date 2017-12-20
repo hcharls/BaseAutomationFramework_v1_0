@@ -20,37 +20,205 @@ using System.IO;
 namespace BaseAutomationFramework.Tests.Encompass
 {
 	[TestFixture]
-	public class TEST_CodeChecker : BaseTest
+	public class CodeChecker : BaseTest
 	{
 		[Test]
 		public void ControlChecker()
 			
 			{
-				AttachToProcess(Processes.Encompass, 5);
 
-				LaunchApplication(DesktopApps.Encompass);
+			//AttachToProcess(Processes.Encompass, 5);
 
-				Launcher
-					.Initialize()
-					.cmb_EnvironmentID_SelectByText("TEBE11141905")
-					.btn_Login_Click();
+			LaunchApplication(DesktopApps.Encompass);
+			return;
+			//Launcher
+			//	.Initialize()
+			//	.cmb_EnvironmentID_SelectByText("TEBE11141905")
+			//	.btn_Login_Click();
 
-				Login
-					.Initialize()
-					.txt_Username_SendKeys("test_qa_lo")
-					.txt_Password_SendKeys("P@ramount1")
-					.btn_Login_Click();
+			//	PipelineView.Initialize().thingy();
 
-				EncompassMain
-					.Initialize();
-				Thread.Sleep(10000);
+			#region eFolder Bypass
 
-				EncompassMain
-					.Initialize()
-					.Resize()
-					.tab_Pipeline_Select();
+			//Encompass_eFolder
+			//	.Open_eFolder()
+			//	.AddNewDocument();
 
-				return;
+			//AddDocument
+			//	.Initialize()
+			//	.rdb_NewDocument_Select()
+			//	.btn_OK_Click();
+
+			//DocumentDetails
+			//	.Initialize()
+			//	.btn_BrowseAndAttach_Click();
+
+			//BrowseAndAttach
+			//	.Initialize()
+			//	.btn_TestDocument_DoubleClick();
+
+			//DocumentDetails
+			//	.Initialize()
+			//	.txt_DocumentName_SendKeys("Credit Report")
+			//	.Chk_Requested_Check(true)
+			//	.btn_Close_Click();
+
+			//AddDocument
+			//	.Initialize()
+			//	.rdb_NewDocument_Select()
+			//	.btn_OK_Click();
+
+			//DocumentDetails
+			//	.Initialize()
+			//	.btn_BrowseAndAttach_Click();
+
+			//BrowseAndAttach
+			//	.Initialize()
+			//	.btn_TestDocument_DoubleClick();
+
+			//DocumentDetails
+			//	.Initialize()
+			//	.txt_DocumentName_SendKeys("Underwriting")
+			//	.Chk_Requested_Check(true)
+			//	.btn_Close_Click();
+
+			//Encompass_eFolder
+			//	.Initialize()
+			//	.btn_Close_Click();
+
+			#endregion eFolder Bypass
+
+			#region Product and Pricing (floating)
+
+			//OB_ProductandPricing
+			//	.OpenFrom_MainMenu()
+			//	.lstbx_Provider_Select("Optimal Blue - Enhanced")
+			//	.btn_Submit_Click();
+
+			//OB_Login
+			//	.Initialize()
+			//	.txt_LoginName_SendKeys("qa_testlo_direct")
+			//	.txt_Password_SendKeys("12345")
+			//	.chk_SaveLoginInformation_Check(true)
+			//	.chk_UpdateUpfrontMIdataforFHAloans_Check(true)
+			//	.btn_Continue_Click();
+
+			//OB_ProductSearch
+			//	.Initialize()
+			//	.btn_Submit_Click();
+
+			//OB_SearchResults
+			//	.Initialize()
+			//	.SelectLoanProgram_Click("PEM CONF 30YR FIXED")
+			//	.SelectRateClosestToZero();
+
+			//OB_LockForm
+			//	.Initialize()
+			//	.btn_UpdateEncompass_Click();
+
+			//OB_PricingImportEncompassUpdate
+			//	.Initialize()
+			//	.btn_Close_Click();
+
+			#endregion Product and Pricing (floating)
+
+			#region Product and Pricing (locked)
+
+			//OB_ProductandPricing
+			//	.OpenFrom_MainMenu()
+			//	.lstbx_Provider_Select("Optimal Blue - Enhanced")
+			//	.btn_Submit_Click();
+
+			//OB_Login
+			//	.Initialize()
+			//	.txt_LoginName_SendKeys("qa_testlo_direct")
+			//	.txt_Password_SendKeys("12345")
+			//	.chk_SaveLoginInformation_Check(true)
+			//	.chk_UpdateUpfrontMIdataforFHAloans_Check(true)
+			//	.btn_Continue_Click();
+
+			//OB_ProductSearch
+			//	.Initialize()
+			//	.btn_Submit_Click();
+
+			//OB_SearchResults
+			//	.Initialize()
+			//	.lp_PEMCONF30YRFIXED_Click()
+			//	.SelectRateClosestToZero();
+
+			//OB_LockForm
+			//	.Initialize()
+			//	.btn_RequestLock_Click();
+
+			//OB_PricingImportEncompassUpdate
+			//	.Initialize()
+			//	.btn_Close_Click();
+
+			#endregion Product and Pricing (locked)
+
+			#region eConsent
+
+			//eConsentNotYetReceived
+			//	.Open_FromAlertsandMessagesTab()
+			//	.btn_RequesteConsent_Click();
+
+			//SendConsent
+			//	.Initialize()
+			//	.chk_BorrowerConsent_Check(true)
+			//	.chk_NotifyWhenBorrowerReceives_Check(false)
+			//	.btn_Send_Click();
+
+			AttachToProcess(Processes.Firefox, 5);
+			LaunchApplication(DesktopApps.Firefox);
+
+			//FirefoxMain
+			//	.Initialize()
+			//	.btn_BorrowerLoanCenter_Click();
+
+			//BorrowerLoanCenterLogIn
+			//	.Initialize()
+			//	.btn_Login_Click();
+
+			#endregion eConsent
+
+			#region Disclosure Prep (TRID)
+
+			//DisclosurePrep
+			//	.OpenForm_FromFormsTab()
+			//	.cmb_WillThereBeSubordination_SendKeys("No")
+			//	.cmb_BetterRateWarranty_SendKeys("No")
+			//	.cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
+			//	.cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
+			//	.btn_GenerateEstimatedClosingDatesandStandardFees_Click()
+			//	.btn_SmartGFE_Click();
+
+			//WVM_TitleAndClosing
+			//	.OpenFrom_MainMenu()
+			//	.Select_WestVMTitle_TEST();
+
+			//WVM_LogOn
+			//	.Initialize()
+			//	//.txt_Username_SendKeys("PEMAdmin")
+			//	.txt_Password_SendKeys("Pemadmin1")
+			//	.btn_LogOn_Click();
+
+			//WVM_PropertyAndOrderInformation
+			//	.Initialize();
+
+			//EncompassMain
+			//	.Initialize()
+			//	.tab_Loan_Select();
+
+			//QuickEntry2015Itemization
+			//	.OpenFromDisclosurePrep();
+
+			//DisclosurePrep
+			//	.Initialize()
+			//	.btn_Review2015Itemization_Click();
+
+			#endregion Disclosure Prep (TRID)
+
+			return;
 
 			}
 

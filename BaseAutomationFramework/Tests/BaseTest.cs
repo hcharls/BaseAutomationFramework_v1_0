@@ -386,7 +386,7 @@ namespace BaseAutomationFramework.Tests
             switch(deskApp)
             {
                 case DesktopApps.Calculator: return @"C:\Windows\System32\calc.exe";
-				case DesktopApps.Encompass: return @"C:\SmartClientCache\Apps\Ellie Mae\Encompass\Encompass.exe";
+				case DesktopApps.Encompass: return @"C:\SmartClientCache\Apps\Ellie Mae\Encompass\AppLauncher.exe";
 				case DesktopApps.Firefox: return @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
 				case DesktopApps.Jing: return @"C:\Users\hcharls\Downloads\jing.exe"; 
 				default: throw new Exception("The DesktopApps enum provided is not implemented!");
