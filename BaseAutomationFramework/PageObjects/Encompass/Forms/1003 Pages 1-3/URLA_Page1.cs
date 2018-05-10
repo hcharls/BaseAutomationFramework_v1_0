@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <URLA_Page1>
+///   Description:    <URLA_Page_1_Form>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,18 +50,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new URLA_Page1();
 		}
 
-		public void ChangeSubjectProperty(string County, string City, string Zip)
+		public void ChangeSubjectProperty(string County, string City, string State, string Zip)
 		{
 			txt_SubjectProperty_County_SendKeys(County);
 			txt_SubjectProperty_City_SendKeys(City);
+			txt_SubjectProperty_State_SendKeys(State);
 			txt_SubjectProperty_ZipCode_SendKeys(Zip);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
 
-			if (Tests.BaseTest.checkForWindow(SelectaCity.scWindow))
-			{
-				SelectaCity
-					.Initialize()
-					.btn_Cancel_Click();
-			}
+			//if (Tests.BaseTest.checkForWindow(SelectaCity.scWindow))
+			//{
+			//	SelectaCity
+			//		.Initialize()
+			//		.btn_Cancel_Click();
+			//}
 		}
 
 		#region Text Boxes
@@ -65,6 +79,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_SubjectProperty_ZipCode = new PropertyCondition(AutomationElement.NameProperty, "15: The zip code in which the subject property is located.");
 		private PropertyCondition txt_SubjectProperty_County = new PropertyCondition(AutomationElement.NameProperty, "13: The county in which the subject property is located.");
 		private PropertyCondition txt_SubjectProperty_City = new PropertyCondition(AutomationElement.NameProperty, "12: The city in which the subject property is located.");
+		private PropertyCondition txt_SubjectProperty_State = new PropertyCondition(AutomationElement.NameProperty, "14: The state in which the subject property is located.");
 
 		//
 
@@ -153,6 +168,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 			aElement.WaitWhileBusy();
 			Thread.Sleep(1000);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+			Thread.Sleep(3000);
+
 		}
 		public URLA_Page1 txt_SubjectProperty_County_SendKeys(string Input)
 		{
@@ -174,6 +192,23 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public URLA_Page1 txt_SubjectProperty_City_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SubjectProperty_City);
+			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(500);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter("a");
+			Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(250);
+			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			aElement.WaitWhileBusy();
+			Thread.Sleep(1000);
+
+			return this;
+		}
+		public URLA_Page1 txt_SubjectProperty_State_SendKeys(string Input)
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SubjectProperty_State);
 			aElement.SetFocus();
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(500);

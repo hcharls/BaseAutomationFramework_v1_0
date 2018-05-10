@@ -1,10 +1,28 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <ToolsTab>
+///   Description:    <Tools_Tab>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Automation;
+using TestStack.White.InputDevices;
+using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.Utility;
+using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
@@ -26,11 +44,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		#region List Boxes
 
-		private SearchCriteria lstbx_Forms = SearchCriteria.ByAutomationId("emToolMenuBox");
+		private SearchCriteria lstbx_Tools = SearchCriteria.ByAutomationId("emToolMenuBox");
+
 		//
+
+
 		public void lstbx_Tools_SelectTool(string ToolName)
 		{
-			aElement = GetListBox(lstbx_Forms).GetElement(SearchCriteria.ByText(ToolName));
+			Point ToolsTab = new Point(95, 598);
+
+			Mouse.Instance.Location = ToolsTab;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(500);
+			aElement = GetListBox(lstbx_Tools).GetElement(SearchCriteria.ByText(ToolName));
 			aElement.SetFocus();
 			Thread.Sleep(500);
 			aElement.ClickCenterOfBounds();
@@ -38,11 +65,16 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public ToolsTab OpenAllTools_SelectForm(string Tools)
 		{
-			aElement = GetListBox(lstbx_Forms).GetElement(SearchCriteria.ByText(Tools));
+			Point ToolsTab = new Point(97, 594);
+			Mouse.Instance.Location = ToolsTab;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(1000);
+			aElement = GetListBox(lstbx_Tools).GetElement(SearchCriteria.ByText(Tools));
 			aElement.SetFocus();
 			Thread.Sleep(500);
 			aElement.ClickCenterOfBounds();
-			Thread.Sleep(10000);
+			Thread.Sleep(200000);
 
 			return this;
 		}

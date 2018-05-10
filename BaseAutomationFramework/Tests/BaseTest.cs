@@ -1,4 +1,19 @@
-﻿using BaseAutomationFramework.DataObjects;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <BaseTest>
+///   Description:    <>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <written_by_Ascendum_automation>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
+using AventStack.ExtentReports.Reporter.Configuration;
+using BaseAutomationFramework.DataObjects;
 using BaseAutomationFramework.HTML_Report;
 using BaseAutomationFramework.PageObjects;
 using BaseAutomationFramework.Tests;
@@ -21,6 +36,65 @@ namespace BaseAutomationFramework.Tests
 {
 	public class BaseTest
 	{
+        public class TestData
+        {
+            private static IEnumerable<TestCaseData> UserLogin()
+            {
+                IEnumerable<TestCaseData> testcases = GetData(BaseTest.ExcelDataPath, "Login");
+                return testcases;
+            }
+           
+            private static IEnumerable<TestCaseData> GetData(string path, string sheetName)
+            {
+                var testcases = ExcelDataReader.New().FromFileSystem(path).AddSheet(sheetName).GetTestCases(delegate (string sheet, System.Data.DataRow row, int rowNum)
+                {
+                    var testDataArgs = new Dictionary<string, string>();
+                    foreach (System.Data.DataColumn column in row.Table.Columns)
+                    {
+                        testDataArgs[column.ColumnName] = Convert.ToString(row[column]);
+                    }
+                    string testName = sheet + " - " + row.ItemArray[0];
+                    return new TestCaseData(testDataArgs).SetName(testName);
+                });
+                foreach (TestCaseData testCaseData in testcases)
+                {
+                    yield return testCaseData;
+                }
+            }
+        }
+
+
+        #region Extent Report
+
+        public static ExtentReports ExtentReport = null;
+		public static ExtentHtmlReporter HtmlReport = null;
+		public static ExtentTest extentTest = null;
+		public static void NullifyExtentReport()
+		{
+			ExtentReport = null;
+			HtmlReport = null;
+			extentTest = null;
+			GC.Collect();
+		}
+		public void InitializeExtentReports(string Path, string NameOfReport)
+		{
+			BaseTest.HtmlReport = new ExtentHtmlReporter(Path);
+			BaseTest.HtmlReport.Configuration().DocumentTitle = NameOfReport;
+			BaseTest.HtmlReport.Configuration().Protocol = Protocol.HTTPS;
+			BaseTest.HtmlReport.Configuration().Theme = Theme.Standard;
+			BaseTest.HtmlReport.Configuration().ReportName = NameOfReport;
+			BaseTest.ExtentReport.AttachReporter(BaseTest.HtmlReport);
+		}
+		public static void ExtentFailStep(Exception ex, string StepDetails, string Filename)
+		{
+			string ssLocation = Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format("Failure\\{0}", Filename), true);
+			extentTest.Fail(StepDetails);
+			extentTest.AddScreenCaptureFromPath(ssLocation);
+			extentTest.Error(ex.ToString());
+			Assert.Fail(ex.ToString());
+		}
+
+		#endregion Extent Report
 
 		public static Logger logger = LogManager.GetCurrentClassLogger();
 		public static StatusReport Report { get; set; }
@@ -33,7 +107,7 @@ namespace BaseAutomationFramework.Tests
 
         public static Application TestedApplication { get; set; }
         public const string ExcelDataPath = objMasterData.MasterCodeFileLocalDirectory + "MasterData.xlsx";
-
+		
 		public string testFixtureName = TestContext.CurrentContext.Test.Name;
 
 		#region Launching and Attaching to Applications

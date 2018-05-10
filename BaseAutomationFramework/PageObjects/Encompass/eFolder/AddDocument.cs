@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <AddDocument>
+///   Description:    <Add_Document_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +26,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 	public class AddDocument : BaseScreen
 	{
 		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("AddDocumentDialog");
-		public static SearchCriteria[] scArray = { EncompassMain.scWindow, Encompass_eFolder.scWindow, scWindow };
+		public static SearchCriteria[] scArray = { Encompass_eFolder.scWindow, scWindow };
 		public const bool SET_MAXIMIZED = false;
 		public AddDocument()
 		{

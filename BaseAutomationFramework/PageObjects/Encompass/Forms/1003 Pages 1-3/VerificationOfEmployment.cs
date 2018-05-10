@@ -1,13 +1,27 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <VerificationOfEmployment>
+///   Description:    <Verification_of_Employment_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Automation;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.Utility;
 using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
@@ -25,7 +39,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aePanel = null;					
 		}
 
-		public static VerificationOfEmployment Initialize()
+			public static VerificationOfEmployment Initialize()
 		{
 			return new VerificationOfEmployment();
 		}
@@ -39,7 +53,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 
 		#region Panel
-		
+
 		private PropertyCondition pne_MainPanel = new PropertyCondition(AutomationElement.ClassNameProperty, "Internet Explorer_Server");
 		//
 		private void SetPanel()

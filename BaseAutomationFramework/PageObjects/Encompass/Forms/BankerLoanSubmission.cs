@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <BankerLoanSubmission>
+///   Description:    <Banker_Loan_Submission_Form>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,8 +45,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			new FormsTab()
 				.lstbx_Forms_SelectForm("Banker Loan Submission Form");
-				Thread.Sleep(5000);
-
+				Thread.Sleep(7000);
+			
 			return new BankerLoanSubmission();
 		}
 

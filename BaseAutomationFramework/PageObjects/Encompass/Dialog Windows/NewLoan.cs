@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <NewLoan>
+///   Description:    <New_Loan_Template_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +37,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			return new NewLoan();
 		}
+
+		#region Direct Loan Template Sets
 
 		public void SelectItem_DirectConvPurchase()
 		{
@@ -97,7 +111,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Mouse.Instance.DoubleClick(MouseButton.Left);
 		}
 
-		public void SelectTemplate(string ExactTemplateName)
+		public void SelectDirectTemplate(string ExactTemplateName)
 		{
 			var pnl = GetPanel(SearchCriteria.ByAutomationId("gcListView"));
 			int maxCount = Convert.ToInt32(pnl.Name.Substring(pnl.Name.Length - 2, 1));
@@ -114,37 +128,103 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			}
 		}
 
+		#endregion
 
+		#region Partners Loan Template Sets
 
+		public void SelectItem_PartnersConvPurchase()
+		{
+			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvDirectory"));
+			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 9.0 + 18.0));
 
+			Mouse.Instance.Location = point;
+			System.Threading.Thread.Sleep(500);
+			Mouse.Instance.DoubleClick(MouseButton.Left);
+		}
 
-		//int y = 257;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
-		//y += 18;
-		//Mouse.Instance.Location = new Point(500, y);
-		//System.Threading.Thread.Sleep(1000);
+		public void SelectItem_PartnersConvRefinance()
+		{
+			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvDirectory"));
+			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 27.0 + 18.0));
+
+			Mouse.Instance.Location = point;
+			System.Threading.Thread.Sleep(500);
+			Mouse.Instance.DoubleClick(MouseButton.Left);
+		}
+
+		public void SelectItem_PartnersFHAPurchase()
+		{
+
+			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvDirectory"));
+			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 63.0 + 18.0));
+
+			Mouse.Instance.Location = point;
+			System.Threading.Thread.Sleep(500);
+			Mouse.Instance.DoubleClick(MouseButton.Left);
+		}
+
+		public void SelectItem_PartnersFHARefinance()
+		{
+			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvDirectory"));
+			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 81.0 + 18.0));
+
+			Mouse.Instance.Location = point;
+			System.Threading.Thread.Sleep(500);
+			Mouse.Instance.DoubleClick(MouseButton.Left);
+		}
+
+		public void SelectItem_PartnersVAPurchase()
+		{
+			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvDirectory"));
+			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 99.0 + 18.0));
+
+			Mouse.Instance.Location = point;
+			System.Threading.Thread.Sleep(500);
+			Mouse.Instance.DoubleClick(MouseButton.Left);
+		}
+
+		public void SelectItem_PartnersVARefinance()
+		{
+			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvDirectory"));
+			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 117.0 + 18.0));
+
+			Mouse.Instance.Location = point;
+			System.Threading.Thread.Sleep(500);
+			Mouse.Instance.DoubleClick(MouseButton.Left);
+		}
+
+		public void SelectPartnersTemplate(string ExactTemplateName)
+		{
+			var pnl = GetPanel(SearchCriteria.ByAutomationId("gcListView"));
+			int maxCount = Convert.ToInt32(pnl.Name.Substring(pnl.Name.Length - 2, 1));
+
+			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvDirectory"));
+			//Point startPoint = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 27.0));
+			double increment = 0.0;
+			for (int i = 0; i <= maxCount; i++)
+			{
+				Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 15), Convert.ToInt32(thing.Bounds.TopLeft.Y + 27.0 + increment));
+				Mouse.Instance.Location = point;
+				System.Threading.Thread.Sleep(500);
+				increment += 18.0;
+			}
+		}
+
+		#endregion
+
+		#region Combo Box
+
+		private SearchCriteria cmb_LoanTemplateFolder = SearchCriteria.ByAutomationId("cmbBoxFolder");
+
+		public NewLoan cmb_LoanTemplateFolder_SelectByText(string Input)
+		{
+			GetComboBox(cmb_LoanTemplateFolder).Select(Input);
+
+			return new NewLoan();
+		}
+
+		#endregion
+
 
 	}
 }

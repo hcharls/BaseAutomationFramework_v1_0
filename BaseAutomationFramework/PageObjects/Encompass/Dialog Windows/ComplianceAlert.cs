@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <ComplianceAlert>
+///   Description:    <Compliance_Alert_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +18,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using BaseAutomationFramework.Tests;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.InputDevices;
+using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
@@ -38,6 +52,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public ComplianceAlert btn_Close_Click()
 		{
 			GetButton(btn_Close).Click();
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Thread.Sleep(2000);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
 			return new ComplianceAlert();
 		}
 

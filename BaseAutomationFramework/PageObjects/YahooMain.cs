@@ -1,4 +1,16 @@
-﻿using OpenQA.Selenium;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <YahooMain>
+///   Description:    <Yahoo_Main>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -31,7 +43,6 @@ namespace BaseAutomationFramework.PageObjects.Yahoo
 
         #endregion
 
-
         #region Text Boxes
 
         private By txt_Search = By.XPath("//input[@id='uh-search-box']");
@@ -43,6 +54,7 @@ namespace BaseAutomationFramework.PageObjects.Yahoo
 
             return this;
         }
+
 
         #endregion
 

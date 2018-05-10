@@ -1,4 +1,16 @@
-﻿using System.Text;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <Step>
+///   Description:    <report_step_builder>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System.Text;
 
 namespace BaseAutomationFramework.HTML_Report
 {

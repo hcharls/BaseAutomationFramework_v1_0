@@ -1,0 +1,6 @@
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\bin\Release\EncompassKiller.exe.config
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\bin\Release\EncompassKiller.exe
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\bin\Release\EncompassKiller.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\obj\Release\EncompassKiller.csprojResolveAssemblyReference.cache
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\obj\Release\EncompassKiller.exe
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\obj\Release\EncompassKiller.pdb

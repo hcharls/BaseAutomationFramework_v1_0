@@ -1,9 +1,22 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <WVM_LogOn>
+///   Description:    <West_VM_Log_On>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Automation;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
@@ -75,15 +88,27 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		#region Buttons
 
-		private PropertyCondition btn_LogOn = new PropertyCondition(AutomationElement.NameProperty, "Log On");
+		private PropertyCondition btn_LogOn = new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "button");
 
 		//
 		public WVM_LogOn btn_LogOn_Click()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_LogOn);
 			aElement.ClickCenterOfBounds();
+			Thread.Sleep(9000);
 
 			return new WVM_LogOn();
+		}
+
+		public void WestVM_UploadFees_Click()
+		{
+			Point UploadFees = new Point(1714, 194);
+
+			Mouse.Instance.Location = UploadFees;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(5000);
+
 		}
 
 		#endregion

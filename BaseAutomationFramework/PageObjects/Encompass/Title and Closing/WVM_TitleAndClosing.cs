@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <WVM_TitleAndClosing>
+///   Description:    <WVM_Title_and_Closing>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,7 +74,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Mouse.LeftUp();
 			Mouse.LeftDown();
 			Mouse.LeftUp();
-			Thread.Sleep(3000);
+			Thread.Sleep(5000);
 		}
 
 		#endregion

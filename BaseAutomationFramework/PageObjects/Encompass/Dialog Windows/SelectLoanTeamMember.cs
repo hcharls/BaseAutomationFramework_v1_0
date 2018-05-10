@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <SelectLoanTeamMember>
+///   Description:    <Select_Loan_Team_Member_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,12 +43,23 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new SelectLoanTeamMember();
 		}
 
+		public void Application_SelectProcessingMgr()
+		{
+			Point ProcessingMgr = new Point(750, 472);
+
+			Mouse.Instance.Location = ProcessingMgr;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
 
 		public void PreProcReview_SelectLoanProcessor()
 		{
-			Point ScrollBarTop = new Point(1204, 335);
-			Point ScrollBarBottom = new Point(1196, 703);
-			Point LoanProcessor = new Point(744, 510);
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 602);
 
 			Mouse.Instance.Location = ScrollBarTop;
 			Mouse.LeftDown();
@@ -48,7 +71,204 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Mouse.LeftDown();
 			Mouse.LeftUp();
 			Thread.Sleep(3000);
+		}
 
+		public void ProcPreApproval_SelectLoanProcessor()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 708);
+			Point LoanProcessor = new Point(744, 420);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void SubmitToUW_SelectUnderwriter()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 673);
+			Point Underwriter = new Point(758, 564);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = Underwriter;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void InitialUWDecision_SelectUnderwriter()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 581);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void FinalUWApproval_SelectQualityControl()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 723);
+			Point QualityControl = new Point(744, 330);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = QualityControl;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void QCReview_SelectDocDrawer()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point DocDrawer = new Point(749, 673);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = DocDrawer;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void DocsOut_SelectFunder()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 581);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void DocsBack_SelectFunder()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 581);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void FundingReview_SelectFunder()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 581);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void Funding_SelectShipper()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 581);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void Shipper_SelectSecondary()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 581);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+		}
+
+		public void Purchase_SelectPostCloser()
+		{
+			Point ScrollBarTop = new Point(1205, 335);
+			Point ScrollBarBottom = new Point(1205, 700);
+			Point LoanProcessor = new Point(744, 581);
+
+			Mouse.Instance.Location = ScrollBarTop;
+			Mouse.LeftDown();
+			Mouse.Instance.Location = ScrollBarBottom;
+			Mouse.LeftUp();
+			Mouse.Instance.Location = LoanProcessor;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
 		}
 
 	}

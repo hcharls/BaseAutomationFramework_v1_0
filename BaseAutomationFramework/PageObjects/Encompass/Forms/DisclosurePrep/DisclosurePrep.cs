@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <DisclosurePrep>
+///   Description:    <Disclosure_Prep_TRID_Form>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +45,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			new FormsTab()
 				.lstbx_Forms_SelectForm("Disclosure Prep (TRID)");
+			Thread.Sleep(5000);
 
 			return new DisclosurePrep();
 		}
@@ -109,7 +122,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement.ClickCenterOfBounds();
 			Keyboard.Instance.Enter(Input);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
-			Thread.Sleep(4000);
+			Thread.Sleep(5000);
 
 			return this;
 		}
@@ -158,6 +171,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Review2015Itemization);
 			aElement.ClickCenterOfBounds();
+			Thread.Sleep(10000);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
+			Thread.Sleep(5000);
 
 			return new DisclosurePrep();
 		}
@@ -165,6 +181,15 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_RunComplianceReport);
 			aElement.ClickCenterOfBounds();
+			Thread.Sleep(10000);
+
+			return new DisclosurePrep();
+		}
+		public DisclosurePrep btn_NotNowContinue_Click()
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_NotNowContinue);
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(3000);
 
 			return new DisclosurePrep();
 		}

@@ -1,7 +1,20 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <AlertsandMessagesTab>
+///   Description:    <Alerts_and_Messages_Tab>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using TestStack.White.InputDevices;
@@ -27,6 +40,13 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_eConsentNotYetReceived()
 		{
+			Point AlertsAndMessages = new Point(60, 185);
+
+			Mouse.Instance.Location = AlertsAndMessages;
+			Mouse.LeftDown();
+			Mouse.LeftUp();
+			Thread.Sleep(3000);
+
 			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gvAlerts"));
 			Point point = new Point(Convert.ToInt32(thing.Bounds.TopLeft.X + 25), Convert.ToInt32(thing.Bounds.TopLeft.Y + 10));
 

@@ -100,3 +100,34 @@ C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\W
 C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.Support.xml
 C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.dll
 C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojResolveAssemblyReference.cache
+C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\ExtentReports.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojResolveAssemblyReference.cache
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\NLog.config
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.pdb
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Castle.Core.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Excel.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\ExtentReports.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Interop.UIAutomationClient.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\NLog.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\nunit.framework.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\TestStack.White.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\UIAComWrapper.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.Support.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Castle.Core.xml
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Excel.pdb
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\NLog.xml
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\nunit.framework.xml
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\TestStack.White.pdb
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\TestStack.White.xml
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\UIAComWrapper.pdb
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.xml
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.Support.xml
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csproj.CoreCompileInputs.cache
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csproj.CopyComplete

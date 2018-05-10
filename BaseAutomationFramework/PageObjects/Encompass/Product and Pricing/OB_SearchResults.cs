@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <OB_SearchResults>
+///   Description:    <OB_Search_Results>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -126,7 +138,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			//Thread.Sleep(1000);
 			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
 			item.ClickCenterOfBounds();
-			Thread.Sleep(500);
+			Thread.Sleep(5000);
 
 			return new OB_SearchResults();
 

@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <RegZCD>
+///   Description:    <RegZ_CD_Form>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,9 +50,18 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new RegZCD();
 		}
 
+		public static RegZCD Initialize()
+		{
+			return new RegZCD();
+		}
+
 		#region Text Boxes
 
 		private PropertyCondition txt_FirstPaymentDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_682");
+		private PropertyCondition txt_DocumentDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_L770");
+		private PropertyCondition txt_ClosingDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_748");
+		private PropertyCondition txt_DocSigningDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_1887");
+		private PropertyCondition txt_DisbursementDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_L244");
 
 		public RegZCD txt_FirstPaymentDate_SendKeys(string Input)
 		{
@@ -55,9 +76,108 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Keyboard.Instance.Enter(Input);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 			aElement.WaitWhileBusy();
+			Thread.Sleep(5000);
+
+			return this;
+		}
+		public RegZCD txt_DocumentDate_SendKeys(string Input)
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DocumentDate);
+			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(500);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter("a");
+			Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(250);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			aElement.WaitWhileBusy();
 			Thread.Sleep(1000);
 
 			return this;
+		}
+		public RegZCD txt_ClosingDate_SendKeys(string Input)
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_ClosingDate);
+			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(500);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter("a");
+			Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(250);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			aElement.WaitWhileBusy();
+			Thread.Sleep(1000);
+
+			return this;
+		}
+		public RegZCD txt_DocSigningDate_SendKeys(string Input)
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DocSigningDate);
+			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(500);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter("a");
+			Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(250);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			aElement.WaitWhileBusy();
+			Thread.Sleep(1000);
+
+			return this;
+
+		}
+		public RegZCD txt_DisbursementDate_SendKeys(string Input)
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DisbursementDate);
+			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(500);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter("a");
+			Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(250);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			aElement.WaitWhileBusy();
+			Thread.Sleep(1000);
+
+			return this;
+
+		}
+
+		#endregion
+
+		#region Buttons
+
+		private PropertyCondition btn_Audit = new PropertyCondition(AutomationElement.AutomationIdProperty, "btnAudit");
+		private PropertyCondition btn_LoanProgram = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button19");
+
+		//
+		public RegZCD btn_Audit_Click()
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Audit);
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(2000);
+
+			return new RegZCD();
+		}
+		public RegZCD btn_LoanProgram_Click()
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_LoanProgram);
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(2000);
+
+			return new RegZCD();
 		}
 
 		#endregion

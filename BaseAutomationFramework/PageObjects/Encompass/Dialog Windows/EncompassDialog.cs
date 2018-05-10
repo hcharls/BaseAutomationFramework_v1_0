@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <EncompassDialog>
+///   Description:    <standard_Encompass_Dialog_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,24 +44,25 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 				throw new Exception("Screen must not be null");
 		}
 
-		private SearchCriteria btn_RESPA_OK = SearchCriteria.ByAutomationId("2");
-		private SearchCriteria btn_SaveYes = SearchCriteria.ByAutomationId("6");
+		private SearchCriteria btn_OK = SearchCriteria.ByAutomationId("2");
+		private SearchCriteria btn_Yes = SearchCriteria.ByAutomationId("6");
 		private SearchCriteria btn_OKtoCertify = SearchCriteria.ByAutomationId("1");
 
 		//
-		public EncompassDialog btn_RESPA_OK_Click()
+		public EncompassDialog btn_OK_Click()
 		{
-			GetButton(btn_RESPA_OK).Click();
+			GetButton(btn_OK).Click();
 			return new EncompassDialog();
 		}
-		public EncompassDialog btn_SaveYes_Click()
+		public EncompassDialog btn_Yes_Click()
 		{
-			GetButton(btn_SaveYes).Click();
+			GetButton(btn_Yes).Click();
 			return new EncompassDialog();
 		}
 		public EncompassDialog btn_OKtoCertify_Click()
 		{
 			GetButton(btn_OKtoCertify).Click();
+			Thread.Sleep(5000);
 			return new EncompassDialog();
 		}
 	}

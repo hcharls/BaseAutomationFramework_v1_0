@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <AggregateSetup>
+///   Description:    <Aggregate_Setup_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,17 +41,51 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new AggregateSetup();
 		}
 
+		public static AggregateSetup OpenFromItemization()
+		{
+			new Itemization()
+				.btn_AggregateSetup_Click();
+
+			return new AggregateSetup();
+		}
+
+		#region Text Boxes
+
+		private PropertyCondition txt_HazardInsurance = new PropertyCondition(AutomationElement.AutomationIdProperty, "box_19");
+		//
+
+		public AggregateSetup txt_HazardInsurance_Tab()
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_HazardInsurance);
+			aElement.SetFocus();
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(300);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Thread.Sleep(1000);
+
+			return this;
+		}
+
+
+		#endregion
+
 		#region Buttons
 
 		private SearchCriteria btn_Cancel = SearchCriteria.ByAutomationId("cancelBtn");
+		private SearchCriteria btn_OK = SearchCriteria.ByAutomationId("okBtn");
 
 		public void btn_Cancel_Click()
 		{
 			GetButton(btn_Cancel).Click();
 		}
 
-		#endregion
+		public void btn_OK_Click()
+		{
+			GetButton(btn_OK).Click();
+			Thread.Sleep(5000);
+		}
 
+		#endregion
 
 		public void DragWindow_AggregateSetup()
 		{

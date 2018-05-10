@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <BorrowerSummary>
+///   Description:    <Borrower_Summary_Form>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,6 +86,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		private PropertyCondition btn_CopyfromPresent = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button6");
 		private PropertyCondition btn_CopyfromBorrower = new PropertyCondition(AutomationElement.NameProperty, "Button1");
+		private PropertyCondition btn_OrderCredit = new PropertyCondition(AutomationElement.NameProperty, "Button4");
+
 		//
 		public BorrowerSummary btn_CopyfromPresent_Click()
 		{
@@ -96,6 +110,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			item.ClickCenterOfBounds();
 			new BorrowerSummary();
 			Thread.Sleep(1000);
+
+			return new BorrowerSummary();
+		}
+
+		public BorrowerSummary btn_OrderCredit_Click()
+		{
+			AndCondition andCond = new AndCondition(
+					new PropertyCondition(AutomationElement.NameProperty, "Order Credit"),
+					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "button")
+				);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_OrderCredit);
+			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+			item.ClickCenterOfBounds();
+			Thread.Sleep(10000);
 
 			return new BorrowerSummary();
 		}
@@ -233,7 +261,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DOB);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(500);
+			Thread.Sleep(1000);
 
 			return this;
 		}
@@ -252,8 +280,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_MaritalStatus);
 			aElement.SetFocus();
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-			Keyboard.Instance.Enter(Input);
 			Thread.Sleep(500);
+			Keyboard.Instance.Enter(Input);
+			Thread.Sleep(1000);
 
 			return this;
 		}
@@ -299,6 +328,10 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
 			Thread.Sleep(500);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Thread.Sleep(1000);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+			Thread.Sleep(3000);
 
 			return this;
 		}
@@ -355,11 +388,12 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public BorrowerSummary txt_EstimatedValue_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_EstimatedValue);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(500);
-            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			EnterTextToTextBox(aElement, Input);
+			//aElement.SetFocus();
+			//aElement.ClickCenterOfBounds();
+			//Keyboard.Instance.Enter(Input);
+			//Thread.Sleep(500);
+   //         Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 
             return this;
 		}
@@ -375,13 +409,14 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 		public BorrowerSummary txt_SubjectProperty_ZipCode_SendKeys(string Input)
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SubjectProperty_ZipCode);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(750);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SubjectProperty_ZipCode);			
+			EnterTextToTextBox(aElement, Input);
+			//aElement.SetFocus();
+			//aElement.ClickCenterOfBounds();
+			//Keyboard.Instance.Enter(Input);
+			//Thread.Sleep(750);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-			fn_CheckCSZLabel(Input);
+			//fn_CheckCSZLabel(Input);
 
 			return new BorrowerSummary();
 		}
@@ -505,48 +540,47 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition cmb_MaritalStatus = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox2");
 		//Information for Government Monitoring
 		private PropertyCondition cmb_InformationProvidedBy = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox16");
-		private PropertyCondition cmb_Sex = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox13");
-		private PropertyCondition cmb_Ethnicity = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox12");
 		//Subject Property Information
 		private PropertyCondition cmb_PropertyType = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox4");
 
 		//Borrower Information
-		public BorrowerSummary cmb_MaritalStatus_SendKeys(string Input)
-		{
-			if (allElements == null)
-				for (int i = 0; i < 30; i++)
-				{
-					aeScreen = null;
-					Screen = null;
-					GC.Collect();
-					new BorrowerSummary();
-					Thread.Sleep(5000);
-					allElements = null;
-					allElements = new AutomationElement[623];
-					aeScreen.FindAll(TreeScope.Descendants, Condition.TrueCondition).CopyTo(allElements, 0);
-					if (allElements[623 - 1] != null)
-						break;
-				}
-			aElement = null;
-			aElement = Array.Find(allElements, x => x.Current.AutomationId == "DropdownBox2");			
-			if (aElement == null)
-				throw new Exception("Control not found!!!");
+		//public BorrowerSummary cmb_MaritalStatus_SendKeys(string Input)
+		//{
+		//	if (allElements == null)
+		//		for (int i = 0; i < 30; i++)
+		//		{
+		//			aeScreen = null;
+		//			Screen = null;
+		//			GC.Collect();
+		//			new BorrowerSummary();
+		//			Thread.Sleep(5000);
+		//			allElements = null;
+		//			allElements = new AutomationElement[623];
+		//			aeScreen.FindAll(TreeScope.Descendants, Condition.TrueCondition).CopyTo(allElements, 0);
+		//			if (allElements[623 - 1] != null)
+		//				break;
+		//		}
+		//	aElement = null;
+		//	aElement = Array.Find(allElements, x => x.Current.AutomationId == "DropdownBox2");			
+		//	if (aElement == null)
+		//		throw new Exception("Control not found!!!");
 
-			AndCondition andCond = new AndCondition(
-					new PropertyCondition(AutomationElement.NameProperty, Input),
-					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "list item")
-				);			
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(1000);
-			new BorrowerSummary();
-			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-			item.ClickCenterOfBounds();
-			Thread.Sleep(500);
+		//	AndCondition andCond = new AndCondition(
+		//			new PropertyCondition(AutomationElement.NameProperty, Input),
+		//			new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "list item")
+		//		);			
+		//	aElement.SetFocus();
+		//	aElement.ClickCenterOfBounds();
+		//	Thread.Sleep(1000);
+		//	new BorrowerSummary();
+		//	AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+		//	item.ClickCenterOfBounds();
+		//	Thread.Sleep(500);
 
-			return new BorrowerSummary();
-		}
+		//	return new BorrowerSummary();
+		//}
 		//Information for Government Monitoring
+
 		public BorrowerSummary cmb_InformationProvidedBy_SendKeys(string Input)
 		{
 			AndCondition andCond = new AndCondition(
@@ -555,42 +589,6 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 				);
 
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_InformationProvidedBy);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(1000);
-			new BorrowerSummary();
-			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-			item.ClickCenterOfBounds();
-			Thread.Sleep(500);
-
-			return new BorrowerSummary();
-		}
-		public BorrowerSummary cmb_Sex_SendKeys(string Input)
-		{
-			AndCondition andCond = new AndCondition(
-					new PropertyCondition(AutomationElement.NameProperty, Input),
-					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "list item")
-				);
-
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_Sex);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(1000);
-			new BorrowerSummary();
-			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-			item.ClickCenterOfBounds();
-			Thread.Sleep(500);
-
-			return new BorrowerSummary();
-		}
-		public BorrowerSummary cmb_Ethnicity_SendKeys(string Input)
-		{
-			AndCondition andCond = new AndCondition(
-					new PropertyCondition(AutomationElement.NameProperty, Input),
-					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "list item")
-				);
-
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_Ethnicity);
 			aElement.SetFocus();
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(1000);
@@ -630,46 +628,38 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private SearchCriteria chk_TransactionDetailsLPMI = SearchCriteria.ByAutomationId("__cid_CheckBox39_Ctrl");
 		private SearchCriteria chk_TransactionDetailsBRW = SearchCriteria.ByAutomationId("__cid_CheckBox38_Ctrl");
 		private SearchCriteria chk_TransactionDetailsMCC = SearchCriteria.ByAutomationId("__cid_CheckBox37_Ctrl");
-		
+		private SearchCriteria chk_BorrowerVerbalAuthForCreditPull = SearchCriteria.ByAutomationId("__cid_CheckBox26_Ctrl");
 		//Present Address
-		public BorrowerSummary chk_PresentAddress_OwnRent_Check(string OwnOrRent)
+		//public BorrowerSummary chk_PresentAddress_OwnRent_Check(string OwnOrRent)
+		//{
+		//	string id = "";
+		//	switch (OwnOrRent.ToLower())
+		//	{
+		//		case "Own": id = "__cid_CheckBox1_Ctrl"; break;
+		//		case "Rent": id = "__cid_CheckBox2_Ctrl"; break;
+		//		default: throw new Exception("Did not specify a proper input!!!");
+		//	}
+		//	aElement = aeScreen.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.AutomationIdProperty, id));
+		//	setLegacyIAccessiblePattern(aElement);
+		//	if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
+		//		DoDefaultAction(aElement);
+
+		//	return this;
+		//}
+		public BorrowerSummary chk_PresentAddress_OwnRent_Check(string PresentAddress_OwnRent)
 		{
-			string id = "";
-			switch (OwnOrRent.ToLower())
-			{
-				case "own": id = "__cid_CheckBox1_Ctrl"; break;
-				case "rent": id = "__cid_CheckBox2_Ctrl"; break;
-				default: throw new Exception("Did not specify a proper input!!!");
-			}
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.AutomationIdProperty, id));
+			AndCondition andCond = new AndCondition(
+					new PropertyCondition(AutomationElement.NameProperty, PresentAddress_OwnRent),
+					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "check box")
+				);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
 			setLegacyIAccessiblePattern(aElement);
 			if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
 				DoDefaultAction(aElement);
 
 			return this;
 		}
-		//Information for Government Monitoring
-		public BorrowerSummary chk_PrimaryBorrower_Race_Check(string Race)
-		{
-			string id = "";
-			switch (Race)
-			{
-				case "American Indian or Alaska Native": id = "__cid_CheckBox51_Ctrl"; break;
-				case "Asian": id = "__cid_CheckBox52_Ctrl"; break;
-				case "Black or African American": id = "__cid_CheckBox53_Ctrl"; break;
-				case "Native Hawaiian or Other Pac. Islander": id = "__cid_CheckBox55_Ctrl"; break;
-				case "White": id = "__cid_CheckBox54_Ctrl"; break;
-				case "Information not provided": id = "__cid_CheckBox56_Ctrl"; break;
-				default: throw new Exception("Did not specify a proper race!!!");
-			}
 
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.AutomationIdProperty, id));
-			setLegacyIAccessiblePattern(aElement);
-			if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
-				DoDefaultAction(aElement);
-
-			return this;
-		}
 		//Purpose of Loan
 		public BorrowerSummary chk_LoanPurpose_Check(string LoanPurpose)
 		{
@@ -714,6 +704,14 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new BorrowerSummary();
 		}
+		//Credit Pull
+			public BorrowerSummary chk_BorrowerVerbalAuthForCreditPull_Check(bool Check)
+			{
+				ClickCheckBox(Check, chk_BorrowerVerbalAuthForCreditPull);
+				Thread.Sleep(2000);
+
+			return this;
+			}
 
 		#endregion
 

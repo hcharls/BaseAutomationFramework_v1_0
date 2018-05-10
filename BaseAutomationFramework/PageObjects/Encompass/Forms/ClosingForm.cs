@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <ClosingForm>
+///   Description:    <Closing_Form>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +49,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static ClosingForm OpenForm_FromFormsTab()
 		{
 			new FormsTab()
+				.OpenFormsTab()
 				.lstbx_Forms_SelectForm("Closing Form");
+			Thread.Sleep(2000);
 
 			return new ClosingForm();
 		}
@@ -54,7 +68,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_CurrentVesting);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(500);
+			Thread.Sleep(1000);
 
 			return this;
 		}
@@ -63,7 +77,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_VestingForDocs);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(500);
+			Thread.Sleep(1000);
 
 			return this;
 		}
@@ -72,7 +86,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_GrantDeedRequested);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(500);
+			Thread.Sleep(1000);
 
 			return this;
 		}
@@ -81,7 +95,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_NonObligorSigning);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(500);
+			Thread.Sleep(1000);
 
 			return this;
 		}
@@ -91,13 +105,14 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		private PropertyCondition btn_ProcessorAddData = new PropertyCondition(AutomationElement.AutomationIdProperty, "condSentAddDataButton");
 		private PropertyCondition btn_ProcessorClicktoCertify = new PropertyCondition(AutomationElement.AutomationIdProperty, "procCertifyButton");
+		private PropertyCondition btn_DocsAddData = new PropertyCondition(AutomationElement.AutomationIdProperty, "docsAddDataButton");
+
 		//
 		public ClosingForm btn_ProcessorAddData_Click()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_ProcessorAddData);
 			aElement.ClickCenterOfBounds();
-			new BorrowerSummary();
-			Thread.Sleep(10000);
+			Thread.Sleep(20000);
 
 			return new ClosingForm();
 		}
@@ -105,49 +120,98 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_ProcessorClicktoCertify);
 			aElement.ClickCenterOfBounds();
-			new BorrowerSummary();
 			Thread.Sleep(10000);
 
 			return new ClosingForm();
 		}
+		public ClosingForm btn_DocsAddData_Click()
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_DocsAddData);
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(20000);
+
+			return new ClosingForm();
+		}
+
 		#endregion
 
 		#region Combo Boxes
 		private PropertyCondition cmb_ChangeVesting = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox1");
-		private PropertyCondition cmb_IsFileReadyForUnderwriting = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox1");
+		private PropertyCondition cmb_IsFileReadyForUnderwriting = new PropertyCondition(AutomationElement.AutomationIdProperty, "readyForUnderwritingDropdown");
 
 		public ClosingForm cmb_ChangeVesting_SendKeys(string Input)
 		{
-			AndCondition andCond = new AndCondition(
-					new PropertyCondition(AutomationElement.NameProperty, Input),
-					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
-				);
-
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ChangeVesting);
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(500);
-			new ClosingForm();
-			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-			item.ClickCenterOfBounds();
+			aElement.SetFocus();
+			Keyboard.Instance.Enter(Input);
+			Thread.Sleep(1000);
 
 			return this;
 		}
+		//{
+		//	AndCondition andCond = new AndCondition(
+		//			new PropertyCondition(AutomationElement.NameProperty, Input),
+		//			new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
+		//		);
+
+		//	aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ChangeVesting);
+		//	aElement.ClickCenterOfBounds();
+		//	Thread.Sleep(500);
+		//	AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+		//	item.ClickCenterOfBounds();
+
+		//	return this;
+		//}
 		public ClosingForm cmb_IsFileReadyForUnderwriting_SendKeys(string Input)
 		{
-			AndCondition andCond = new AndCondition(
-					new PropertyCondition(AutomationElement.NameProperty, Input),
-					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
-				);
-
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_IsFileReadyForUnderwriting);
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(500);
-			new ClosingForm();
-			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-			item.ClickCenterOfBounds();
+			aElement.SetFocus();
+			Keyboard.Instance.Enter(Input);
+			Thread.Sleep(1000);
 
 			return this;
 		}
+
+
+
+		//public void SelectFromComboBox(UIItem box, string Option, int numberOfOptions = 150)
+		//{
+		//	string currentOption = null;
+		//	AutomationElement ae = box.AutomationElement;
+		//	Option = Option.ToLower();
+		//	// Pressing space should set the option to the blank default
+		//	ae.SetFocus();
+		//	Thread.Sleep(250);
+		//	Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.SPACE);
+
+		//	for (int i = 0; i < numberOfOptions; i++)
+		//	{
+		//		ae.SetFocus();
+		//		Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+		//		Thread.Sleep(10);
+		//		currentOption = getLegacyIAccessiblePattern_Value(AutomationElement.FocusedElement).ToLower();
+		//		if (currentOption == Option)
+		//			return;
+		//	}
+		//	throw new Exception("Did not find intended ComboBox Option or reached the end of the list of Options!!!");
+		//}
+
+
+		//{
+		//	AndCondition andCond = new AndCondition(
+		//			new PropertyCondition(AutomationElement.NameProperty, Input),
+		//			new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
+		//		);
+
+		//	aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_IsFileReadyForUnderwriting);
+		//	aElement.ClickCenterOfBounds();
+		//	Thread.Sleep(500);
+		//	new ClosingForm();
+		//	AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+		//	item.ClickCenterOfBounds();
+
+		//	return this;
+		//}
 
 		#endregion
 

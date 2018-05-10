@@ -1,4 +1,16 @@
-﻿using BaseAutomationFramework.Tools;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <StatusReport>
+///   Description:    <builds_report_structure>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <written_by_Ascendum_automation>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using BaseAutomationFramework.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <EncompassMain>
+///   Description:    <Encompass_Main>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +48,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public EncompassMain Resize()
 		{
 			Screen.DisplayState = TestStack.White.UIItems.WindowItems.DisplayState.Restored;
-			System.Threading.Thread.Sleep(500);
+			System.Threading.Thread.Sleep(5000);
 			Screen.DisplayState = TestStack.White.UIItems.WindowItems.DisplayState.Maximized;
 			Screen.WaitTill(() => Screen.DisplayState == TestStack.White.UIItems.WindowItems.DisplayState.Maximized, TimeSpan.FromSeconds(15.0));
 
@@ -80,6 +92,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		#region Tab & Tab Items
 
 		private SearchCriteria tab_MainTabs = SearchCriteria.ByAutomationId("tabControl");
+		private PropertyCondition tab_Forms = new PropertyCondition(AutomationElement.NameProperty, "Forms");
+		private PropertyCondition tab_Tools = new PropertyCondition(AutomationElement.NameProperty, "Tools");
+
 		//
 		private Tab tab_MainTabs_Return()
 		{
@@ -118,8 +133,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
 			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.SHIFT);
 			Keyboard.Instance.Enter("f");
+            Thread.Sleep(500);
+            Keyboard.Instance.LeaveAllKeys();
+			Thread.Sleep(500);
+		}
+
+		public void ExitEncompass()
+		{
+			tab_MainTabs_Return().SelectTabPage("Loan");
+			Thread.Sleep(250);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.ALT);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.F4);
 			Keyboard.Instance.LeaveAllKeys();
 			Thread.Sleep(250);
+
 		}
 
 		#endregion

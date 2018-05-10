@@ -1,0 +1,12 @@
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\bin\Debug\EncompassKiller.exe.config
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\bin\Debug\EncompassKiller.exe
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\bin\Debug\EncompassKiller.pdb
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\obj\Debug\EncompassKiller.csprojResolveAssemblyReference.cache
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\obj\Debug\EncompassKiller.exe
+C:\VisualStudio\BaseAutomationFramework_v1_0\EncompassKiller\obj\Debug\EncompassKiller.pdb
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\EncompassKiller\bin\Debug\EncompassKiller.exe.config
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\EncompassKiller\bin\Debug\EncompassKiller.exe
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\EncompassKiller\bin\Debug\EncompassKiller.pdb
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\EncompassKiller\obj\Debug\EncompassKiller.csprojResolveAssemblyReference.cache
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\EncompassKiller\obj\Debug\EncompassKiller.exe
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\EncompassKiller\obj\Debug\EncompassKiller.pdb

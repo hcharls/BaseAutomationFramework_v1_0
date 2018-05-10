@@ -1,4 +1,16 @@
-﻿using BaseAutomationFramework.Tests;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <BaseScreen>
+///   Description:    <Base_Screen>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <written_by_Ascendum_automation>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using BaseAutomationFramework.Tests;
 using NLog;
 using NUnit.Framework;
 using System;
@@ -472,6 +484,49 @@ namespace BaseAutomationFramework.PageObjects
 
 		#region BaseAction
 
+		public void EnterTextToTextBox(AutomationElement ae, string TextToEnter, int maxWaitInSeconds = 60)
+		{
+			string currentText = null;
+			int i = 0;
+			ae.SetFocus();
+			ae.ClickCenterOfBounds();
+			if (string.IsNullOrEmpty(currentText))
+				Keyboard.Instance.Enter(TextToEnter);
+			do
+			{
+				Thread.Sleep(10);
+				currentText = getLegacyIAccessiblePattern_Value(AutomationElement.FocusedElement);
+				if (currentText == TextToEnter)
+					return;
+				Thread.Sleep(500);
+				i++;
+			} while (i < maxWaitInSeconds * 2);
+
+			throw new Exception(string.Format("Was not able to set the text of the textbox in the alotted time of {0} seconds!!!", maxWaitInSeconds));
+		}
+
+		public void SelectFromComboBox(AutomationElement box, string Option, int numberOfOptions = 150)
+		{
+			string currentOption = null;
+			AutomationElement ae = box;
+			Option = Option.ToLower();
+			// Pressing space should set the option to the blank default
+			ae.SetFocus();
+			Thread.Sleep(250);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.SPACE);
+
+			for (int i = 0; i < numberOfOptions; i++)
+			{
+				ae.SetFocus();
+				Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+				Thread.Sleep(10);
+				currentOption = getLegacyIAccessiblePattern_Value(AutomationElement.FocusedElement).ToLower();
+				if (currentOption == Option)
+					return;
+			}
+			throw new Exception("Did not find intended ComboBox Option or reached the end of the list of Options!!!");
+		}
+		
 		public static void DeleteField_KeyCombo()
 		{
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
@@ -479,6 +534,13 @@ namespace BaseAutomationFramework.PageObjects
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 			Keyboard.Instance.LeaveAllKeys();
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DELETE);
+		}
+		public static void TabShiftTab()
+		{
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.SHIFT);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Keyboard.Instance.LeaveAllKeys();
 		}
 
 		/// <summary>

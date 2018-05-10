@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <eConsentNotYetReceived>
+///   Description:    <eConsent_Not_Yet_Received_window>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +41,11 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 				throw new Exception("Screen is null!!!");
 		}
 
+		public static eConsentNotYetReceived Initialize()
+		{
+			return new eConsentNotYetReceived();
+		}
+
 		public static eConsentNotYetReceived Open_FromAlertsandMessagesTab()
 		{
 			new AlertsandMessagesTab()
@@ -37,17 +54,37 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new eConsentNotYetReceived();
 		}
 
-		private PropertyCondition btn_RequesteConsent = new PropertyCondition(AutomationElement.NameProperty, "Request eConsent");
-		//
-		public eConsentNotYetReceived btn_RequesteConsent_Click()
+		#region Buttons
+
+		private PropertyCondition btn_Request_eConsent = new PropertyCondition(AutomationElement.NameProperty, "Request eConsent");
+		private PropertyCondition btn_View_eConsent = new PropertyCondition(AutomationElement.NameProperty, "View eConsent");
+
+
+		public eConsentNotYetReceived btn_Request_eConsent_Click()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_RequesteConsent);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Request_eConsent);
 			aElement.ClickCenterOfBounds();
 			aElement.WaitWhileBusy();
 			Thread.Sleep(1000);
 
 			return new eConsentNotYetReceived();
 		}
+
+		public eConsentNotYetReceived btn_View_eConsent_Click()
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_View_eConsent);
+			aElement.ClickCenterOfBounds();
+			aElement.WaitWhileBusy();
+			Thread.Sleep(1000);
+			Thread.Sleep(2000);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+
+			return new eConsentNotYetReceived();
+		}
+
+
+		#endregion
 
 	}
 }

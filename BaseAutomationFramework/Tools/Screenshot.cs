@@ -72,6 +72,21 @@ namespace BaseAutomationFramework.Tools
 
             return fullPath;
         }
+		public static string TakeScreenShot(Bitmap SS, string FileName, bool ExtentStep)
+		{
+			string fullPath = string.Format("{0}\\Screenshots\\{1}\\{2}.png", BaseTest.MasterData.TestResultPathStem, BaseTest.MasterData.TestID, FileName);
+//			string fullPath = string.Format("{0}\\{1}\\{2}\\Screenshots\\{3}.png", BaseTest.MasterData.TestResultPathStem, BaseTest.MasterData.TestID, BaseTest.MasterData.TestDescription, FileName);
+			Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+
+			using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+			{
+				SS.Save(stream, ImageFormat.Png);
+				SS.Dispose();
+			}
+			Console.WriteLine("Path of the screenshot: " + fullPath);
+
+			return fullPath;
+		}
 
 	}
 }

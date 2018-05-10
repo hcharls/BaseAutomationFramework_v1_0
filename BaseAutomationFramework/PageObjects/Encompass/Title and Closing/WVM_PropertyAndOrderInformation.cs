@@ -1,4 +1,16 @@
-﻿using System;
+﻿///------------------------------------------------------------------------------------------------------------------------
+///   Namespace:      <Namespace>
+///   Class:          <WVM_PropertyAndOrderInformation>
+///   Description:    <WVM_Property_and_Order_Information>
+///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
+///   Notes:          <>
+///   Revision History:
+///   Name:				 Date:					Description:
+///   
+/// 
+///------------------------------------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +54,21 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new WVM_PropertyAndOrderInformation();
 		}
 
+		#region Buttons
+
+		private PropertyCondition btn_UploadFees = new PropertyCondition(AutomationElement.NameProperty, "Upload Fees");
+
+
+		public WVM_PropertyAndOrderInformation btn_UploadFees_Click()
+		{
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_UploadFees);
+			aElement.ClickCenterOfBounds();
+			Thread.Sleep(8000);
+
+			return new WVM_PropertyAndOrderInformation();
+		}
+
+		#endregion
 
 
 	}
