@@ -109,12 +109,17 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			tab_MainTabs_Return().SelectTabPage("Loan");
 		}
+        public void tab_ServicesView_Select()
+        {
+            tab_MainTabs_Return().SelectTabPage("Services View");
+            Thread.Sleep(2000);
+        }
 
-		#endregion
+        #endregion
 
-		#region Functions
+        #region Functions
 
-		public void SaveAndExitLoan()
+        public void SaveAndExitLoan()
 		{
 			tab_MainTabs_Return().SelectTabPage("Loan");
 			Thread.Sleep(250);

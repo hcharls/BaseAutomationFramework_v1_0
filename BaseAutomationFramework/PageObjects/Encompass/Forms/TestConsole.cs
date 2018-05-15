@@ -413,9 +413,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_PurchasePrice = new PropertyCondition(AutomationElement.NameProperty, "136: The purchase price of the subject property.");
 		private PropertyCondition txt_DownPayment = new PropertyCondition(AutomationElement.NameProperty, "1335: The portion of the purchase price paid by the borrower that is not covered by the loan amount or other financing. The Down Payment % (field 1771) will be calculated for you.");
 		private PropertyCondition txt_Refinance = new PropertyCondition(AutomationElement.NameProperty, "1092: If this is a refinance loan, the total liens and other debts to be paid from the loan proceeds. Liabilities included in the total are marked as 'to be paid off' on the VOL.");
+        private PropertyCondition txt_Email = new PropertyCondition(AutomationElement.NameProperty, "1240: The borrower's home email address.");
 
-
-		public TestConsole txt_SubjectProperty_Address_SendKeys(string Input)
+        public TestConsole txt_SubjectProperty_Address_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SubjectProperty_Address);
 			aElement.SetFocus();
@@ -569,6 +569,16 @@ namespace BaseAutomationFramework.PageObjects.Encompass
             Thread.Sleep(1000);
 
             return new TestConsole();
+        }
+        public TestConsole txt_Email_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_Email);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Thread.Sleep(1000);
+
+            return this;
         }
 
         #endregion

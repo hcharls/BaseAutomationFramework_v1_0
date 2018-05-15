@@ -44,10 +44,10 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new VerificationOfDepository();
 		}
+     
+        #region Panel
 
-		#region Panel
-
-		private PropertyCondition pne_MainPanel = new PropertyCondition(AutomationElement.ClassNameProperty, "Internet Explorer_Server");
+        private PropertyCondition pne_MainPanel = new PropertyCondition(AutomationElement.ClassNameProperty, "Internet Explorer_Server");
 		//
 		private void SetPanel()
 		{

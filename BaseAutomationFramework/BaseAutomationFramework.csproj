@@ -212,6 +212,7 @@
     <Compile Include="Tests\LaunchAndLogin\PROD_LaunchAndLogin.cs" />
     <Compile Include="Tests\LaunchAndLogin\STAGE_LaunchAndLogin.cs" />
     <Compile Include="Tests\LaunchAndLogin\TEST_LaunchAndLogin.cs" />
+    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\0. EXTENT_TestConsoleForm.cs" />
     <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\01. LO_AfterPricing.cs" />
     <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\0. NEW_TestConsoleForm.cs" />
     <Compile Include="Tests\Loan Creation\Conventional\Partners_Conv_CashOutRefi.cs" />

@@ -100,7 +100,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public void btn_Finish_Click()
 		{
 			GetButton(btn_Finish).Click();
-			Thread.Sleep(10000);
+			Thread.Sleep(20000);
 		}
 
 		#endregion

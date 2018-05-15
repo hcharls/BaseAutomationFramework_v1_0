@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Automation;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
@@ -49,10 +50,26 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			
 			return new BankerLoanSubmission();
 		}
+        public static BankerLoanSubmission Initialize()
+        {
+            return new BankerLoanSubmission();
+        }
+        public void ScrollDown()
+        {
+            Point Top = new Point(1902, 339);
+            Point Bottom = new Point(1902, 782);
 
-		#region Text Boxes
+            Mouse.Instance.Location = Top;
+            Mouse.LeftDown();
+            Thread.Sleep(500);
+            Mouse.Instance.Location = Bottom;
+            Mouse.LeftUp();
+            Thread.Sleep(2000);
+        }
 
-		private PropertyCondition txt_LastMortgagePayment = new PropertyCondition(AutomationElement.AutomationIdProperty, "TextBox5");
+        #region Text Boxes
+
+        private PropertyCondition txt_LastMortgagePayment = new PropertyCondition(AutomationElement.AutomationIdProperty, "TextBox5");
 		private PropertyCondition txt_ClosingMonthPayment = new PropertyCondition(AutomationElement.AutomationIdProperty, "MultilineTextBox14");
         private PropertyCondition txt_PestInspection = new PropertyCondition(AutomationElement.AutomationIdProperty, "MultilineTextBox14");
 
