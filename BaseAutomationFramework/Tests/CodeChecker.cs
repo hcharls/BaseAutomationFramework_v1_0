@@ -215,26 +215,100 @@ namespace BaseAutomationFramework.Tests.Encompass
 
 			}
 
-		[Test]
-		public void test1()
+        [Test]
+		public void GetMortgageInsurance()
 		{
-			//BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome);
-			//BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+            //BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome);
+            //BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
 
-			//BorrowerLoanCenterLogIn.Initialize()
-			//	.txt_Email_SendKeys("hcpemtesting@gmail.com")
-			//	.txt_Password_SendKeys("P@ramount1")
-			//	.btn_Login_Click();
+            //BorrowerLoanCenterLogIn.Initialize()
+            //	.txt_Email_SendKeys("hcpemtesting@gmail.com")
+            //	.txt_Password_SendKeys("P@ramount1")
+            //	.btn_Login_Click();
 
-			//CheckLoanStatus
-			//	.Initialize()
-			//	.fn_SelectFirstRow();
+            //CheckLoanStatus
+            //	.Initialize()
+            //	.fn_SelectFirstRow();
 
-			//BaseSeleniumPage.CloseDriver();
+            //BaseSeleniumPage.CloseDriver();
 
-			
-			
-		}
+            AttachToProcess(Processes.Encompass, 5);
+
+            BorrowerSummary.Initialize().chk_AmortizationType_Check("Fixed Rate").txt_NoteRate_SendKeys("4").txt_Term_SendKeys("360").txt_LoanAmount_SendKeys("250000").chk_LoanPurpose_Check("No Cash-Out Refi");
+
+            URLA_Page3.OpenForm_FromFormsTab().btn_EnterDataManually_Refinance_Click().txt_Refinance_SendKeys("250000");
+
+            MortgageInsurance.OpenFrom_MainMenu().lstbx_Provider_Select("Genworth - Direct Connect").btn_Submit_Click();Thread.Sleep(2000);
+
+            GenworthMortgageInsuranceRequest.Initialize().cmb_PremiumPaymentOption_SendKeys("s").txt_MI_Coverage_SendKeys("6").chk_PremiumFinanced_Check(true).btn_RateQuote_Click(); Thread.Sleep(10000);
+
+            EncompassDialog.Initialize().btn_OK_Click();Thread.Sleep(2000);
+
+            //MI_FeeImport.Initialize().btn_ImportFee_Click();Thread.Sleep(2000);
+
+            //EncompassDialog.Initialize().btn_OK_Click(); Thread.Sleep(2000);
+
+            //GenworthMortgageInsuranceRequest.Initialize().btn_Cancel_Click();
+
+            //OB_ProductandPricing.OpenFrom_MainMenu().lstbx_Provider_Select("Optimal Blue - Enhanced").btn_Submit_Click();
+
+            //OB_Login
+            //    .Initialize()
+            //    .txt_LoginName_SendKeys("stg_testlo_direct")
+            //    .txt_Password_SendKeys("12345")
+            //    .chk_SaveLoginInformation_Check(true)
+            //    .chk_UpdateUpfrontMIdataforFHAloans_Check(true)
+            //    .btn_Continue_Click();
+
+            //OB_ProductSearch.Initialize().btn_Submit_Click(); Thread.Sleep(10000); 
+
+            //OB_LockForm
+            //    .Initialize()
+            //    .btn_RequestLock_Click();
+
+            //OB_PricingImportEncompassUpdate
+            //    .Initialize()
+            //    .btn_Close_Click();
+
+            //OB_LockRequestDialog.Initialize().btn_ExitLoan_Click();
+
+
+        }
+        [Test]
+        public void Lock()
+        {
+            
+            AttachToProcess(Processes.Encompass, 5);
+
+            //MI_FeeImport.Initialize().btn_ImportFee_Click(); Thread.Sleep(2000);
+
+           // EncompassDialog.Initialize().btn_OK_Click(); Thread.Sleep(2000);
+
+            GenworthMortgageInsuranceRequest.Initialize().btn_Cancel_Click();
+
+            OB_ProductandPricing.OpenFrom_MainMenu().lstbx_Provider_Select("Optimal Blue - Enhanced").btn_Submit_Click();
+
+            OB_Login
+                .Initialize()
+                .txt_LoginName_SendKeys("stg_testlo_direct")
+                .txt_Password_SendKeys("12345")
+                .chk_SaveLoginInformation_Check(true)
+                .chk_UpdateUpfrontMIdataforFHAloans_Check(true)
+                .btn_Continue_Click();
+
+            OB_ProductSearch.Initialize().btn_Submit_Click(); Thread.Sleep(10000);
+
+            OB_LockForm
+                .Initialize()
+                .btn_RequestLock_Click();
+
+            OB_PricingImportEncompassUpdate
+                .Initialize()
+                .btn_Close_Click();
+
+           // OB_LockRequestDialog.Initialize().btn_ExitLoan_Click();
+
+        }
 
         [Test, TestCaseSource(typeof(BaseTest.TestData), "DataforThisThing")]
         public void dummy1(IDictionary<string, string> data)

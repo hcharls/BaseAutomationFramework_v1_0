@@ -531,13 +531,33 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return this;
 		}
+        public BorrowerSummary txt_Term_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_Term);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(1000);
+
+            return this;
+        }
+        public BorrowerSummary txt_NoteRate_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_NoteRate);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(1000);
+
+            return this;
+        }
 
 
-		#endregion
+        #endregion
 
-		#region Combo Boxes
-		//Borrower Information
-		private PropertyCondition cmb_MaritalStatus = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox2");
+        #region Combo Boxes
+        //Borrower Information
+        private PropertyCondition cmb_MaritalStatus = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox2");
 		//Information for Government Monitoring
 		private PropertyCondition cmb_InformationProvidedBy = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox16");
 		//Subject Property Information

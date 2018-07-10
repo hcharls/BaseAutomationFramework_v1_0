@@ -32,7 +32,7 @@ using AventStack.ExtentReports;
 using BaseAutomationFramework.PageObjects;
 using BaseAutomationFramework.PageObjects.EncompassLoanCenter;
 
-namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
+namespace BaseAutomationFramework.Tests.Encompass
 {
     [TestFixture]
     public class Smoke_Test : BaseTest
@@ -136,7 +136,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
 
                 BorrowerSummary.OpenForm_FromFormsTab(); Thread.Sleep(500); extentTest.Pass("Borrower Summary successfully completed with Borrower email address " + MasterData.HomeEmail, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_BorrowerSummary"), true)).Build());
            
-                URLA_Page1.OpenForm_FromFormsTab(); Thread.Sleep(2000); extentTest.Pass("1003 Page 1 successfully completed with address " + MasterData.Address + ", " + MasterData.City + ", " + MasterData.State + ", " + MasterData.Zip + "(" + MasterData.County + " County)", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_1003Page1"), true)).Build()); 
+                URLA_Page1.OpenForm_FromFormsTab(); Thread.Sleep(2000); extentTest.Pass("1003 Page 1 successfully completed with address " + MasterData.Address + ", " + MasterData.City + ", " + MasterData.State + ", " + MasterData.Zip + " (" + MasterData.County + " County)", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_1003Page1"), true)).Build()); 
 
                 URLA_Page2.OpenForm_FromFormsTab(); Thread.Sleep(2000); extentTest.Pass("1003 Page 2 successfully completed", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_1003Page2"), true)).Build()); 
 
@@ -150,30 +150,30 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
 
                 #region eConsent
 
-                //eConsentNotYetReceived.Open_FromAlertsandMessagesTab().btn_Request_eConsent_Click();
+                eConsentNotYetReceived.Open_FromAlertsandMessagesTab().btn_Request_eConsent_Click();
 
-                //SendConsent
-                //    .Initialize()
-                //    .chk_BorrowerConsent_Check(true)
-                //    .chk_NotifyWhenBorrowerReceives_Check(true)
-                //    .btn_Send_Click();
+                SendConsent
+                    .Initialize()
+                    .chk_BorrowerConsent_Check(true)
+                    .chk_NotifyWhenBorrowerReceives_Check(true)
+                    .btn_Send_Click();
 
-                //BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+                BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
 
-                //BorrowerLoanCenterLogIn.Initialize()
-                //    .txt_Email_SendKeys("hcpemtesting@gmail.com")
-                //    .txt_Password_SendKeys("P@ramount1")
-                //    .btn_Login_Click();
+                BorrowerLoanCenterLogIn.Initialize()
+                    .txt_Email_SendKeys("hcpemtesting@gmail.com")
+                    .txt_Password_SendKeys("P@ramount1")
+                    .btn_Login_Click();
 
-                //CheckLoanStatus.Initialize().fn_SelectFirstRow();
+                CheckLoanStatus.Initialize().fn_SelectFirstRow();
 
-                ////LoanDetail.Initialize().btn_View_Click();
+                //LoanDetail.Initialize().btn_View_Click();
 
-                //AgreeToReceiveDisclosuresElectronically.Initialize().btn_Agree_Click(); BaseSeleniumPage.CloseDriver();
+                AgreeToReceiveDisclosuresElectronically.Initialize().btn_Agree_Click(); BaseSeleniumPage.CloseDriver();
 
-                //eConsentNotYetReceived.Initialize().btn_View_eConsent_Click();
+                eConsentNotYetReceived.Initialize().btn_View_eConsent_Click();
 
-                //extentTest.Pass("eConsent accepted", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_eConsentAccepted"), true)).Build());
+                extentTest.Pass("eConsent accepted", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_eConsentAccepted"), true)).Build());
 
                 #endregion eConsent
 

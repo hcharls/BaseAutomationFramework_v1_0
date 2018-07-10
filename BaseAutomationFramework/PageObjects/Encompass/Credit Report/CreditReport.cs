@@ -61,13 +61,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		#region Buttons
 
 		private SearchCriteria btn_Submit = SearchCriteria.ByAutomationId("submitBtn");
-		//
+        private SearchCriteria btn_Cancel = SearchCriteria.ByAutomationId("cancelBtn1");
 
-		public void btn_Submit_Click()
+        //
+
+        public void btn_Submit_Click()
 		{
 			GetButton(btn_Submit).Click();
 		}
+        public void btn_Cancel_Click()
+        {
+            GetButton(btn_Cancel).Click();
+            Thread.Sleep(1000);
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

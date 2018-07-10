@@ -61,7 +61,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		private PropertyCondition mnu_TitleAndClosing = new PropertyCondition(AutomationElement.NameProperty, "Title & Closing");
 		private PropertyCondition mnu_ProductAndPricing = new PropertyCondition(AutomationElement.NameProperty, "Product and Pricing");
-		private PropertyCondition mnu_Services = new PropertyCondition(AutomationElement.NameProperty, "Services");
+        private PropertyCondition mnu_MortgageInsurance = new PropertyCondition(AutomationElement.NameProperty, "Mortgage Insurance");
+        private PropertyCondition mnu_Services = new PropertyCondition(AutomationElement.NameProperty, "Services");
 		//
 		public EncompassMain mnu_TitleAndClosing_Click()
 		{
@@ -77,7 +78,14 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new EncompassMain();
 		}
-		public EncompassMain mnu_Services_Click()
+        public EncompassMain mnu_MortgageInsurance_Click()
+        {
+            Thread.Sleep(250);
+            MenuParent.FindFirst(TreeScope.Children, mnu_MortgageInsurance).ClickCenterOfBounds();
+
+            return new EncompassMain();
+        }
+        public EncompassMain mnu_Services_Click()
 		{
 			Thread.Sleep(250);
 			aElement = MenuParent.FindFirst(TreeScope.Children, mnu_Services);

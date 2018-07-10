@@ -102,7 +102,6 @@ C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\B
 C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb
 C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojResolveAssemblyReference.cache
 C:\VisualStudio\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\ExtentReports.dll
-C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojResolveAssemblyReference.cache
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.dll
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.pdb
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\NLog.config
@@ -131,3 +130,4 @@ C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\WebDriver.Support.xml
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csproj.CoreCompileInputs.cache
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csproj.CopyComplete
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojAssemblyReference.cache

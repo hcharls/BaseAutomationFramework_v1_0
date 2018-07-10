@@ -123,7 +123,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Keyboard.Instance.Enter(Input);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
 			Thread.Sleep(500);
-
+            
 			return this;
 		}
 		public FinalUWApproval txt_TotalMortgagedPropertiesCount_SendKeys(string Input)

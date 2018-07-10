@@ -178,6 +178,9 @@
     <Compile Include="PageObjects\Encompass\Milestone Worksheets\08. QCReview.cs" />
     <Compile Include="PageObjects\Encompass\Milestone Worksheets\13. Shipping.cs" />
     <Compile Include="PageObjects\Encompass\Milestone Worksheets\04. SubmitToUW.cs" />
+    <Compile Include="PageObjects\Encompass\Mortgage Insurance\MI_FeeImport.cs" />
+    <Compile Include="PageObjects\Encompass\Mortgage Insurance\MortgageInsurance.cs" />
+    <Compile Include="PageObjects\Encompass\Mortgage Insurance\GenworthMortgageInsuranceRequest.cs" />
     <Compile Include="PageObjects\Encompass\Product and Pricing\OB_LockForm.cs" />
     <Compile Include="PageObjects\Encompass\Product and Pricing\OB_LockRequestDialog.cs" />
     <Compile Include="PageObjects\Encompass\Product and Pricing\OB_PricingImportEncompassUpdate.cs" />
@@ -226,7 +229,7 @@
     <Compile Include="Tests\Other Tests\AddNumbers.cs" />
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageObjects\Encompass\Forms\1003 Pages 1-3\URLA_Page1.cs" />
-    <Compile Include="Tests\ExtentTestSample.cs" />
+    <Compile Include="Tests\Other Tests\ExtentTestSample.cs" />
     <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\02. Admin.cs" />
     <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\11. Completion.cs" />
     <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\05. ConditionsSent.cs" />
