@@ -24,7 +24,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 	class EncompassDialog : BaseScreen
 	{
 		public static SearchCriteria scWindow = SearchCriteria.ByClassName("#32770");
-		public static SearchCriteria[] scArray = { scWindow };
+        public static SearchCriteria[] scArray = { scWindow };
 		public const bool SET_MAXIMIZED = false;
 
 		public static EncompassDialog Initialize()

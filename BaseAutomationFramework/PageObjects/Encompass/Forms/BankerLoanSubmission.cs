@@ -72,6 +72,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         private PropertyCondition txt_LastMortgagePayment = new PropertyCondition(AutomationElement.AutomationIdProperty, "TextBox5");
 		private PropertyCondition txt_ClosingMonthPayment = new PropertyCondition(AutomationElement.AutomationIdProperty, "MultilineTextBox14");
         private PropertyCondition txt_PestInspection = new PropertyCondition(AutomationElement.AutomationIdProperty, "MultilineTextBox14");
+        private PropertyCondition txt_AdditionalNotes = new PropertyCondition(AutomationElement.AutomationIdProperty, "MultilineTextBox3");
 
         public BankerLoanSubmission txt_LastMortgagePayment_SendKeys(string Input)
 		{
@@ -101,6 +102,15 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
             return this;
         }
+        public BankerLoanSubmission txt_AdditionalNotes_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_AdditionalNotes);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
+
+            return this;
+        }
 
 
         #endregion
@@ -117,23 +127,41 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new BankerLoanSubmission();
 		}
 
-		#endregion
+        #endregion
 
-		#region Combo Boxes
+        #region Combo Boxes
 
-		private PropertyCondition cmb_CreditOnNonBorrowingSpouse = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox4");
+        private PropertyCondition cmb_CreditOnNonBorrowingSpouse = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox4");
+        private PropertyCondition cmb_ConditionsSentByBorrower = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox6");
+        private PropertyCondition cmb_AppraisalRequired = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox7");
 
-		public BankerLoanSubmission cmb_CreditOnNonBorrowingSpouse_SendKeys(string Input)
-		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_CreditOnNonBorrowingSpouse);
-			aElement.SetFocus();
-			Keyboard.Instance.Enter(Input);
+        public BankerLoanSubmission cmb_CreditOnNonBorrowingSpouse_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_CreditOnNonBorrowingSpouse);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
 
-			return this;
-		}
+            return this;
+        }
+        public BankerLoanSubmission cmb_ConditionsSentByBorrower_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ConditionsSentByBorrower);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
 
-		#endregion
+            return this;
+        }
+        public BankerLoanSubmission cmb_AppraisalRequired_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_AppraisalRequired);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+
+            return this;
+        }
+
+        #endregion
 
 
-	}
+    }
 }

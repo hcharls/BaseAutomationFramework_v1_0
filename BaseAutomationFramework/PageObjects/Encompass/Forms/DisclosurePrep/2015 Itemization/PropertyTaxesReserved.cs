@@ -30,13 +30,17 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 	{
 		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("InsuranceDialog");
 		public static SearchCriteria[] scArray = { EncompassMain.scWindow, scWindow };
-		public const bool SET_MAXIMIZED = false;
-		public PropertyTaxesReserved()
-		{
-			Set_Screen(scArray, SET_MAXIMIZED);
-		}
+        public const bool SET_MAXIMIZED = false;
+        private AutomationElement aePanel = null;
 
-		public static PropertyTaxesReserved OpenFromItemization()
+        public PropertyTaxesReserved()
+        {
+            Set_Screen(scArray, SET_MAXIMIZED);
+            aeScreen = Screen.AutomationElement;
+            aePanel = null;
+        }
+        
+        public static PropertyTaxesReserved OpenFromItemization()
 		{
 			new Itemization()
 				.btn_PropertyTaxes_Click();
@@ -57,14 +61,16 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public PropertyTaxesReserved cmb_ReserveBasedOn_SendKeys(string Input)
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ReserveBasedOn);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(1000);
 
-			return this;
-		}
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ReserveBasedOn);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(1000);
+
+            return this;
+
+        }
 
 		#endregion
 

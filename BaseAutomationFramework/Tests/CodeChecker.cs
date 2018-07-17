@@ -40,41 +40,48 @@ namespace BaseAutomationFramework.Tests.Encompass
 		public void ControlChecker()
 			
 			{
+            AttachToProcess(Processes.Encompass, 5);
+
+            SendDisclosures
+                 .Initialize()
+                 //.cmb_BorrowerAuthenticationMethod_SendKeys("Auth")
+                 //.txt_BorrowerAuthorization_SendKeys("13188");
+                 .btn_Send_Click();
 
             //	Pipeline.Initialize().thingy();
 
-            AttachToProcess(Processes.Encompass, 5);
+            //AttachToProcess(Processes.Encompass, 5);
 
-            WVM_LogOn
-                .Initialize()
-                .txt_Password_SendKeys("Pemadmin1")
-                .btn_LogOn_Click()
-                .WestVM_UploadFees_Click();
+            //WVM_LogOn
+            //    .Initialize()
+            //    .txt_Password_SendKeys("Pemadmin1")
+            //    .btn_LogOn_Click()
+            //    .WestVM_UploadFees_Click();
 
-            EncompassMain.Initialize().tab_Loan_Select(); DisclosurePrep.Initialize().btn_Review2015Itemization_Click(); Itemization.OpenForm_FromFormsTab();
+            //EncompassMain.Initialize().tab_Loan_Select(); DisclosurePrep.Initialize().btn_Review2015Itemization_Click(); Itemization.OpenForm_FromFormsTab();
 
-            PropertyTaxesReserved
-                .OpenFromItemization()
-                .cmb_ReserveBasedOn_SendKeys("Base Loan Amount")
-                .txt_RatePercentage_SendKeys(".25")
-                .btn_OK_Click();
+            //PropertyTaxesReserved
+            //    .OpenFromItemization()
+            //    .cmb_ReserveBasedOn_SendKeys("Base Loan Amount")
+            //    .txt_RatePercentage_SendKeys(".25")
+            //    .btn_OK_Click();
 
-            DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click();
+            //DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click();
 
-            DisclosurePrep
-                .OpenForm_FromFormsTab()
-                .btn_NotNowContinue_Click()
-                .cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
-                .btn_ReadytoDisclose_Click()
-                .btn_GenerateDisclosures_Click();
+            //DisclosurePrep
+            //    .OpenForm_FromFormsTab()
+            //    .btn_NotNowContinue_Click()
+            //    .cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
+            //    .btn_ReadytoDisclose_Click()
+            //    .btn_GenerateDisclosures_Click();
 
-            DisclosurePlanCode.SelectPlanCode().btn_Order_eDisclosures_Click(); SelectDocuments.Initialize().btn_Send_Click();
+            //DisclosurePlanCode.SelectPlanCode().btn_Order_eDisclosures_Click(); SelectDocuments.Initialize().btn_Send_Click();
 
-            SendDisclosures
-                .Initialize()
-                .cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
-                .txt_BorrowerAuthorization_SendKeys("13188")
-                .btn_Send_Click();
+            //SendDisclosures
+            //    .Initialize()
+            //    .cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
+            //    .txt_BorrowerAuthorization_SendKeys("13188")
+            //    .btn_Send_Click();
 
 
             #region Product and Pricing (floating)

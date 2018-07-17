@@ -36,8 +36,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aeScreen = AutomationElement.RootElement.FindFirst(TreeScope.Children, pcWindow);
 			aeScreen = aeScreen.FindFirst(TreeScope.Descendants, pcsubWindow);
 			aeScreen.WaitWhileBusy();
+            aeScreen = Screen.AutomationElement;
 
-			if (aeScreen == null)
+            if (aeScreen == null)
 				throw new Exception("Screen is null!!!");
 		}
 
@@ -603,22 +604,30 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public BorrowerSummary cmb_InformationProvidedBy_SendKeys(string Input)
 		{
-			AndCondition andCond = new AndCondition(
-					new PropertyCondition(AutomationElement.NameProperty, Input),
-					new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "list item")
-				);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_InformationProvidedBy);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
 
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_InformationProvidedBy);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(1000);
-			new BorrowerSummary();
-			AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-			item.ClickCenterOfBounds();
-			Thread.Sleep(500);
+            return this;
 
-			return new BorrowerSummary();
-		}
+            //        AndCondition andCond = new AndCondition(
+            //	new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox16"),
+            //	new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
+            //);
+
+            //        //aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_InformationProvidedBy);
+            //        AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+            //        item.ClickCenterOfBounds();
+            //       // aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+            //       // aElement.SetFocus();
+            //       // aElement.ClickCenterOfBounds();
+            //        Keyboard.Instance.Enter(Input);
+            //        Thread.Sleep(1000);
+            //        Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            //        Thread.Sleep(1000);
+            //        new BorrowerSummary();
+        }
+
 		//Subject Property Information
 		public BorrowerSummary cmb_PropertyType_SendKeys(string Input)
 		{

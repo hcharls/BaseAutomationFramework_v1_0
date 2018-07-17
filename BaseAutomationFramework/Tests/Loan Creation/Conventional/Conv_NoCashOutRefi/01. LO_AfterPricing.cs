@@ -59,157 +59,70 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 			{
 				AttachToProcess(Processes.Encompass, 5);
 
-				#region Product and Pricing (floating)
+                #region Disclosure Prep (TRID) 
 
-				//OB_ProductandPricing
-				//	.OpenFrom_MainMenu()
-				//	.lstbx_Provider_Select("Optimal Blue - Enhanced")
-				//	.btn_Submit_Click();
+                //DisclosurePrep
+                //    .OpenForm_FromFormsTab()
+                //    .cmb_WillThereBeSubordination_SendKeys("No")
+                //    .cmb_BetterRateWarranty_SendKeys("No")
+                //    .cmb_ImpoundsWaivedOrNotWaived_SendKeys("Not Waived")
+                //    .cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
+                //    .cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
+                //    .btn_GenerateEstimatedClosingDatesandStandardFees_Click()
+                        //.btn_WestVM_Click();
 
-				//OB_Login
+                //WVM_LogOn
+                //    .Initialize()
+                //    .txt_Username_SendKeys("PEMAdmin")
+                //    .txt_Password_SendKeys("Pemadmin1")
+                //    .btn_LogOn_Click();
+
+                //WVM_PropertyAndOrderInformation.Initialize().chk_Appraisal_included_Check(false).UploadFees_Click(); EncompassMain.Initialize().tab_Loan_Select();
+
+    //            DisclosurePrep.Initialize().btn_Review2015Itemization_Click();Itemization.OpenForm_FromFormsTab();
+
+    //            PropertyTaxesReserved
+    //                .OpenFromItemization()
+    //                .cmb_ReserveBasedOn_SendKeys("B")
+    //                .txt_RatePercentage_SendKeys(".25")
+    //                .btn_OK_Click();
+
+    //            AggregateSetup.OpenFromItemization().btn_OK_Click();
+
+				//DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click();
+
+				//DisclosurePrep
+					//.OpenForm_FromFormsTab()
+					//.btn_NotNowContinue_Click()
+					//.cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
+					//.btn_ReadytoDisclose_Click()
+				    //.btn_GenerateDisclosures_Click();
+
+                #endregion Disclosure Prep (TRID)
+
+                #region Initial Disclosures 
+
+               // Order_eDisclosures.Initialize().InitialDisclosures_SelectTopPlanCode().btn_Order_eDisclosures_Click();
+
+				//SelectDocuments.Initialize().btn_Send_Click();
+
+				//SendDisclosures
 				//	.Initialize()
-				//	.txt_LoginName_SendKeys(MasterData.Login)
-				//	.txt_Password_SendKeys(MasterData.Password)
-				//	.chk_SaveLoginInformation_Check(true)
-				//	.chk_UpdateUpfrontMIdataforFHAloans_Check(true)
-				//	.btn_Continue_Click();
+				//	.cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
+				//	.txt_BorrowerAuthorization_SendKeys("13188")
+				//	.btn_Send_Click();
 
-				//OB_ProductSearch
+				EncompassDialog.Initialize().btn_Yes_Click();
+
+				//eSignDocuments
 				//	.Initialize()
-				//	.btn_Submit_Click();
+				//	.btn_Next_Click()
+				//	.btn_Start_Click()
+				//	.btn_eSign_Click()
+				//	.btn_eSign_Click()
+				//	.btn_Finish_Click();
 
-				//Thread.Sleep(10000);
-
-				//OB_LockForm
-				//	.Initialize()
-				//	.btn_UpdateEncompass_Click();
-
-				//OB_PricingImportEncompassUpdate
-				//	.Initialize()
-				//	.btn_Close_Click();
-
-				#endregion Run Product and Pricing (floating)
-
-				#region Product and Pricing (locked)
-
-				//OB_ProductandPricing
-				//	.OpenFrom_MainMenu()
-				//	.lstbx_Provider_Select("Optimal Blue - Enhanced")
-				//	.btn_Submit_Click();
-
-				//OB_Login
-				//	.Initialize()
-				//	.txt_LoginName_SendKeys("qa_testlo_direct")
-				//	.txt_Password_SendKeys("12345")
-				//	.chk_SaveLoginInformation_Check(true)
-				//	.chk_UpdateUpfrontMIdataforFHAloans_Check(true)
-				//	.btn_Continue_Click();
-
-				//OB_ProductSearch
-				//	.Initialize()
-				//	.btn_Submit_Click();
-
-				//Thread.Sleep(10000);
-
-				//OB_LockForm
-				//	.Initialize()
-				//	.btn_RequestLock_Click();
-
-				//OB_PricingImportEncompassUpdate
-				//	.Initialize()
-				//	.btn_Close_Click();
-
-				#endregion Product and Pricing (locked)
-
-				#region Disclosure Prep (TRID) through milestone completion
-
-				DisclosurePrep
-					.OpenForm_FromFormsTab()
-					.cmb_WillThereBeSubordination_SendKeys("No")
-					.cmb_BetterRateWarranty_SendKeys("No")
-					.cmb_ImpoundsWaivedOrNotWaived_SendKeys("Not Waived")
-					.cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
-					.cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
-					.btn_GenerateEstimatedClosingDatesandStandardFees_Click();
-
-				WVM_TitleAndClosing
-					.OpenFrom_MainMenu()
-					.Select_WestVMTitle_TEST();
-
-				WVM_LogOn
-					.Initialize()
-					.txt_Username_SendKeys("PEMAdmin")
-					.txt_Password_SendKeys("Pemadmin1")
-					.btn_LogOn_Click();
-
-				WVM_PropertyAndOrderInformation
-					.Initialize()
-					.btn_UploadFees_Click();
-
-				EncompassMain
-					.Initialize()
-					.tab_Loan_Select();
-
-				DisclosurePrep
-					.Initialize()
-					.btn_SmartGFE_Click()
-					.btn_Review2015Itemization_Click();
-
-				Itemization
-					.OpenForm_FromFormsTab();
-
-				PropertyTaxesReserved
-					.OpenFromItemization()
-					.cmb_ReserveBasedOn_SendKeys("Base Loan Amount")
-					.txt_RatePercentage_SendKeys(".25")
-					.btn_OK_Click();
-
-				AggregateSetup
-					.OpenFromItemization()
-					.txt_HazardInsurance_Tab()
-					.btn_OK_Click();
-
-				DisclosurePrep
-					.OpenForm_FromFormsTab()
-					.btn_RunComplianceReport_Click();
-
-				DisclosurePrep
-					.OpenForm_FromFormsTab()
-					.btn_NotNowContinue_Click()
-					.cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
-					.btn_ReadytoDisclose_Click()
-					.btn_GenerateDisclosures_Click();
-
-				Order_eDisclosures
-					.Initialize()
-					.InitialDisclosures_SelectTopPlanCode()
-					.btn_Order_eDisclosures_Click();
-
-				SelectDocuments
-					.Initialize()
-					.btn_Send_Click();
-
-				SendDisclosures
-					.Initialize()
-					.cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
-					.txt_BorrowerAuthorization_SendKeys("13188")
-					.btn_Send_Click();
-
-				EncompassDialog
-					.Initialize()
-					.btn_Yes_Click();
-
-				eSignDocuments
-					.Initialize()
-					.btn_Next_Click()
-					.btn_Start_Click()
-					.btn_eSign_Click()
-					.btn_eSign_Click()
-					.btn_Finish_Click();
-
-				EncompassDialog
-					.Initialize()
-					.btn_OK_Click();
+				//EncompassDialog.Initialize().btn_OK_Click();
 
 			
 
@@ -218,20 +131,14 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 
 
 
-				Retrieve
-					.OpenFrom_eFolder()
-					.btn_Download_Click();
+				Retrieve.OpenFrom_eFolder().btn_Download_Click();FileManager.Initialize().btn_Close_Click();Encompass_eFolder.Initialize().btn_Close_Click();
 
-				FileManager
-					.Initialize()
-					.btn_Close_Click();
+                #endregion Initial Disclosures 
 
-				Encompass_eFolder
-					.Initialize()
-					.btn_Close_Click();
+                #region Application milestone 
 
-				LoanEstimatePage1
-					.OpenForm_FromFormsTab()
+                LoanEstimatePage1
+                    .OpenForm_FromFormsTab()
 					.chk_IntentToProceed_Check(true);
 
 				DisclosedLESnapshot
@@ -263,11 +170,11 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 					.Initialize()
 					.btn_Close_Click();
 
-				#endregion Disclosure Prep (TRID) through milestone completion
+                #endregion Application milestone 
 
-			}
+            }
 
-			catch (Exception ex)
+            catch (Exception ex)
 			{
 				step.ModalText = ex.ToString();
 				step.Status = "Fail";

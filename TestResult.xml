@@ -1,37 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-07-08" time="06:12:11">
+<test-results name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-07-17" time="12:12:07">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8784" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="D-J6P1NC2" user="hcharls" user-domain="PEM" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" executed="True" result="Failure" success="False" time="38.988" asserts="0">
+  <test-suite type="Project" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" executed="True" result="Failure" success="False" time="11.465" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" executed="True" result="Failure" success="False" time="38.979" asserts="0">
+      <test-suite type="Assembly" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" executed="True" result="Failure" success="False" time="11.456" asserts="0">
         <results>
-          <test-suite type="Namespace" name="BaseAutomationFramework" executed="True" result="Failure" success="False" time="38.978" asserts="0">
+          <test-suite type="Namespace" name="BaseAutomationFramework" executed="True" result="Failure" success="False" time="11.455" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="38.978" asserts="0">
+              <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="11.455" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Encompass" executed="True" result="Failure" success="False" time="38.978" asserts="0">
+                  <test-suite type="Namespace" name="Encompass" executed="True" result="Failure" success="False" time="11.455" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="EnvironmentLogin" executed="True" result="Failure" success="False" time="38.977" asserts="0">
+                      <test-suite type="TestFixture" name="CodeChecker" executed="True" result="Failure" success="False" time="11.452" asserts="0">
                         <results>
-                          <test-suite type="TestFixture" name="LaunchAndLogin_3_PROD" executed="True" result="Failure" success="False" time="38.975" asserts="0">
-                            <results>
-                              <test-suite type="ParameterizedTest" name="UserLogin" executed="True" result="Failure" success="False" time="38.832" asserts="0">
-                                <results>
-                                  <test-case name="BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_3_PROD.Login - Administrator" executed="True" result="Error" success="False" time="38.827" asserts="0">
-                                    <failure>
-                                      <message><![CDATA[TestStack.White.UIItems.UIActionException : Time out happened, after waiting for 120000 ms]]></message>
-                                      <stack-trace><![CDATA[at TestStack.White.UIItems.WindowItems.Window.WaitTill(WaitTillDelegate waitTillDelegate, TimeSpan timeout) in d:\work\White\src\TestStack.White\UIItems\WindowItems\Window.cs:line 311
-at BaseAutomationFramework.PageObjects.Encompass.EncompassMain.Resize() in C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\PageObjects\Encompass\EncompassMain.cs:line 53
-at BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_3_PROD.UserLogin(IDictionary`2 data) in C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\Tests\LaunchAndLogin\PROD_LaunchAndLogin.cs:line 66
+                          <test-case name="BaseAutomationFramework.Tests.Encompass.CodeChecker.ControlChecker" executed="True" result="Error" success="False" time="11.300" asserts="0">
+                            <failure>
+                              <message><![CDATA[TestStack.White.UIItems.UIActionException : Time out happened, after waiting for 120000 ms]]></message>
+                              <stack-trace><![CDATA[at TestStack.White.UIItems.WindowItems.Window.WaitTill(WaitTillDelegate waitTillDelegate, TimeSpan timeout) in d:\work\White\src\TestStack.White\UIItems\WindowItems\Window.cs:line 311
+at BaseAutomationFramework.PageObjects.BaseScreen.WaitUntilWindowReady(SearchCriteria ParentWindowLocator, SearchCriteria ModalLocator, SearchCriteria ChildModalLocator, Double timeoutSeconds) in C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\PageObjects\BaseScreen.cs:line 161
+at BaseAutomationFramework.PageObjects.BaseScreen.Set_Screen(SearchCriteria[] scParams, Boolean isMaximized) in C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\PageObjects\BaseScreen.cs:line 72
+at BaseAutomationFramework.PageObjects.Encompass.SendDisclosures..ctor() in C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\PageObjects\Encompass\Dialog Windows\SendDisclosures.cs:line 36
+at BaseAutomationFramework.PageObjects.Encompass.SendDisclosures.Initialize() in C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\PageObjects\Encompass\Dialog Windows\SendDisclosures.cs:line 43
+at BaseAutomationFramework.Tests.Encompass.CodeChecker.ControlChecker() in C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\Tests\CodeChecker.cs:line 45
 ]]></stack-trace>
-                                    </failure>
-                                  </test-case>
-                                </results>
-                              </test-suite>
-                            </results>
-                          </test-suite>
+                            </failure>
+                          </test-case>
                         </results>
                       </test-suite>
                     </results>

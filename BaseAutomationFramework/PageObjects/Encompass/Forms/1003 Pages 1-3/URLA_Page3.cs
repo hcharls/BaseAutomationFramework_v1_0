@@ -542,7 +542,23 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return this;
 		}
 
-		#endregion
+        #endregion
 
-	}
+        public URLA_Page3 cmb_InformationProvidedBy_SendKeys(string Input)
+        {
+            AndCondition andCond = new AndCondition(
+                    new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox5"),
+                    new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
+                );
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Thread.Sleep(1000);
+            return this;
+        }
+
+    }
 }

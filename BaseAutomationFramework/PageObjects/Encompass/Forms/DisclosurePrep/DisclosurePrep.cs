@@ -44,7 +44,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static DisclosurePrep OpenForm_FromFormsTab()
 		{
 			new FormsTab()
-				.lstbx_Forms_SelectForm("Disclosure Prep (TRID)");
+                .OpenFormsTab()
+                .lstbx_Forms_SelectForm("Disclosure Prep (TRID)");
 			Thread.Sleep(5000);
 
 			return new DisclosurePrep();
@@ -141,7 +142,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		#region Buttons
 		private PropertyCondition btn_GenerateEstimatedClosingDatesandStandardFees = new PropertyCondition(AutomationElement.AutomationIdProperty, "disclosureDatesButton");
 		private PropertyCondition btn_SmartGFE = new PropertyCondition(AutomationElement.AutomationIdProperty, "gfeButton");
-		private PropertyCondition btn_Review2015Itemization = new PropertyCondition(AutomationElement.AutomationIdProperty, "reviewItemizationButton");
+        private PropertyCondition btn_WestVM = new PropertyCondition(AutomationElement.AutomationIdProperty, "gfeButton");
+        private PropertyCondition btn_Review2015Itemization = new PropertyCondition(AutomationElement.AutomationIdProperty, "reviewItemizationButton");
 		private PropertyCondition btn_RunComplianceReport = new PropertyCondition(AutomationElement.AutomationIdProperty, "complianceButton");
 		private PropertyCondition btn_RunDUorLP = new PropertyCondition(AutomationElement.AutomationIdProperty, "undButton");
 		private PropertyCondition btn_NotNowContinue = new PropertyCondition(AutomationElement.AutomationIdProperty, "undContinueButton");
@@ -167,13 +169,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new DisclosurePrep();
 		}
-		public DisclosurePrep btn_Review2015Itemization_Click()
+        public void btn_WestVM_Click()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_WestVM);
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(10000);
+
+        }
+        public DisclosurePrep btn_Review2015Itemization_Click()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Review2015Itemization);
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(10000);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
-			Thread.Sleep(5000);
+			Thread.Sleep(10000);
 
 			return new DisclosurePrep();
 		}

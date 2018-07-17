@@ -59,7 +59,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 			step.Time = DateTime.Now.ToString();
 
 			try
-			{
+            {
                 LaunchApplication(DesktopApps.Encompass);
 
                 Launcher
@@ -75,21 +75,14 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
                     .txt_Password_SendKeys("P@ramount1")
                     .btn_Login_Click();
 
-                Thread.Sleep(10000);
-
-                EncompassMain.Initialize().Resize().tab_Pipeline_Select();
-
-                Pipeline.Initialize().btn_NewLoan_Click();
+                Thread.Sleep(10000);EncompassMain.Initialize().Resize().tab_Pipeline_Select();Pipeline.Initialize().btn_NewLoan_Click();
 
                 NewLoan
                     .Initialize()
                     .cmb_LoanTemplateFolder_SelectByText("PEM Direct")
                     .SelectItem_DirectConvRefinance();
 
-                FormsTab
-                    .Initialize()
-                    .chk_Show_Check(true)
-                    .chk_ShowInAlpha_Check(true);
+                FormsTab.Initialize().chk_Show_Check(true).chk_ShowInAlpha_Check(true);
 
                 #region Co-Borrower
 
@@ -288,6 +281,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 
                 BorrowerSummary
                     .OpenForm_FromFormsTab()
+                    .chk_BorrowerVerbalAuthForCreditPull_Check(true)
                     .txt_FirstName_SendKeys(MasterData.BorrowerFirstName)
                     .txt_LastName_SendKeys(MasterData.BorrowerLastName)
                     .txt_SocialSecurityNumber_SendKeys(MasterData.BorrowerSSN)
@@ -299,10 +293,9 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
                     .txt_PresentZip_SendKeys(MasterData.Zip)
                     .txt_NumberofYears_SendKeys("10")
                     .txt_NumberofMonths_SendKeys("11")
-					.chk_PresentAddress_OwnRent_Check("Own")
-					.cmb_InformationProvidedBy_SendKeys("Internet")
-					.chk_BorrowerVerbalAuthForCreditPull_Check(true)
-					.btn_CopyfromPresent_Click()
+                    .chk_PresentAddress_OwnRent_Check("Own")
+                    .cmb_InformationProvidedBy_SendKeys("Internet")
+                    .btn_CopyfromPresent_Click()
 					.cmb_PropertyType_SendKeys(MasterData.PropertyType)
 					.txt_EstimatedValue_SendKeys(MasterData.EstimatedValue)
 					.txt_AppraisedValue_SendKeys(MasterData.AppraisedValue)
@@ -310,9 +303,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 					.chk_PropertyWillBe_Check(MasterData.PropertyWillBe)
 					.txt_LoanAmount_SendKeys(MasterData.LoanAmount);
 
-				EncompassDialog
-					.Initialize()
-					.btn_OK_Click();
+				EncompassDialog.Initialize().btn_OK_Click();
 
 				URLA_Page1
 					.OpenForm_FromFormsTab()
@@ -325,15 +316,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 					.txt_Dependents_SendKeys("0")
 					.chk_MailingAddress_Check("Same as present");
 
-				VerificationOfEmployment
-					.OpenFromURLA_Page1()
-					.btn_VOENewVerif_Click();
-
-				VOE_NewEmployment
-					.Initialize()
-					.rdb_Borrower_Select()
-					.rdb_EmploymentStatus_Select()
-					.btn_OK_Click();
+				VerificationOfEmployment.OpenFromURLA_Page1().btn_VOENewVerif_Click();VOE_NewEmployment.Initialize().rdb_Borrower_Select().rdb_EmploymentStatus_Select().btn_OK_Click();
 
 				VerificationOfEmployment
 					.Initialize()
@@ -353,14 +336,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 					.txt_BasePay_SendKeys("6500")
 					.btn_VOEClose_Click();
 
-				URLA_Page2
-					.OpenForm_FromFormsTab()
-					.btn_EditFieldValueBorrowerBase_Click();
-
-				URLA_Page2_CalculateBaseIncome
-					.Initialize()
-					.chk_CopyfrompresentjobinVOE_Check(true)
-					.btn_OK_Click();
+				URLA_Page2.OpenForm_FromFormsTab().btn_EditFieldValueBorrowerBase_Click();URLA_Page2_CalculateBaseIncome.Initialize().chk_CopyfrompresentjobinVOE_Check(true).btn_OK_Click();
 
 				VerificationOfDepository
 					.OpenFromURLA_Page2()
@@ -403,9 +379,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 					.chk_PrimaryBorrower_Race_Check(MasterData.BorrowerRace)
 					.chk_PrimaryBorrower_Sex_Check(MasterData.BorrowerSex);
 
-				BorrowerSummary
-					.OpenForm_FromFormsTab()
-					.btn_OrderCredit_Click();
+				BorrowerSummary.OpenForm_FromFormsTab().btn_OrderCredit_Click();
 
 				CreditReport
 					.Initialize()
@@ -420,30 +394,25 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 					.chk_Equifax_Check(true)
 					.chk_Experian_Check(true)
 					.chk_TransUnion_Check(true)
-					.btn_Finish_Click();
+					.btn_Finish_Click();EncompassMain.Initialize().tab_Loan_Select();
 
-				EncompassMain
-					.Initialize()
-					.tab_Loan_Select();
-
-				TransmittalSummary
-					.OpenForm_FromFormsTab()
-					.cmb_PropertyType_SendKeys(MasterData.TransPropertyType);
+				TransmittalSummary.OpenForm_FromFormsTab().cmb_PropertyType_SendKeys(MasterData.TransPropertyType);
 
 				BankerLoanSubmission
 					.OpenForm_FromFormsTab()
-					.txt_ClosingMonthPayment_SendKeys("test")
-					.txt_LastMortgagePayment_SendKeys("081517")
+                    .cmb_ConditionsSentByBorrower_SendKeys("Mail")
+                    .txt_LastMortgagePayment_SendKeys("081517")
+                    .txt_ClosingMonthPayment_SendKeys("test")
+					.cmb_AppraisalRequired_SendKeys("Not Needed")
 					.cmb_CreditOnNonBorrowingSpouse_SendKeys("CONFIRMED")
-					.btn_BankerCertificationBLS_Click();
+					.txt_AdditionalNotes_SendKeys("test")
+                    .btn_BankerCertificationBLS_Click();
 
 				#endregion Single Borrower
 
 				#region eConsent
 
-				eConsentNotYetReceived
-					.Open_FromAlertsandMessagesTab()
-					.btn_Request_eConsent_Click();
+				eConsentNotYetReceived.Open_FromAlertsandMessagesTab().btn_Request_eConsent_Click();
 
 				SendConsent
 					.Initialize()
@@ -459,27 +428,19 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 					.txt_Password_SendKeys("P@ramount1")
 					.btn_Login_Click();
 
-				CheckLoanStatus
-					.Initialize()
-					.fn_SelectFirstRow();
+				CheckLoanStatus.Initialize().fn_SelectFirstRow();
 
 				//LoanDetail
 				//	.Initialize()
 				//	.btn_View_Click();
 
-				AgreeToReceiveDisclosuresElectronically
-					.Initialize()
-					.btn_Agree_Click();
+				AgreeToReceiveDisclosuresElectronically.Initialize().btn_Agree_Click();BaseSeleniumPage.CloseDriver();
 
-				BaseSeleniumPage.CloseDriver();
-
-				eConsentNotYetReceived
-					.Initialize()
-					.btn_View_eConsent_Click();
+				eConsentNotYetReceived.Initialize().btn_View_eConsent_Click();
 
                 #endregion eConsent
 
-                #region Product and Pricing
+                #region Product and Pricing (floating)
 
                 OB_ProductandPricing.OpenFrom_MainMenu().lstbx_Provider_Select("Optimal Blue - Enhanced").btn_Submit_Click();
 
@@ -493,20 +454,43 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 
                 OB_ProductSearch.Initialize().btn_Submit_Click(); Thread.Sleep(10000); OB_LockForm.Initialize().btn_UpdateEncompass_Click(); Thread.Sleep(10000); OB_PricingImportEncompassUpdate.Initialize().btn_Close_Click();
 
-                #endregion Run Product and Pricing
+                #endregion Product and Pricing (floating)
+
+                #region Product and Pricing (locked)
+
+                //OB_ProductandPricing
+                //    .OpenFrom_MainMenu()
+                //    .lstbx_Provider_Select("Optimal Blue - Enhanced")
+                //    .btn_Submit_Click();
+
+                //OB_Login
+                //    .Initialize()
+                //    .txt_LoginName_SendKeys("qa_testlo_direct")
+                //    .txt_Password_SendKeys("12345")
+                //    .chk_SaveLoginInformation_Check(true)
+                //    .chk_UpdateUpfrontMIdataforFHAloans_Check(true)
+                //    .btn_Continue_Click();
+
+                //OB_ProductSearch.Initialize().btn_Submit_Click();Thread.Sleep(10000);
+
+                //OB_LockForm.Initialize().btn_RequestLock_Click();
+
+                //OB_PricingImportEncompassUpdate.Initialize().btn_Close_Click();
+
+                #endregion Product and Pricing (locked)
 
             }
 
             catch (Exception ex)
 			{
-				step.ModalText = ex.ToString();
-				step.Status = "Fail";
-				step.ScreenShotLocation = Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format("Failure\\{0}", System.Reflection.MethodBase.GetCurrentMethod().Name));
-				Assert.Fail(ex.ToString());
+				//step.ModalText = ex.ToString();
+				//step.Status = "Fail";
+				//step.ScreenShotLocation = Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format("Failure\\{0}", System.Reflection.MethodBase.GetCurrentMethod().Name));
+				//Assert.Fail(ex.ToString());
 			}
 			finally
 			{
-				Report.addStep(step);
+				//Report.addStep(step);
 			}
 
 		}
@@ -514,14 +498,14 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 		[TestFixtureSetUp]
 		public void OnFixtureSetup()
 		{
-			runTime = CreateRuntimeString();
-			Report = StatusReport.getStatusReport();
-			string sub1 = string.Format("Tester: {0}", Environment.UserName);
-			string sub2 = string.Format("Release Version: {0}", "Not Assigned");
-			List<string> subheaders = new List<string>() { sub1, sub2 };
-			this.pathStem = string.Format("{0}\\{1}\\{2} - {3}", FileUtilities.DefaultTestResultDirectory, className, Environment.UserName, runTime);
-			string path = string.Format("{0}\\{1}.html", pathStem, "Results");
-			Report.reportSetup("Demo Script", path, null, subheaders);
+			//runTime = CreateRuntimeString();
+			//Report = StatusReport.getStatusReport();
+			//string sub1 = string.Format("Tester: {0}", Environment.UserName);
+			//string sub2 = string.Format("Release Version: {0}", "Not Assigned");
+			//List<string> subheaders = new List<string>() { sub1, sub2 };
+			//this.pathStem = string.Format("{0}\\{1}\\{2} - {3}", FileUtilities.DefaultTestResultDirectory, className, Environment.UserName, runTime);
+			//string path = string.Format("{0}\\{1}.html", pathStem, "Results");
+			//Report.reportSetup("Demo Script", path, null, subheaders);
 		}
 
 		[SetUp]

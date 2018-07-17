@@ -34,37 +34,14 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public SendDisclosures()
 		{
 			Set_Screen(scArray, SET_MAXIMIZED);
-			aePanel = null;
+            aeScreen = Screen.AutomationElement;
+            aePanel = null;
 		}
 
 		public static SendDisclosures Initialize()
 		{
 			return new SendDisclosures();
 		}
-
-		#region Panel
-
-		private PropertyCondition pne_MainPanel = new PropertyCondition(AutomationElement.AutomationIdProperty, "gcSigning");
-		//
-		private void SetPanel()
-		{
-			int i = 0;
-			do
-			{
-				aePanel = null;
-				aeScreen = null;
-				Screen = null;
-				GC.Collect();
-				new SendConsent();
-				Thread.Sleep(1000);
-				aePanel = Screen.AutomationElement.FindFirst(TreeScope.Descendants, pne_MainPanel);
-
-			} while (aePanel == null && i++ < 60);
-			if (aePanel == null)
-				throw new Exception("Could not find the embedded panel!");
-		}
-
-		#endregion
 
 		#region Buttons
 
@@ -84,8 +61,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		//
 		public SendDisclosures txt_BorrowerAuthorization_SendKeys(string Input)
 		{
-			SetPanel();
-			aElement = aePanel.FindFirst(TreeScope.Descendants, txt_BorrowerAuthorization);
+			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_BorrowerAuthorization);
 			Thread.Sleep(1000);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
@@ -102,14 +78,15 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		//
 		public SendDisclosures cmb_BorrowerAuthenticationMethod_SendKeys(string Input)
 		{
-			SetPanel();
-			aElement = aePanel.FindFirst(TreeScope.Descendants, cmb_BorrowerAuthenticationMethod);
-			aElement.ClickCenterOfBounds();
-			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(3000);
-
-			return new SendDisclosures();
-		}
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_BorrowerAuthenticationMethod);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Thread.Sleep(1000);
+            return this;
+        }
 
 		#endregion
 

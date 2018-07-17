@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Automation;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
@@ -55,21 +56,46 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 
 		#region Buttons
+        
+		//public WVM_PropertyAndOrderInformation btn_UploadFees_Click()
+		//{
+  //          AndCondition andCond = new AndCondition(
+  //                  new PropertyCondition(AutomationElement.NameProperty, "Upload Fees"),
+  //                  new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "hyperlink")
+  //              );
 
-		private PropertyCondition btn_UploadFees = new PropertyCondition(AutomationElement.NameProperty, "Upload Fees");
+  //          aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+  //          setLegacyIAccessiblePattern(aElement);
+  //          if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Jump")
+  //              DoDefaultAction(aElement);
 
+  //          return this;
 
-		public WVM_PropertyAndOrderInformation btn_UploadFees_Click()
-		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_UploadFees);
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(8000);
+  //      }
 
-			return new WVM_PropertyAndOrderInformation();
-		}
+        public void UploadFees_Click()
+        {
+            Point UploadFees = new Point(1711, 195);
+        
+            Mouse.Instance.Location = UploadFees;
+            Mouse.LeftDown();
+            Mouse.LeftUp();
+            Thread.Sleep(8000);
+        }
 
-		#endregion
+        #endregion
 
+        #region Checkboxes
 
-	}
+        private SearchCriteria chk_Appraisal_included = SearchCriteria.ByAutomationId("appraisalIsIncluded");
+        
+        public WVM_PropertyAndOrderInformation chk_Appraisal_included_Check(bool Check)
+        {
+            ClickCheckBox(Check, chk_Appraisal_included);
+            Thread.Sleep(20000);
+            return this;
+        }
+        #endregion
+
+    }
 }

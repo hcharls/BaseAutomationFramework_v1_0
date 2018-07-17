@@ -95,7 +95,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_LogOn);
 			aElement.ClickCenterOfBounds();
-			Thread.Sleep(9000);
+			Thread.Sleep(20000);
 
 			return new WVM_LogOn();
 		}
