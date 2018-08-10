@@ -42,185 +42,15 @@ namespace BaseAutomationFramework.Tests.Encompass
 			{
             AttachToProcess(Processes.Encompass, 5);
 
-            SendDisclosures
-                 .Initialize()
-                 //.cmb_BorrowerAuthenticationMethod_SendKeys("Auth")
-                 //.txt_BorrowerAuthorization_SendKeys("13188");
-                 .btn_Send_Click();
 
-            //	Pipeline.Initialize().thingy();
+            DisclosurePrep
+                   .OpenForm_FromFormsTab()
+                   .btn_NotNowContinue_Click()
+                   .cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
+                   .btn_ReadytoDisclose_Click()
+                   .btn_GenerateDisclosures_Click();
 
-            //AttachToProcess(Processes.Encompass, 5);
-
-            //WVM_LogOn
-            //    .Initialize()
-            //    .txt_Password_SendKeys("Pemadmin1")
-            //    .btn_LogOn_Click()
-            //    .WestVM_UploadFees_Click();
-
-            //EncompassMain.Initialize().tab_Loan_Select(); DisclosurePrep.Initialize().btn_Review2015Itemization_Click(); Itemization.OpenForm_FromFormsTab();
-
-            //PropertyTaxesReserved
-            //    .OpenFromItemization()
-            //    .cmb_ReserveBasedOn_SendKeys("Base Loan Amount")
-            //    .txt_RatePercentage_SendKeys(".25")
-            //    .btn_OK_Click();
-
-            //DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click();
-
-            //DisclosurePrep
-            //    .OpenForm_FromFormsTab()
-            //    .btn_NotNowContinue_Click()
-            //    .cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
-            //    .btn_ReadytoDisclose_Click()
-            //    .btn_GenerateDisclosures_Click();
-
-            //DisclosurePlanCode.SelectPlanCode().btn_Order_eDisclosures_Click(); SelectDocuments.Initialize().btn_Send_Click();
-
-            //SendDisclosures
-            //    .Initialize()
-            //    .cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
-            //    .txt_BorrowerAuthorization_SendKeys("13188")
-            //    .btn_Send_Click();
-
-
-            #region Product and Pricing (floating)
-
-            //OB_ProductandPricing
-            //	.OpenFrom_MainMenu()
-            //	.lstbx_Provider_Select("Optimal Blue - Enhanced")
-            //	.btn_Submit_Click();
-
-            //OB_Login
-            //	.Initialize()
-            //	.txt_LoginName_SendKeys("qa_testlo_direct")
-            //	.txt_Password_SendKeys("12345")
-            //	.chk_SaveLoginInformation_Check(true)
-            //	.chk_UpdateUpfrontMIdataforFHAloans_Check(true)
-            //	.btn_Continue_Click();
-
-            //OB_ProductSearch
-            //	.Initialize()
-            //	.btn_Submit_Click();
-
-            //OB_SearchResults
-            //	.Initialize()
-            //	.SelectLoanProgram_Click("PEM CONF 30YR FIXED")
-            //	.SelectRateClosestToZero();
-
-            //OB_LockForm
-            //	.Initialize()
-            //	.btn_UpdateEncompass_Click();
-
-            //OB_PricingImportEncompassUpdate
-            //	.Initialize()
-            //	.btn_Close_Click();
-
-            #endregion Product and Pricing (floating)
-
-            #region Product and Pricing (locked)
-
-            //OB_ProductandPricing
-            //	.OpenFrom_MainMenu()
-            //	.lstbx_Provider_Select("Optimal Blue - Enhanced")
-            //	.btn_Submit_Click();
-
-            //OB_Login
-            //	.Initialize()
-            //	.txt_LoginName_SendKeys("qa_testlo_direct")
-            //	.txt_Password_SendKeys("12345")
-            //	.chk_SaveLoginInformation_Check(true)
-            //	.chk_UpdateUpfrontMIdataforFHAloans_Check(true)
-            //	.btn_Continue_Click();
-
-            //OB_ProductSearch
-            //	.Initialize()
-            //	.btn_Submit_Click();
-
-            //OB_SearchResults
-            //	.Initialize()
-            //	.lp_PEMCONF30YRFIXED_Click()
-            //	.SelectRateClosestToZero();
-
-            //OB_LockForm
-            //	.Initialize()
-            //	.btn_RequestLock_Click();
-
-            //OB_PricingImportEncompassUpdate
-            //	.Initialize()
-            //	.btn_Close_Click();
-
-            #endregion Product and Pricing (locked)
-
-            #region Disclosure Prep (TRID)
-
-            //DisclosurePrep
-            //.OpenForm_FromFormsTab()
-            //.cmb_WillThereBeSubordination_SendKeys("No")
-            //.cmb_BetterRateWarranty_SendKeys("No")
-            //.cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
-            //.cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
-            //.btn_GenerateEstimatedClosingDatesandStandardFees_Click()
-            //.btn_SmartGFE_Click();
-
-            //WVM_TitleAndClosing
-            //	.OpenFrom_MainMenu()
-            //	.Select_WestVMTitle_TEST();
-
-            //WVM_LogOn
-            //.Initialize()
-            //.txt_Password_SendKeys("Pemadmin1")
-            //.btn_LogOn_Click()
-            //.WestVM_UploadFees_Click();
-
-            //EncompassMain
-            //.Initialize()
-            //.tab_Loan_Select();
-
-            //DisclosurePrep
-            //	.Initialize()
-            //	.btn_Review2015Itemization_Click();
-
-            //Itemization
-            //	.OpenForm_FromFormsTab();
-
-            //PropertyTaxesReserved
-            //	.OpenFromItemization()
-            //	.cmb_ReserveBasedOn_SendKeys("Base Loan Amount")
-            //	.txt_RatePercentage_SendKeys(".25")
-            //	.btn_OK_Click();
-
-            //DisclosurePrep
-            //	.OpenForm_FromFormsTab()
-            //	.btn_RunComplianceReport_Click();
-
-            //DisclosurePrep
-            //	.OpenForm_FromFormsTab()
-            //	.btn_NotNowContinue_Click()
-            //	.cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
-            //	.btn_ReadytoDisclose_Click()
-            //	.btn_GenerateDisclosures_Click();
-
-            //DisclosurePlanCode
-            //	.SelectPlanCode()
-            //	.btn_Order_eDisclosures_Click();
-
-            //SelectDocuments
-            //	.Initialize()
-            //	.btn_Send_Click();
-
-            //SendDisclosures
-            //	.Initialize()
-            //	.cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
-            //	.txt_BorrowerAuthorization_SendKeys("13188")
-            //	.btn_Send_Click();
-
-            #endregion Disclosure Prep (TRID)
-
-
-            return;
-
-			}
+        }
 
         [Test]
 		public void GetMortgageInsurance()
@@ -316,6 +146,38 @@ namespace BaseAutomationFramework.Tests.Encompass
            // OB_LockRequestDialog.Initialize().btn_ExitLoan_Click();
 
         }
+        [Test]
+        public void LogInspect()
+        {
+            //AttachToProcess(Processes.Encompass, 5);
+
+
+
+            TestStack.White.InputDevices.Mouse.Instance.Location = new Point(96.0, 209.0);
+            Thread.Sleep(3000);
+            var el = AutomationElement.FocusedElement;
+            Console.WriteLine($"Name: {el.Current.Name}");
+            Console.WriteLine($"ID: {el.Current.AutomationId}");
+            Console.WriteLine($"Help: {el.Current.HelpText}");
+            
+            return;
+
+        }
+
+        [Test]
+        public void WestVM()
+        {
+
+            AttachToProcess(Processes.Encompass, 5);
+            WVM_LogOn
+                  .Initialize()
+                  .txt_Username_SendKeys("PEMAdmin")
+                  .txt_Password_SendKeys("Pemadmin1")
+                  .btn_LogOn_Click();
+
+            WVM_PropertyAndOrderInformation.Initialize().chk_Appraisal_included_Check(false).btn_UploadFees_Click(); EncompassMain.Initialize().tab_Loan_Select();
+
+        }
 
         [Test, TestCaseSource(typeof(BaseTest.TestData), "DataforThisThing")]
         public void dummy1(IDictionary<string, string> data)
@@ -327,7 +189,40 @@ namespace BaseAutomationFramework.Tests.Encompass
         {
            
         }
+        [Test]
+        public void eConsent()
+        {
+            AttachToProcess(Processes.Encompass, 5);
 
+            eConsentNotYetReceived.Open_FromAlertsandMessagesTab().btn_Request_eConsent_Click();
+
+            SendConsent
+                .Initialize()
+                        .chk_BorrowerConsent_Check(true)
+                        .chk_NotifyWhenBorrowerReceives_Check(true)
+                        .btn_Send_Click();
+
+            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome);
+            BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+
+            BorrowerLoanCenterLogIn.Initialize()
+                .txt_Email_SendKeys("hcpemtesting@gmail.com")
+                .txt_Password_SendKeys("P@ramount1")
+                .btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow();
+
+            LoanDetail
+                .Initialize()
+                .btn_View_Click();
+
+            AgreeToReceiveDisclosuresElectronically.Initialize().btn_Agree_Click(); BaseSeleniumPage.CloseDriver();
+
+            eConsentNotYetReceived.Initialize().btn_View_eConsent_Click();
+
+
+        }
+      
 
         [TestFixtureSetUp]
 		public void OnFixtureSetup()

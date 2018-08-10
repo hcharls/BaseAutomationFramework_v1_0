@@ -173,7 +173,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         {
             aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_WestVM);
             aElement.ClickCenterOfBounds();
-            Thread.Sleep(10000);
+            Thread.Sleep(5000);
 
         }
         public DisclosurePrep btn_Review2015Itemization_Click()
@@ -182,7 +182,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(10000);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
-			Thread.Sleep(10000);
+			Thread.Sleep(50000);
 
 			return new DisclosurePrep();
 		}

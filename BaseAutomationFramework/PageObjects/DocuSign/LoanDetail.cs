@@ -35,7 +35,7 @@ namespace BaseAutomationFramework.PageObjects.EncompassLoanCenter
 
 		#region Buttons
 
-		private By btn_View = By.XPath("//span[contains(.,'Agree To Receive Disclosures electronically')]");
+		private By btn_View = By.XPath("//a[@class='btnRight Normal9Bold']");
         private By btn_eSign = By.XPath("");
 
         //

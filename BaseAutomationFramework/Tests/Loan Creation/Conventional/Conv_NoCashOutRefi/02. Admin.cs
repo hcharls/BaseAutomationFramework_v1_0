@@ -72,19 +72,9 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 
                 //Pipeline.Initialize().Pipeline_SelectCurrentLoan(MasterData.LoanNumber);
 
-				Encompass_eFolder.Open_eFolder().btn_New_Click();
-
-				AddDocument.Initialize().rdb_NewDocument_Select().btn_OK_Click();DocumentDetails.Initialize().btn_BrowseAndAttach_Click();Thread.Sleep(10000);
-
-				DocumentDetails
-					.Initialize()
-					.cmb_DocumentName_SelectByText("Underwriting")
-					.Chk_Requested_Check(true)
-					.btn_Close_Click();
-
-				Encompass_eFolder.Initialize().btn_Close_Click();
-
                 DisclosureTracking.OpenForm_FromToolsTab();
+
+
 
 
 			}

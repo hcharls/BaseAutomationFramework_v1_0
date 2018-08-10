@@ -270,10 +270,13 @@
     <Compile Include="Tools\GetTestSet.cs" />
     <Compile Include="Tools\IWebElementExtensions.cs" />
     <Compile Include="Tools\LoggerMethods.cs" />
+    <Compile Include="Tools\RectExtensions.cs" />
     <Compile Include="Tools\Screenshot.cs" />
     <Compile Include="Tools\SQL_Utilities.cs" />
     <Compile Include="Tools\StringUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\UIA_Automation_Extensions.cs" />
+    <Compile Include="Tools\UIItemExtensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
