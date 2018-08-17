@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <BaseTest>
-///   Description:    <>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <written_by_Ascendum_automation>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using AventStack.ExtentReports;
+﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports.Reporter.Configuration;
 using BaseAutomationFramework.DataObjects;

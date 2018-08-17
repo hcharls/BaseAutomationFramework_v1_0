@@ -1,41 +1,19 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <EndToEndConvRefi>
-///   Description:    <>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Windows;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Automation;
 using BaseAutomationFramework.PageObjects.Encompass;
 using NUnit.Framework;
-using TestStack.White.InputDevices;
-using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.ListBoxItems;
 using BaseAutomationFramework.Tools;
 using BaseAutomationFramework.DataObjects;
-using System.Threading;
 using System.IO;
 using BaseAutomationFramework.HTML_Report;
-using BaseAutomationFramework.PageObjects.Yahoo;
 using BaseAutomationFramework.PageObjects;
 using BaseAutomationFramework.PageObjects.EncompassLoanCenter;
+using System.Threading;
 
 namespace BaseAutomationFramework.Tests.Encompass.Regression
 {
 	[TestFixture]
-	public class EndToEndConvRefi : BaseTest
+	public class FloatingEndToEndConvRefi : BaseTest
 	{
 		private StreamWriter SW;
 		private StatusReport SR;
@@ -66,31 +44,13 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
 
                 //#region Launch and Login
 
-                //LaunchApplication(DesktopApps.Encompass);
+                //LaunchApplication(DesktopApps.Encompass); Launcher.Initialize().cmb_EnvironmentID_SelectByText(MasterData.EnvironmentID).btn_Login_Click(); AttachToProcess(Processes.Encompass, 5);
 
-                //Launcher
-                //    .Initialize()
-                //    .cmb_EnvironmentID_SelectByText(MasterData.EnvironmentID)
-                //    .btn_Login_Click();
+                //Login.Initialize().txt_Username_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
 
-                AttachToProcess(Processes.Encompass, 5);
+                //Thread.Sleep(10000); EncompassMain.Initialize().Resize().tab_Pipeline_Select();
 
-                //Login
-                //    .Initialize()
-                //    .txt_Username_SendKeys("test_qa_lo")
-                //    .txt_Password_SendKeys("P@ramount1")
-                //    .btn_Login_Click();
-
-                //Thread.Sleep(10000);
-
-                //EncompassMain.Initialize().Resize().tab_Pipeline_Select();
-
-                //Pipeline.Initialize().btn_NewLoan_Click();
-
-                //NewLoan
-                //    .Initialize()
-                //    .cmb_LoanTemplateFolder_SelectByText("PEM Direct")
-                //    .SelectItem_DirectConvRefinance();
+                //Pipeline.Initialize().btn_NewLoan_Click(); NewLoan.Initialize().cmb_LoanTemplateFolder_SelectByText("PEM Direct").SelectItem_DirectConvRefinance();
 
                 //FormsTab.Initialize().chk_Show_Check(true).chk_ShowInAlpha_Check(true);
 
@@ -248,7 +208,7 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
                 ////	.cmb_CreditOnNonBorrowingSpouse_SendKeys("CONFIRMED")
                 ////	.btn_BankerCertificationBLS_Click();
 
-                //#region eFolder Bypass
+                ////#region eFolder Bypass
 
                 ////EncompassMain.Initialize().ExitEncompass();EncompassDialog.Initialize().btn_Yes_Click();ComplianceAlert.Initialize().btn_Close_Click();
 
@@ -292,50 +252,28 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
                 ////	.cmb_LoanFolder_SelectByText(MasterData.LoanFolder)
                 ////	.Pipeline_SelectCurrentLoan(MasterData.LoanNumber);
 
-                //#endregion eFolder Bypass
+                ////#endregion eFolder Bypass
 
                 //#endregion Loan Creation w/o Test Console
 
                 //#region Loan Creation w/ Test Console
 
-                //TestConsole.OpenForm_FromFormsTab().btn_KenCustomer_Click();
+                //TestConsole.OpenForm_FromFormsTab().btn_KenCustomer_Click(); EncompassDialog.Initialize().btn_OK_Click();
 
-                //EncompassDialog.Initialize().btn_OK_Click();
+                ////CreditReport.Initialize().lstbx_Provider_Select("Equifax Mortgage Solutions").btn_Submit_Click();//.btn_Cancel_Click();
 
-                //CreditReport
-                //    .Initialize()
-                //    .lstbx_Provider_Select("Equifax Mortgage Solutions")
-                //    .btn_Submit_Click();
-                ////.btn_Cancel_Click();
-
-                //CreditReportRequest
-                //    .Initialize()
-                //    .txt_UserName_SendKeys("PARAMOUNTIT")
-                //    .txt_Password_SendKeys("P@ramount2")
-                //    .chk_SaveLoginInformation_Check(true)
-                //    .chk_Equifax_Check(true)
-                //    .chk_Experian_Check(true)
-                //    .chk_TransUnion_Check(true)
-                //    .btn_Finish_Click();
-
-                //EncompassMain.Initialize().tab_Loan_Select();
+                ////CreditReportRequest.Initialize().txt_UserName_SendKeys("PARAMOUNTIT").txt_Password_SendKeys("P@ramount2").chk_SaveLoginInformation_Check(true).chk_Equifax_Check(true).chk_Experian_Check(true).chk_TransUnion_Check(true).btn_Finish_Click(); EncompassMain.Initialize().tab_Loan_Select();
 
                 //TestConsole
                 //    .Initialize()
                 //    .btn_CashOutRefi_Click()
                 //    .btn_Direct_Click()
-                //    .btn_HannahEmail_Click()
-                //    //.btn_BLSCertification_Click();
-
-                //    //QuickEntryBankerLoanSubmission.Initialize().ScrollDown().btn_BankerCertificationBLS_Click().btn_Close_Click();
-
-                //    // TestConsole
-                //    //  .Initialize()
+                //    .txt_BorrowerEmail_SendKeys(MasterData.HomeEmail)
                 //    .txt_SubjectProperty_Address_SendKeys(MasterData.Address)
+                //    .txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
                 ////.txt_SubjectProperty_City_SendKeys(MasterData.City)
                 ////.txt_SubjectProperty_State_SendKeys(MasterData.State)
                 ////.txt_SubjectProperty_County_SendKeys(MasterData.County)
-                //.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
 
                 //#endregion Loan Creation w/ Test Console
 
@@ -343,18 +281,11 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
 
                 //eConsentNotYetReceived.Open_FromAlertsandMessagesTab().btn_Request_eConsent_Click();
 
-                //SendConsent
-                //    .Initialize()
-                //    .chk_BorrowerConsent_Check(true)
-                //    .chk_NotifyWhenBorrowerReceives_Check(true)
-                //    .btn_Send_Click();
+                //SendConsent.Initialize().chk_BorrowerConsent_Check(true).chk_NotifyWhenBorrowerReceives_Check(true).btn_Send_Click();
 
                 //BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
 
-                //BorrowerLoanCenterLogIn.Initialize()
-                //    .txt_Email_SendKeys("hcpemtesting@gmail.com")
-                //    .txt_Password_SendKeys("P@ramount1")
-                //    .btn_Login_Click();
+                //BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys(MasterData.HomeEmail).txt_Password_SendKeys("P@ramount1").btn_Login_Click();
 
                 //CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
 
@@ -368,90 +299,43 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
 
                 //OB_ProductandPricing.OpenFrom_MainMenu().lstbx_Provider_Select("Optimal Blue - Enhanced").btn_Submit_Click();
 
-                //OB_Login
-                //    .Initialize()
-                //    .txt_LoginName_SendKeys(MasterData.OB_Login)
-                //    .txt_Password_SendKeys(MasterData.OB_Password)
-                //    .chk_SaveLoginInformation_Check(true)
-                //    .chk_UpdateUpfrontMIdataforFHAloans_Check(true)
-                //    .btn_Continue_Click();
+                //OB_Login.Initialize().txt_LoginName_SendKeys(MasterData.OB_Login).txt_Password_SendKeys(MasterData.OB_Password).chk_SaveLoginInformation_Check(true).btn_Continue_Click();
 
                 //OB_ProductSearch.Initialize().btn_Submit_Click(); Thread.Sleep(10000); OB_LockForm.Initialize().btn_UpdateEncompass_Click(); Thread.Sleep(10000); OB_PricingImportEncompassUpdate.Initialize().btn_Close_Click();
 
-                //#region Locked
-
-                ////OB_ProductandPricing
-                ////	.OpenFrom_MainMenu()
-                ////	.lstbx_Provider_Select("Optimal Blue - Enhanced")
-                ////	.btn_Submit_Click();
-
-                ////OB_Login
-                ////	.Initialize()
-                ////	.txt_LoginName_SendKeys("qa_testlo_direct")
-                ////	.txt_Password_SendKeys("12345")
-                ////	.chk_SaveLoginInformation_Check(true)
-                ////	.chk_UpdateUpfrontMIdataforFHAloans_Check(true)
-                ////	.btn_Continue_Click();
-
-                ////OB_ProductSearch
-                ////	.Initialize()
-                ////	.btn_Submit_Click();
-
-                ////OB_SearchResults
-                ////	.Initialize()
-                ////	.lp_PEMCONF30YRFIXED_Click()
-                ////	.SelectRateClosestToZero();
-
-                ////OB_LockForm
-                ////	.Initialize()
-                ////	.btn_RequestLock_Click();
-
-                ////OB_PricingImportEncompassUpdate
-                ////	.Initialize()
-                ////	.btn_Close_Click();
-
-                //#endregion Locked
-
                 //#endregion Product and Pricing
 
-                //#region Disclosure Prep (TRID) 
+                #region Locked Product and Pricing
 
-                //DisclosurePrep
-                //    .OpenForm_FromFormsTab()
-                //    .cmb_WillThereBeSubordination_SendKeys("No")
-                //    .cmb_BetterRateWarranty_SendKeys("No")
-                //    .cmb_ImpoundsWaivedOrNotWaived_SendKeys("Not Waived")
-                //    .cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
-                //    .cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
-                //    .btn_GenerateEstimatedClosingDatesandStandardFees_Click()
-                //    .btn_WestVM_Click();
+                //OB_ProductandPricing.OpenFrom_MainMenu().lstbx_Provider_Select("Optimal Blue - Enhanced").btn_Submit_Click();
 
-                //WVM_LogOn
-                //    .Initialize()
-                //    .txt_Username_SendKeys("PEMAdmin")
-                //    .txt_Password_SendKeys("Pemadmin1")
-                //    .btn_LogOn_Click();
+                //OB_Login.Initialize().txt_LoginName_SendKeys(MasterData.OB_Login).txt_Password_SendKeys(MasterData.OB_Password).chk_SaveLoginInformation_Check(true).btn_Continue_Click();
 
-                //WVM_PropertyAndOrderInformation.Initialize().chk_Appraisal_included_Check(false).btn_UploadFees_Click(); EncompassMain.Initialize().tab_Loan_Select();
+                //OB_ProductSearch.Initialize().btn_Submit_Click(); OB_SearchResults.Initialize().SelectRateClosestToZero();
 
-                DisclosurePrep.Initialize().btn_Review2015Itemization_Click(); Itemization.OpenForm_FromFormsTab();
+                //OB_LockForm.Initialize().btn_RequestLock_Click(); OB_PricingImportEncompassUpdate.Initialize().btn_Close_Click();
 
-                PropertyTaxesReserved
-                    .OpenFromItemization()
-                    .cmb_ReserveBasedOn_SendKeys("B")
-                    .txt_RatePercentage_SendKeys(".25")
-                    .btn_OK_Click();
+                #endregion Locked Product and Pricing
 
-                AggregateSetup.OpenFromItemization().btn_OK_Click();
-
-                DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click();
+                #region Disclosure Prep (TRID) 
 
                 DisclosurePrep
-                    .OpenForm_FromFormsTab()
-                    .btn_NotNowContinue_Click()
-                    .cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
-                    .btn_ReadytoDisclose_Click()
-                    .btn_GenerateDisclosures_Click();
+                .OpenForm_FromFormsTab()
+                .cmb_WillThereBeSubordination_SendKeys("No")
+                .cmb_BetterRateWarranty_SendKeys("No")
+                .cmb_ImpoundsWaivedOrNotWaived_SendKeys("Not Waived")
+                .cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
+                .cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
+                .btn_GenerateEstimatedClosingDatesandStandardFees_Click()
+                .btn_WestVM_Click();
+
+                WVM_LogOn.Initialize().txt_QuickUsername_SendKeys("PEMAdmin").txt_QuickPassword_SendKeys("Pemadmin1").btn_LogOn_Click();
+
+                WVM_PropertyAndOrderInformation.Initialize().chk_QuickAppraisalIncluded_Check().btn_UploadFees_Click(); EncompassMain.Initialize().tab_Loan_Select();
+
+                DisclosurePrep.Initialize().btn_Review2015Itemization_Click(); Itemization.OpenForm_FromFormsTab(); PropertyTaxesReserved.OpenFromItemization().cmb_ReserveBasedOn_SendKeys("B").txt_RatePercentage_SendKeys(".25").btn_OK_Click(); AggregateSetup.OpenFromItemization().btn_OK_Click();
+
+                DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click(); DisclosurePrep.OpenForm_FromFormsTab().btn_NotNowContinue_Click().cmb_DocumentDeliveryPreference_SendKeys("Email - eSign").btn_ReadytoDisclose_Click().btn_GenerateDisclosures_Click();
 
                 #endregion Disclosure Prep (TRID)
 
@@ -461,25 +345,27 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
 
                 SelectDocuments.Initialize().btn_Send_Click();
 
-                SendDisclosures
-                    .Initialize()
-                    .cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
-                    .txt_BorrowerAuthorization_SendKeys("13188")
-                    .btn_Send_Click();
+                SendDisclosures.Initialize().cmb_BorrowerAuthenticationMethod_SendKeys("a").txt_BorrowerAuthorization_SendKeys(MasterData.AuthorizationCode).btn_Send_Click();
 
-                //EncompassDialog.Initialize().btn_Yes_Click();
+                DisclosuresDialog.Initialize().btn_No_Click(); EncompassDialog.Initialize().btn_OK_Click();
 
-                //eSignDocuments
-                //    .Initialize()
-                //    .btn_Next_Click()
-                //    .btn_Start_Click()
-                //    .btn_eSign_Click()
-                //    .btn_eSign_Click()
-                //    .btn_Finish_Click();
+                BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://encompass.mortgage-application.net/EncompassAccount/AccountLogin.aspx");
 
-                //EncompassDialog.Initialize().btn_OK_Click();
+                LoanOfficerLoanCenterLogIn.Initialize().txt_ClientID_SendKeys("3011141905").txt_UserID_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
 
-                //Retrieve.OpenFrom_eFolder().btn_Download_Click();FileManager.Initialize().btn_Close_Click();Encompass_eFolder.Initialize().btn_Close_Click();
+                CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click(); DocuSign.Initialize().fn_ESignWholeDocument();
+
+                BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+
+                BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys(MasterData.HomeEmail).txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+                CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
+
+                VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys(MasterData.AuthorizationCode).btn_Next_Click();
+
+                DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
+
+                Retrieve.OpenFrom_eFolder().btn_Download_Click(); FileManager.Initialize().btn_Close_Click(); Encompass_eFolder.Initialize().btn_Close_Click();
 
                 #endregion Initial Disclosures
 
@@ -487,15 +373,19 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
 
                 //DisclosedLESnapshot.Initialize().btn_OK_Click();
 
-                //Application.Open_FromLogTab().cmb_UnderwritingRiskAccessType_SendKeys("DU").btn_ProcessingMgr_Click();
+
+
+                //BankerLoanSubmission.OpenForm_FromFormsTab().btn_CopyCashBackSTC_Click(); EncompassDialog.Initialize().btn_OKtoCertify_Click(); BankerLoanSubmission.Initialize().btn_BankerCertificationBLS_Click();
+
+                //Application.Open_FromLogTab().cmb_UnderwritingRiskAccessType_SendKeys("DU").cmb_LoanInfoRefiPurpose_SendKeys("Cash-Out Other").btn_ProcessingMgr_Click();
 
                 //SelectLoanTeamMember.Initialize().Application_SelectProcessingMgr();
 
                 //Application.Initialize().chk_Finish_Check();
 
-                //EncompassMain.Initialize().ExitEncompass();EncompassDialog.Initialize().btn_Yes_Click();ComplianceAlert.Initialize().btn_Close_Click();
+                //EncompassMain.Initialize().ExitEncompass(); EncompassDialog.Initialize().btn_Yes_Click(); ComplianceAlert.Initialize().btn_Close_Click();
 
-                //#endregion Application Milestone
+                #endregion Application Milestone
 
                 #region Pre Proc. Review Milestone
 
@@ -1266,14 +1156,14 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
 
             catch (Exception ex)
             {
-                //step.ModalText = ex.ToString();
-                //step.Status = "Fail";
-                //step.ScreenShotLocation = Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format("Failure\\{0}", System.Reflection.MethodBase.GetCurrentMethod().Name));
-                //	//Assert.Fail(ex.ToString());
-                //}
-                //finally
-                //{
-                //	Report.addStep(step);
+                step.ModalText = ex.ToString();
+                step.Status = "Fail";
+                step.ScreenShotLocation = Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format("Failure\\{0}", System.Reflection.MethodBase.GetCurrentMethod().Name));
+                //Assert.Fail(ex.ToString());
+            }
+            finally
+            {
+                Report.addStep(step);
             }
 
         }
@@ -1281,15 +1171,15 @@ namespace BaseAutomationFramework.Tests.Encompass.Regression
 		[TestFixtureSetUp]
 		public void OnFixtureSetup()
 		{
-			//runTime = CreateRuntimeString();
-			//Report = StatusReport.getStatusReport();
-			//string sub1 = string.Format("Tester: {0}", Environment.UserName);
-			//string sub2 = string.Format("Release Version: {0}", "Not Assigned");
-			//List<string> subheaders = new List<string>() { sub1, sub2 };
-			//this.pathStem = string.Format("{0}\\{1}\\{2} - {3}", FileUtilities.DefaultTestResultDirectory, className, Environment.UserName, runTime);
-			//string path = string.Format("{0}\\{1}.html", pathStem, "Results");
-			//Report.reportSetup("Demo Script", path, null, subheaders);
-		}
+            runTime = CreateRuntimeString();
+            Report = StatusReport.getStatusReport();
+            string sub1 = string.Format("Tester: {0}", Environment.UserName);
+            string sub2 = string.Format("Release Version: {0}", "Not Assigned");
+            List<string> subheaders = new List<string>() { sub1, sub2 };
+            this.pathStem = string.Format("{0}\\{1}\\{2} - {3}", FileUtilities.DefaultTestResultDirectory, className, Environment.UserName, runTime);
+            string path = string.Format("{0}\\{1}.html", pathStem, "Results");
+            Report.reportSetup("Demo Script", path, null, subheaders);
+        }
 
 		[SetUp]
 		public void BeforeEachTest()

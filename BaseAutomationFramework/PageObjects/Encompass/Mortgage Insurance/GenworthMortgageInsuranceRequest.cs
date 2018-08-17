@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <GenworthMortgageInsuranceRequest>
-///   Description:    <GenworthMortgageInsuranceRequest>
-///   Author:         <Hannah_Charls>           Date: <June_26_2018>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

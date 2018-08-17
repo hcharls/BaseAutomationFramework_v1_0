@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <Application>
-///   Description:    <Application_Milestone_Worksheet>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,7 +37,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static Application Open_FromLogTab()
 		{
 			new LogTab()
-				.SelectItem_Application();
+				.CollapseAll().SelectItem_Application();
 
 			return new Application();
 		}
@@ -72,8 +60,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		#region Required Fields
 
 		private PropertyCondition cmb_UnderwritingRiskAccessType = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_1543");
+        private PropertyCondition cmb_LoanInfoRefiPurpose = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_299");
 
-		public Application cmb_UnderwritingRiskAccessType_SendKeys(string Input)
+        public Application cmb_UnderwritingRiskAccessType_SendKeys(string Input)
 		{
 			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_UnderwritingRiskAccessType);
@@ -84,12 +73,23 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return this;
 		}
+        public Application cmb_LoanInfoRefiPurpose_SendKeys(string Input)
+        {
+            Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_LoanInfoRefiPurpose);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+            Thread.Sleep(500);
 
-		#endregion
+            return this;
+        }
 
-		#region Checkboxes
+        #endregion
 
-		private SearchCriteria chk_Finish = SearchCriteria.ByAutomationId("checkBoxFinished");
+        #region Checkboxes
+
+        private SearchCriteria chk_Finish = SearchCriteria.ByAutomationId("checkBoxFinished");
 
 		public Application chk_Finish_Check()
 		{

@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <LoanEstimatePage1>
-///   Description:    <Loan_Estimate_Page_1_Form>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +33,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static LoanEstimatePage1 OpenForm_FromFormsTab()
 		{
 			new FormsTab()
-				.lstbx_Forms_SelectForm("1003 Page 1");
+				.lstbx_Forms_SelectForm("Loan Estimate Page 1");
 
 			return new LoanEstimatePage1();
 		}

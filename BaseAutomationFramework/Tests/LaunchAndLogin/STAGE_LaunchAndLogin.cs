@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <LaunchAndLogin_2_STAGE>
-///   Description:    <logs_into_Encompass_as_the_specific_user_in_the_specified_environment>
-///   Author:         <Hannah_Charls>           Date: <May_3_2018>
-///   Notes:          <Login_tab_in_MasterData_spreadsheet>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Linq;

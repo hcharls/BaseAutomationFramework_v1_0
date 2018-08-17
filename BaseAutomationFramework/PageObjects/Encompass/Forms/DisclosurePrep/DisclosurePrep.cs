@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <DisclosurePrep>
-///   Description:    <Disclosure_Prep_TRID_Form>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +34,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			new FormsTab()
                 .OpenFormsTab()
                 .lstbx_Forms_SelectForm("Disclosure Prep (TRID)");
-			Thread.Sleep(5000);
+			Thread.Sleep(7000);
 
 			return new DisclosurePrep();
 		}
@@ -173,7 +161,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         {
             aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_WestVM);
             aElement.ClickCenterOfBounds();
-            Thread.Sleep(5000);
+            Thread.Sleep(500);
 
         }
         public DisclosurePrep btn_Review2015Itemization_Click()
@@ -181,10 +169,10 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Review2015Itemization);
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(10000);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
-			Thread.Sleep(50000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
+            Thread.Sleep(8000);
 
-			return new DisclosurePrep();
+            return new DisclosurePrep();
 		}
 		public DisclosurePrep btn_RunComplianceReport_Click()
 		{
@@ -196,7 +184,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 		public DisclosurePrep btn_NotNowContinue_Click()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_NotNowContinue);
+            Thread.Sleep(2000);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_NotNowContinue);
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(3000);
 
@@ -206,6 +195,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_ReadytoDisclose);
 			aElement.ClickCenterOfBounds();
+            Thread.Sleep(3000);
 
 			return new DisclosurePrep();
 		}

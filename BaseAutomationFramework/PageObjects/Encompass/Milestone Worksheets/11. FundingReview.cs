@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <FundingReview>
-///   Description:    <Funding_Review_Milestone_Worksheet>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,7 +37,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static FundingReview Open_FromLogTab()
 		{
 			new LogTab()
-				.SelectItem_FundingReview();
+                .CollapseAll().SelectItem_FundingReview();
 
 			return new FundingReview();
 		}

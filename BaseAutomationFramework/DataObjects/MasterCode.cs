@@ -32,7 +32,8 @@ namespace BaseAutomationFramework.DataObjects
 		private string colImpoundsMonths = @"Impounds Months";
 		private string colImpounds904Months = @"Impounds 904 Months";
 		private string colEnvironmentID = @"Environment ID";
-		private string colLoanFolder = @"Loan Folder";
+        private string colClientID = @"Client ID";
+        private string colLoanFolder = @"Loan Folder";
 		private string colLoanNumber = @"[364] Loan Number";
 		private string colOB_Login = @"OB Login";
 		private string colOB_Password = @"OB Password";
@@ -86,7 +87,8 @@ namespace BaseAutomationFramework.DataObjects
 		public string Impounds904Months { get; set; }
 		public string Environment { get; private set; }
 		public string EnvironmentID { get; set; }
-		public string LoanFolder { get; set; }
+        public string ClientID { get; set; }
+        public string LoanFolder { get; set; }
 		public string LoanNumber { get; set; }
 		public string OB_Login { get; set; }
 		public string OB_Password { get; set; }
@@ -137,7 +139,8 @@ namespace BaseAutomationFramework.DataObjects
 			this.ImpoundsMonths = TestData[colImpoundsMonths];
 			this.Impounds904Months = TestData[colImpounds904Months];
 			this.EnvironmentID = TestData[colEnvironmentID];
-			this.LoanFolder = TestData[colLoanFolder];
+            this.ClientID = TestData[colClientID];
+            this.LoanFolder = TestData[colLoanFolder];
 			this.LoanNumber = TestData[colLoanNumber];
 			this.OB_Login = TestData[colOB_Login];
 			this.OB_Password = TestData[colOB_Password];

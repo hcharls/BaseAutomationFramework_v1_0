@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
-  <TopNode>[0-1000]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln</TopNode>
-  <SelectedNode>[0-1264]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST.Login - Administrator</SelectedNode>
+  <TopNode>[0-1286]BaseAutomationFramework.Tests</TopNode>
+  <SelectedNode>[0-1271]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST.Login - Doc Drawer/Funder</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" Expanded="true" />
-    <Node UniqueName="[0-1286]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" Expanded="true" />
-    <Node UniqueName="[0-1287]BaseAutomationFramework" Expanded="true" />
-    <Node UniqueName="[0-1288]BaseAutomationFramework.Tests" Expanded="true" />
-    <Node UniqueName="[0-1290]BaseAutomationFramework.Tests.Encompass" Expanded="true" />
-    <Node UniqueName="[0-1017]BaseAutomationFramework.Tests.Encompass.CodeChecker" Expanded="true" />
-    <Node UniqueName="[0-1298]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin" Expanded="true" />
-    <Node UniqueName="[0-1259]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST" Expanded="true" />
-    <Node UniqueName="[0-1260]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST.UserLogin" Expanded="true" />
-    <Node UniqueName="[0-1293]BaseAutomationFramework.Tests.Encompass.LoanCreation" Expanded="true" />
-    <Node UniqueName="[0-1296]BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional" Expanded="true" />
-    <Node UniqueName="[0-1297]BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv_NoCashOutRefi" Expanded="true" />
-    <Node UniqueName="[0-1295]BaseAutomationFramework.Tests.Encompass.LoanCreation.FHA" Expanded="true" />
-    <Node UniqueName="[0-1294]BaseAutomationFramework.Tests.Encompass.LoanCreation.VA" Expanded="true" />
-    <Node UniqueName="[0-1291]BaseAutomationFramework.Tests.Encompass.Regression" Expanded="true" />
-    <Node UniqueName="[0-1030]BaseAutomationFramework.Tests.Encompass.Regression.EndToEndConvRefi" Expanded="true" />
-    <Node UniqueName="[0-1031]BaseAutomationFramework.Tests.Encompass.Regression.EndToEndConvRefi.Regression" Expanded="true" />
-    <Node UniqueName="[0-1292]BaseAutomationFramework.Tests.Encompass.TicketTesting" Expanded="true" />
-    <Node UniqueName="[0-1289]BaseAutomationFramework.Tests.OtherTests" Expanded="true" />
+    <Node UniqueName="[0-1284]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" Expanded="true" />
+    <Node UniqueName="[0-1285]BaseAutomationFramework" Expanded="true" />
+    <Node UniqueName="[0-1286]BaseAutomationFramework.Tests" Expanded="true" />
+    <Node UniqueName="[0-1288]BaseAutomationFramework.Tests.Encompass" Expanded="true" />
+    <Node UniqueName="[0-1015]BaseAutomationFramework.Tests.Encompass.CodeChecker" Expanded="true" />
+    <Node UniqueName="[0-1296]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin" Expanded="true" />
+    <Node UniqueName="[0-1257]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST" Expanded="true" />
+    <Node UniqueName="[0-1258]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST.UserLogin" Expanded="true" />
+    <Node UniqueName="[0-1291]BaseAutomationFramework.Tests.Encompass.LoanCreation" Expanded="true" />
+    <Node UniqueName="[0-1294]BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional" Expanded="true" />
+    <Node UniqueName="[0-1295]BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv_NoCashOutRefi" Expanded="true" />
+    <Node UniqueName="[0-1293]BaseAutomationFramework.Tests.Encompass.LoanCreation.FHA" Expanded="true" />
+    <Node UniqueName="[0-1292]BaseAutomationFramework.Tests.Encompass.LoanCreation.VA" Expanded="true" />
+    <Node UniqueName="[0-1289]BaseAutomationFramework.Tests.Encompass.Regression" Expanded="true" />
+    <Node UniqueName="[0-1028]BaseAutomationFramework.Tests.Encompass.Regression.FloatingEndToEndConvRefi" Expanded="true" />
+    <Node UniqueName="[0-1029]BaseAutomationFramework.Tests.Encompass.Regression.FloatingEndToEndConvRefi.Regression" Expanded="true" />
+    <Node UniqueName="[0-1290]BaseAutomationFramework.Tests.Encompass.TicketTesting" Expanded="true" />
+    <Node UniqueName="[0-1287]BaseAutomationFramework.Tests.OtherTests" Expanded="true" />
   </Nodes>
 </VisualState>

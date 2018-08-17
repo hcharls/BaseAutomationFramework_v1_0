@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <SubmitToUW>
-///   Description:    <Submit_To_UW_Milestone_Worksheet>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,7 +37,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static SubmitToUW Open_FromLogTab()
 		{
 			new LogTab()
-				.SelectItem_SubmitToUW();
+                .CollapseAll().SelectItem_SubmitToUW();
 
 			return new SubmitToUW();
 		}

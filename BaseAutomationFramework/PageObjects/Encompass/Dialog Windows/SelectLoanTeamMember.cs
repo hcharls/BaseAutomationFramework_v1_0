@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <SelectLoanTeamMember>
-///   Description:    <Select_Loan_Team_Member_window>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +33,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void Application_SelectProcessingMgr()
 		{
-			Point ProcessingMgr = new Point(750, 472);
+			Point ProcessingMgr = new Point(750, 563);
 
 			Mouse.Instance.Location = ProcessingMgr;
 			Mouse.LeftDown();

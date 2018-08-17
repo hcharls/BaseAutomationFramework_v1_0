@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <WVM_PropertyAndOrderInformation>
-///   Description:    <WVM_Property_and_Order_Information>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,31 +15,33 @@ using UIAutomationClient;
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
 	public class WVM_PropertyAndOrderInformation : BaseScreen
-	{
-		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("RequestDialog");
-		public static SearchCriteria[] scArray = new SearchCriteria[] { EncompassMain.scWindow };
-		public const bool SET_MAXIMIZED = true;
+    {
+        public static SearchCriteria[] scArray = new SearchCriteria[] { EncompassMain.scWindow };
+        public const bool SET_MAXIMIZED = true;
 
-		public WVM_PropertyAndOrderInformation()
-		{
-			Set_Screen(scArray, SET_MAXIMIZED);
+        public WVM_PropertyAndOrderInformation()
+        {
+            int i = 0;
+            PropertyCondition pcWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "MainForm");
+            PropertyCondition pcsubWindow = new PropertyCondition(AutomationElement.NameProperty, "Fees");
 
-			PropertyCondition pcWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "MainForm");
-			PropertyCondition pcsubWindow = new PropertyCondition(AutomationElement.NameProperty, "Fees");
-			for (int i = 0; i < 30; i++) // ~30 Seconds
-			{
-				Thread.Sleep(1000);
-				aeScreen = AutomationElement.RootElement.FindFirst(System.Windows.Automation.TreeScope.Children, pcWindow);
-				aeScreen = aeScreen.FindFirst(System.Windows.Automation.TreeScope.Descendants, pcsubWindow);
-				if (aeScreen != null)
-					break;
-			}
+            do
+            {
+                aElement = null;
+                aeScreen = null;
+                Screen = null;
+                GC.Collect();
+                Thread.Sleep(1000);
+                Set_Screen(scArray, SET_MAXIMIZED);
+                aeScreen = AutomationElement.RootElement.FindFirst(System.Windows.Automation.TreeScope.Children, pcWindow);
+                aeScreen = aeScreen.FindFirst(System.Windows.Automation.TreeScope.Descendants, pcsubWindow);
+            } while (aeScreen == null && ++i < 60);
 
-			if (aeScreen == null)
-				throw new Exception("Screen is null!!!");
-		}
+            if (aeScreen == null)
+                throw new Exception("Screen is null!!!");
+        }
 
-		public static WVM_PropertyAndOrderInformation Initialize()
+        public static WVM_PropertyAndOrderInformation Initialize()
 		{
 			return new WVM_PropertyAndOrderInformation();
 		}
@@ -82,6 +72,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
             
             button.xtClickCenterOfBounds();
+            Thread.Sleep(10000);
 
             //aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
             //aElement.ClickCenterOfBounds();
@@ -93,7 +84,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
         }
 
-        public void UploadFees_Click()
+        public void btn_QuickUploadFees_Click()
         {
             Point UploadFees = new Point(1711, 195);
         
@@ -103,18 +94,30 @@ namespace BaseAutomationFramework.PageObjects.Encompass
             Thread.Sleep(8000);
         }
 
+ 
         #endregion
 
         #region Checkboxes
 
-        private SearchCriteria chk_Appraisal_included = SearchCriteria.ByAutomationId("appraisalIsIncluded");
+        private SearchCriteria chk_AppraisalIncluded = SearchCriteria.ByAutomationId("appraisalIsIncluded");
         
-        public WVM_PropertyAndOrderInformation chk_Appraisal_included_Check(bool Check)
+        public WVM_PropertyAndOrderInformation chk_AppraisalIncluded_Check(bool Check)
         {
-            ClickCheckBox(Check, chk_Appraisal_included);
-            Thread.Sleep(20000);
+            ClickCheckBox(Check, chk_AppraisalIncluded);
+            Thread.Sleep(1000);
             return this;
         }
+        public void chk_QuickAppraisalIncluded_Check()
+        {
+            Point AppraisalIncluded = new Point(279, 594);
+
+            Mouse.Instance.Location = AppraisalIncluded;
+            Mouse.LeftDown();
+            Mouse.LeftUp();
+            Thread.Sleep(1000);
+           
+        }
+
         #endregion
 
     }

@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <DisclosedLESnapshot>
-///   Description:    <Disclosed_LE_Snapshot_window>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,6 +36,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public void btn_OK_Click()
 		{
 			GetButton(btn_OK).Click();
+            Thread.Sleep(3000);
 		}
 
 		#endregion

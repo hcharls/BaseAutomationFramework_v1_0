@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <BankerLoanSubmission>
-///   Description:    <Banker_Loan_Submission_Form>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -118,14 +106,23 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         #region Buttons
 
         private PropertyCondition btn_BankerCertificationBLS = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button3");
-		//
-		public BankerLoanSubmission btn_BankerCertificationBLS_Click()
+        private PropertyCondition btn_CopyCashBackSTC = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button1");
+
+        //
+        public BankerLoanSubmission btn_BankerCertificationBLS_Click()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_BankerCertificationBLS);
 			aElement.ClickCenterOfBounds();
 
 			return new BankerLoanSubmission();
 		}
+        public BankerLoanSubmission btn_CopyCashBackSTC_Click()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_CopyCashBackSTC);
+            aElement.ClickCenterOfBounds();
+
+            return this;
+        }
 
         #endregion
 

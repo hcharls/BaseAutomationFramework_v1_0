@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <ExtentTestSample>
-///   Description:    <>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using AventStack.ExtentReports;
+﻿using AventStack.ExtentReports;
 using BaseAutomationFramework.Tools;
 using NUnit.Framework;
 using System;

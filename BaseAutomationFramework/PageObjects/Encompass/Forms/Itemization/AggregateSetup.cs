@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <AggregateSetup>
-///   Description:    <Aggregate_Setup_window>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,10 +36,17 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new AggregateSetup();
 		}
+        public static AggregateSetup OpenFromItemizationQuickEntry()
+        {
+            new ItemizationQuickEntry()
+                .btn_AggregateSetup_Click();
 
-		#region Text Boxes
+            return new AggregateSetup();
+        }
 
-		private PropertyCondition txt_HazardInsurance = new PropertyCondition(AutomationElement.AutomationIdProperty, "box_19");
+        #region Text Boxes
+
+        private PropertyCondition txt_HazardInsurance = new PropertyCondition(AutomationElement.AutomationIdProperty, "box_19");
 		//
 
 		public AggregateSetup txt_HazardInsurance_Tab()

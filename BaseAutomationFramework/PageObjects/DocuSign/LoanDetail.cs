@@ -1,22 +1,6 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <LoanDetail>
-///   Description:    <Loan_Detail>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BaseAutomationFramework.PageObjects.EncompassLoanCenter
 {
@@ -43,13 +27,13 @@ namespace BaseAutomationFramework.PageObjects.EncompassLoanCenter
 		{
 			wElement = btn_View.GetWebElement();
 			wElement.Click();
-            wElement.WaitUntilStale();
+            wElement.xtWaitUntilStale();
         }
         public void btn_eSign_Click()
         {
             wElement = btn_eSign.GetWebElement();
             wElement.Click();
-            wElement.WaitUntilStale();
+            wElement.xtWaitUntilStale();
         }
 
         #endregion

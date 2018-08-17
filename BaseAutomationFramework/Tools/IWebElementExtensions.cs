@@ -44,16 +44,21 @@ namespace BaseAutomationFramework.PageObjects
 			return str;
 		}
 		
-		public static void WaitUntilStale(this IWebElement element, int timeoutInSeconds=30)
+		public static void xtWaitUntilStale(this IWebElement element, int timeoutInSeconds=30)
         {
             var wait = new WebDriverWait(BaseSeleniumPage.webDriver, TimeSpan.FromSeconds(timeoutInSeconds));
             wait.Until(ExpectedConditions.StalenessOf(element));
         }
 
-        public static void WaitForTextToBePresent(this IWebElement element, string str, int timeoutInSeconds=30)
+        public static void xtWaitForTextToBePresent(this IWebElement element, string str, int timeoutInSeconds=30)
         {
             var wait = new WebDriverWait(BaseSeleniumPage.webDriver, TimeSpan.FromSeconds(timeoutInSeconds));
             wait.Until(ExpectedConditions.TextToBePresentInElement(element, str));
+        }
+        public static void xtWaitForElementToBeClickable(this IWebElement element, int timeoutInSeconds = 30)
+        {
+            var wait = new WebDriverWait(BaseSeleniumPage.webDriver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
     }
 }

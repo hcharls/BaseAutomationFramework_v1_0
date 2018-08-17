@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <YahooMain>
-///   Description:    <Yahoo_Main>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -37,7 +25,7 @@ namespace BaseAutomationFramework.PageObjects.Yahoo
         {
             wElement = btn_Search.GetWebElement();
             wElement.Click();
-            wElement.WaitUntilStale();
+            wElement.xtWaitUntilStale();
             return new YahooMain();
         }
 

@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <PropertyTaxesReserved>
-///   Description:    <Property_Taxes_Reserved_window>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,31 +14,32 @@ using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
-	public class PropertyTaxesReserved : BaseScreen
+	public class PropertyTaxesReservedQuickEntry : BaseScreen
 	{
 		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("InsuranceDialog");
-		public static SearchCriteria[] scArray = { EncompassMain.scWindow, scWindow };
+		public static SearchCriteria[] scArray = { EncompassMain.scWindow, ItemizationQuickEntry.scWindow, scWindow };
         public const bool SET_MAXIMIZED = false;
         private AutomationElement aePanel = null;
 
-        public PropertyTaxesReserved()
+        public PropertyTaxesReservedQuickEntry()
         {
             Set_Screen(scArray, SET_MAXIMIZED);
             aeScreen = Screen.AutomationElement;
             aePanel = null;
         }
         
-        public static PropertyTaxesReserved OpenFromItemization()
-		{
-			new Itemization()
-				.btn_PropertyTaxes_Click();
+    
+        public static PropertyTaxesReservedQuickEntry OpenFromItemizationQuickEntry()
+        {
+            new ItemizationQuickEntry()
+                .btn_PropertyTaxes_Click();
 
-			return new PropertyTaxesReserved();
-		}
+            return new PropertyTaxesReservedQuickEntry();
+        }
 
-		public static PropertyTaxesReserved Initialize()
+        public static PropertyTaxesReservedQuickEntry Initialize()
 		{
-			return new PropertyTaxesReserved();
+			return new PropertyTaxesReservedQuickEntry();
 		}
 
 
@@ -59,7 +48,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition cmb_ReserveBasedOn = new PropertyCondition(AutomationElement.AutomationIdProperty, "typeCombo");
 		//
 
-		public PropertyTaxesReserved cmb_ReserveBasedOn_SendKeys(string Input)
+		public PropertyTaxesReservedQuickEntry cmb_ReserveBasedOn_SendKeys(string Input)
 		{
 
             aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_ReserveBasedOn);
@@ -79,7 +68,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_RatePercentage = new PropertyCondition(AutomationElement.AutomationIdProperty, "rateTxt");
 		//
 
-		public PropertyTaxesReserved txt_RatePercentage_SendKeys(string Input)
+		public PropertyTaxesReservedQuickEntry txt_RatePercentage_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_RatePercentage);
 			aElement.SetFocus();

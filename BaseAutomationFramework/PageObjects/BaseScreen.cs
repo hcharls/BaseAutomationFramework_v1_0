@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <BaseScreen>
-///   Description:    <Base_Screen>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <written_by_Ascendum_automation>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using BaseAutomationFramework.Tests;
+﻿using BaseAutomationFramework.Tests;
 using NLog;
 using NUnit.Framework;
 using System;

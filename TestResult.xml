@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-08-10" time="06:35:14">
-  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8784" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="D-J6P1NC2" user="hcharls" user-domain="PEM" />
+<test-results name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-08-17" time="11:18:36">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8793" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="D-J6P1NC2" user="hcharls" user-domain="PEM" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" executed="True" result="Success" success="True" time="42.289" asserts="0">
+  <test-suite type="Project" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" executed="True" result="Success" success="True" time="41.732" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" executed="True" result="Success" success="True" time="42.280" asserts="0">
+      <test-suite type="Assembly" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" executed="True" result="Success" success="True" time="41.723" asserts="0">
         <results>
-          <test-suite type="Namespace" name="BaseAutomationFramework" executed="True" result="Success" success="True" time="42.280" asserts="0">
+          <test-suite type="Namespace" name="BaseAutomationFramework" executed="True" result="Success" success="True" time="41.722" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="42.279" asserts="0">
+              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="41.722" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Encompass" executed="True" result="Success" success="True" time="42.279" asserts="0">
+                  <test-suite type="Namespace" name="Encompass" executed="True" result="Success" success="True" time="41.721" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="EnvironmentLogin" executed="True" result="Success" success="True" time="42.278" asserts="0">
+                      <test-suite type="Namespace" name="Regression" executed="True" result="Success" success="True" time="41.721" asserts="0">
                         <results>
-                          <test-suite type="TestFixture" name="LaunchAndLogin_1_TEST" executed="True" result="Success" success="True" time="42.277" asserts="0">
+                          <test-suite type="TestFixture" name="FloatingEndToEndConvRefi" executed="True" result="Success" success="True" time="41.719" asserts="0">
                             <results>
-                              <test-suite type="ParameterizedTest" name="UserLogin" executed="True" result="Success" success="True" time="42.121" asserts="0">
+                              <test-suite type="ParameterizedTest" name="Regression" executed="True" result="Success" success="True" time="41.516" asserts="0">
                                 <results>
-                                  <test-case name="BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST.Login - Doc Drawer/Funder" executed="True" result="Success" success="True" time="42.112" asserts="0" />
+                                  <test-case name="BaseAutomationFramework.Tests.Encompass.Regression.FloatingEndToEndConvRefi.Test - Hannah - Stage" executed="True" result="Success" success="True" time="41.504" asserts="0" />
                                 </results>
                               </test-suite>
                             </results>

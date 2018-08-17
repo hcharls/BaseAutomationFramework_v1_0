@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <TestConsole>
-///   Description:    <QA_Test_Console_Form>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,9 +43,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new TestConsole();
 		}
 
-		#region Buttons
+        #region Buttons
 
-		private PropertyCondition btn_KenCustomer = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button5");
+        private PropertyCondition btn_KenCustomer = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button5");
 		private PropertyCondition btn_JohnMaryHomeowner = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button1");
 		private PropertyCondition btn_AliceFirstimer = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button2");
 		private PropertyCondition btn_Conventional = new PropertyCondition(AutomationElement.AutomationIdProperty, "Button17");
@@ -413,7 +401,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_PurchasePrice = new PropertyCondition(AutomationElement.NameProperty, "136: The purchase price of the subject property.");
 		private PropertyCondition txt_DownPayment = new PropertyCondition(AutomationElement.NameProperty, "1335: The portion of the purchase price paid by the borrower that is not covered by the loan amount or other financing. The Down Payment % (field 1771) will be calculated for you.");
 		private PropertyCondition txt_Refinance = new PropertyCondition(AutomationElement.NameProperty, "1092: If this is a refinance loan, the total liens and other debts to be paid from the loan proceeds. Liabilities included in the total are marked as 'to be paid off' on the VOL.");
-        private PropertyCondition txt_Email = new PropertyCondition(AutomationElement.NameProperty, "1240: The borrower's home email address.");
+        private PropertyCondition txt_BorrowerEmail = new PropertyCondition(AutomationElement.NameProperty, "1240: The borrower's home email address.");
 
         public TestConsole txt_SubjectProperty_Address_SendKeys(string Input)
 		{
@@ -570,9 +558,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
             return new TestConsole();
         }
-        public TestConsole txt_Email_SendKeys(string Input)
+        public TestConsole txt_BorrowerEmail_SendKeys(string Input)
         {
-            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_Email);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_BorrowerEmail);
             aElement.SetFocus();
             Keyboard.Instance.Enter(Input);
             Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);

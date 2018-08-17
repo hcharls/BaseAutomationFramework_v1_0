@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <ConditionsSent>
-///   Description:    <Conditions_Sent_Milestone_Worksheet>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,7 +37,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static ConditionsSent Open_FromLogTab()
 		{
 			new LogTab()
-				.SelectItem_ConditionsSent();
+                .CollapseAll().SelectItem_ConditionsSent();
 
 			return new ConditionsSent();
 		}

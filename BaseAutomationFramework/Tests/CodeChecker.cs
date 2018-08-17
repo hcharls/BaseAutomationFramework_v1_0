@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <CodeChecker>
-///   Description:    <>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Linq;
@@ -37,18 +25,25 @@ namespace BaseAutomationFramework.Tests.Encompass
 	public class CodeChecker : BaseTest
 	{
 		[Test]
-		public void ControlChecker()
-			
-			{
-            AttachToProcess(Processes.Encompass, 5);
+		public void ControlChecker()	
+		{
+            // AttachToProcess(Processes.Encompass, 5);
 
+            //BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://encompass.mortgage-application.net/EncompassAccount/AccountLogin.aspx");
 
-            DisclosurePrep
-                   .OpenForm_FromFormsTab()
-                   .btn_NotNowContinue_Click()
-                   .cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
-                   .btn_ReadytoDisclose_Click()
-                   .btn_GenerateDisclosures_Click();
+            //LoanOfficerLoanCenterLogIn.Initialize().txt_ClientID_SendKeys("3011141905").txt_UserID_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            //CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click(); DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver(); 
+
+            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+
+            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys(MasterData.HomeEmail).txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
+
+            VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys(MasterData.AuthorizationCode).btn_Next_Click();
+
+            DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
 
         }
 

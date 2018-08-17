@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Conv_NoCashOutRefi>
-///   Class:          <EXTENT_0_TestConsoleForm>
-///   Description:    <>
-///   Author:         <Hannah_Charls>           Date: <May_11_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Linq;
@@ -122,7 +110,7 @@ namespace BaseAutomationFramework.Tests.Encompass
                      .Initialize()
                      .btn_CashOutRefi_Click()
                      .btn_Direct_Click()
-                     .txt_Email_SendKeys(MasterData.HomeEmail);
+                     .txt_BorrowerEmail_SendKeys(MasterData.HomeEmail);
 
 				TestConsole.Initialize().btn_BLSCertification_Click(); QuickEntryBankerLoanSubmission.Initialize().ScrollDown().btn_BankerCertificationBLS_Click(); extentTest.Pass("Banker Loan Submission Form certified", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_BLS"), true)).Build()); QuickEntryBankerLoanSubmission.Initialize().btn_Close_Click();
 

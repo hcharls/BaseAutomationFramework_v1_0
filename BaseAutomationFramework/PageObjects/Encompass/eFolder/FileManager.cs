@@ -1,16 +1,4 @@
-﻿///------------------------------------------------------------------------------------------------------------------------
-///   Namespace:      <Namespace>
-///   Class:          <FileManager>
-///   Description:    <File_Manager_window_in_eFolder>
-///   Author:         <Hannah_Charls>           Date: <Novmeber_21_2017>
-///   Notes:          <>
-///   Revision History:
-///   Name:				 Date:					Description:
-///   
-/// 
-///------------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +14,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 	public class FileManager : BaseScreen
 	{
 		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("AllFilesDialog");
-		public static SearchCriteria[] scArray = { EncompassMain.scWindow, Encompass_eFolder.scWindow, scWindow };
+		public static SearchCriteria[] scArray = { scWindow };
 		public const bool SET_MAXIMIZED = false;
 		public FileManager()
 		{
@@ -45,7 +33,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public void btn_Close_Click()
 		{
 			GetButton(btn_Close).Click();
-
+            Thread.Sleep(3000);
 		}
 
 		#endregion
