@@ -50,39 +50,39 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 
 				//Impounds (unlocked loan must be up to Step 4 of Disclosure Prep (TRID) form)
 
-				URLA_Page1
-					.OpenForm_FromFormsTab()
-					.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID);
+				//URLA_Page1
+				//	.OpenForm_FromFormsTab()
+				//	.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
+				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID);
 				
-				RegZCD
-					.OpenForm_FromFormsTab()
-					.txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 1. First Payment Date");
+				//RegZCD
+				//	.OpenForm_FromFormsTab()
+				//	.txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
+				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 1. First Payment Date");
 
-				Itemization
-					.OpenForm_FromFormsTab()
-					.btn_ScrollDown1100_Click()
-					.btn_AggregateSetup_Click();
+				//Itemization
+				//	.OpenForm_FromFormsTab()
+				//	.btn_ScrollDown1100_Click()
+				//	.btn_AggregateSetup_Click();
 
-				AggregateSetup
-					.Initialize()
-					.DragWindow_AggregateSetup();
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 2. " + MasterData.ImpoundsDueDates);
+				//AggregateSetup
+				//	.Initialize()
+				//	.DragWindow_AggregateSetup();
+				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 2. " + MasterData.ImpoundsDueDates);
 
-				AggregateSetup
-					.Initialize()
-					.btn_OK_Click();
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 3. after Aggregate Setup closed");
+				//AggregateSetup
+				//	.Initialize()
+				//	.btn_OK_Click();
+				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 3. after Aggregate Setup closed");
 
-				Itemization
-					.Initialize()
-					.btn_ScrollUp900_Click();
-				Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 4. line 904 population");
+				//Itemization
+				//	.Initialize()
+				//	.btn_ScrollUp900_Click();
+				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + MasterData.TestDescription + " - 4. line 904 population");
 
-				Itemization
-					.Initialize()
-					.txt_PropertyTaxesMths_SendKeys(" ");
+				//Itemization
+				//	.Initialize()
+				//	.txt_PropertyTaxesMths_SendKeys(" ");
 	
 			}
 

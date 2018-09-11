@@ -25,7 +25,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new FormsTab();
 		}
 
-		public FormsTab OpenFormsTab()
+        public FormsTab OpenFormsTab()
 		{
 			Point FormsTab = new Point(37, 597);
 
@@ -44,7 +44,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		//
 		public void lstbx_Forms_SelectForm(string FormName)
 		{
-			aElement = GetListBox(lstbx_Forms).GetElement(SearchCriteria.ByText(FormName));
+            OpenFormsTab();
+            aElement = GetListBox(lstbx_Forms).GetElement(SearchCriteria.ByText(FormName));
 			aElement.SetFocus();
 			Thread.Sleep(500);
 			aElement.ClickCenterOfBounds();

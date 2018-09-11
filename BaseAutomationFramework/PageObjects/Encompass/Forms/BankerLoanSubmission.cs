@@ -42,6 +42,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         {
             return new BankerLoanSubmission();
         }
+
         public void ScrollDown()
         {
             Point Top = new Point(1902, 339);

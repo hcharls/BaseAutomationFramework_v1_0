@@ -71,7 +71,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 				Pipeline
 					.Initialize()
 					.cmb_PipelineView_SelectByText("QA View")
-					.cmb_LoanFolder_SelectByText(MasterData.LoanFolder)
+					.cmb_LoanFolder_SelectByText("Testing_Training")
 					.Pipeline_SelectCurrentLoan(MasterData.LoanNumber);
 
 				Completion

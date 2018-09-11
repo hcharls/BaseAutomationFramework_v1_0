@@ -131,3 +131,6 @@ C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csproj.CoreCompileInputs.cache
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csproj.CopyComplete
 C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\obj\Debug\BaseAutomationFramework.csprojAssemblyReference.cache
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\EncompassAutomation.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\EncompassObjects.dll
+C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\Microsoft.mshtml.dll

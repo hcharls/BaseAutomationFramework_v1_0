@@ -44,7 +44,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			txt_SubjectProperty_City_SendKeys(City);
 			txt_SubjectProperty_State_SendKeys(State);
 			txt_SubjectProperty_ZipCode_SendKeys(Zip);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
 
 			//if (Tests.BaseTest.checkForWindow(SelectaCity.scWindow))
 			//{

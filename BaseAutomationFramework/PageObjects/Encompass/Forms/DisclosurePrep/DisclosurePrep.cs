@@ -151,8 +151,14 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_SmartGFE);
 			aElement.ClickCenterOfBounds();
-			Thread.Sleep(10000);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
+			Thread.Sleep(8000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Keyboard.Instance.Enter("test_lo"); Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Keyboard.Instance.Enter("P@ramount1"); Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
 			Thread.Sleep(3000);
 
 			return new DisclosurePrep();

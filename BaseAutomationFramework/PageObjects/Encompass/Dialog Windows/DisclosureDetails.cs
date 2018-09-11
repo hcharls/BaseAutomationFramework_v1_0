@@ -15,20 +15,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
     public class DisclosureDetails : BaseScreen
     {
         public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("DisclosureDetailsDialog2015");
-        public static SearchCriteria[] scArray = new SearchCriteria[] { EncompassMain.scWindow, scWindow };
+        public static SearchCriteria[] scArray = { EncompassMain.scWindow, scWindow };
         public const bool SET_MAXIMIZED = false;
+        private AutomationElement aePanel = null;
+
         public DisclosureDetails()
         {
-            PropertyCondition pcWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "MainForm");
-            PropertyCondition pcsubWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "LoanPage");
-            aeScreen = AutomationElement.RootElement.FindFirst(TreeScope.Children, pcWindow);
-            aeScreen = aeScreen.FindFirst(TreeScope.Descendants, pcsubWindow);
-            aeScreen.WaitWhileBusy();
-
-            if (aeScreen == null)
-                throw new Exception("Screen is null!!!");
+            Set_Screen(scArray, SET_MAXIMIZED);
+            aeScreen = Screen.AutomationElement;
+            aePanel = null;
         }
-
+        public static DisclosureDetails Initialize()
+        {
+            return new DisclosureDetails();
+        }
         public static DisclosureDetails OpenFrom_DisclosureTracking()
         {
             new DisclosureTracking()
@@ -37,7 +37,58 @@ namespace BaseAutomationFramework.PageObjects.Encompass
             return new DisclosureDetails();
         }
 
+        #region Checkboxes
+
+        private SearchCriteria chk_IntentToProceed = SearchCriteria.ByAutomationId("chkIntent");
+       
+        public DisclosureDetails chk_IntentToProceed_Check(bool Check)
+        {
+            ClickCheckBox(Check, chk_IntentToProceed);
+
+            return this;
+        }
+
+        #endregion
+
+        #region Text Boxes
+
+        private PropertyCondition txt_DisclosureSentDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "dtDisclosedDate");
+
+        public DisclosureDetails txt_DisclosureSentDate_SetBack()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DisclosureSentDate);
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.LEFT);
+            Thread.Sleep(500);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Thread.Sleep(500);
+
+            return this;
+        }
+
+        #endregion
         
+        #region Buttons
+
+        private PropertyCondition btn_SentDateManualEntry = new PropertyCondition(AutomationElement.AutomationIdProperty, "lbtnSentDate");
+        private SearchCriteria btn_OK = SearchCriteria.ByAutomationId("btnOK");
+        //
+        public DisclosureDetails btn_SendDateManualEntry_Click()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_SentDateManualEntry);
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(2000);
+
+            return new DisclosureDetails();
+        }
+
+        public void btn_OK_Click()
+        {
+            GetButton(btn_OK).Click();
+            Thread.Sleep(10000);
+        }
+
+        #endregion
 
     }
 }

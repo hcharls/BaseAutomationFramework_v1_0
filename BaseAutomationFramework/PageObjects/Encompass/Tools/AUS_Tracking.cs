@@ -13,12 +13,12 @@ using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
-	public class DisclosureTracking : BaseScreen
+	public class AUS_Tracking : BaseScreen
 	{
 		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("LoanPage");
-		public static SearchCriteria[] scArray = new SearchCriteria[] { EncompassMain.scWindow };//, scWindow };
+        public static SearchCriteria[] scArray = new SearchCriteria[] { EncompassMain.scWindow };
 		public const bool SET_MAXIMIZED = false;
-		public DisclosureTracking()
+		public AUS_Tracking()
 		{
 			PropertyCondition pcWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "MainForm");
 			PropertyCondition pcsubWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "LoanPage");
@@ -30,30 +30,33 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 				throw new Exception("Screen is null!!!");
 		}
 
-		public static DisclosureTracking Initialize()
+		public static AUS_Tracking Initialize()
 		{
-			return new DisclosureTracking();
+			return new AUS_Tracking();
 		}
 
-		public static DisclosureTracking OpenForm_FromToolsTab()
+		public static AUS_Tracking OpenTool_FromToolsTab()
 		{
 			new ToolsTab()
-				.lstbx_Tools_SelectTool("Disclosure Tracking");
+				.lstbx_Tools_SelectTool("AUS Tracking");
 
-			return new DisclosureTracking();
+			return new AUS_Tracking();
 		}
 
-        public void btn_InitialDisclosureRecord_Click()
-        {
-            Point InitialDisclosure = new Point(352, 539);
+        #region Buttons
 
-            Mouse.Instance.Location = InitialDisclosure;
-            Mouse.LeftDown();
-            Mouse.LeftUp();
-            Mouse.LeftDown();
-            Mouse.LeftUp();
-            Thread.Sleep(1000);
+        private PropertyCondition btn_NewDecision = new PropertyCondition(AutomationElement.AutomationIdProperty, "stdIconNew");
+    
+        //
+        public AUS_Tracking btn_NewDecision_Click()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_NewDecision);
+            aElement.ClickCenterOfBounds();
+
+            return this;
         }
+
+        #endregion
 
     }
 }

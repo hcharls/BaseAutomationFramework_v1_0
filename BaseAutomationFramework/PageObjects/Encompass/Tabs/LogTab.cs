@@ -31,8 +31,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
         public LogTab CollapseAll()
         {
-            Point LogTab = new Point(182, 182);
-            Point Collapse = new Point(15, 281);
+            Point LogTab = new Point(180, 185);
+            Point Collapse = new Point(25, 565);
             
             Mouse.Instance.Location = LogTab;
             Mouse.LeftDown();
@@ -50,7 +50,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         public void SelectItem_FileStarted()
 		{
 			
-			Point FileStarted = new Point(82, 206);
+			Point FileStarted = new Point(43, 218);
 
 			Mouse.Instance.Location = FileStarted;
 			Mouse.LeftDown();
@@ -60,7 +60,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_Application()
 		{
-			Point Application = new Point(82, 225);
+			Point Application = new Point(43, 225);
 
 			Mouse.Instance.Location = Application;
 			Mouse.LeftDown();
@@ -70,7 +70,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_PreProcReview()
 		{
-			Point PreProcReview = new Point(61, 245);
+			Point PreProcReview = new Point(43, 253);
 
 			Mouse.Instance.Location = PreProcReview;
 			Mouse.LeftDown();
@@ -80,7 +80,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_ProcPreApproval()
 		{
-			Point ProcPreApproval = new Point(66, 263);
+			Point ProcPreApproval = new Point(43, 270);
 
 			Mouse.Instance.Location = ProcPreApproval;
 			Mouse.LeftDown();
@@ -90,7 +90,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_SubmitToUW()
 		{
-			Point SubmitToUW = new Point(66, 280);
+			Point SubmitToUW = new Point(43, 289);
 
 			Mouse.Instance.Location = SubmitToUW;
 			Mouse.LeftDown();
@@ -100,7 +100,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_InitialUWDecision()
 		{
-			Point InitialUWDecision = new Point(82, 297);
+			Point InitialUWDecision = new Point(43, 307);
 
 			Mouse.Instance.Location = InitialUWDecision;
 			Mouse.LeftDown();
@@ -110,7 +110,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_ConditionsSent()
 		{
-			Point ConditionsSent = new Point(82, 316);
+			Point ConditionsSent = new Point(43, 324);
 
 			Mouse.Instance.Location = ConditionsSent;
 			Mouse.LeftDown();
@@ -120,7 +120,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_FinalUWApproval()
 		{
-			Point FinalUWApproval = new Point(66, 335);
+			Point FinalUWApproval = new Point(43, 343);
 
 			Mouse.Instance.Location = FinalUWApproval;
 			Mouse.LeftDown();
@@ -130,7 +130,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_QCReview()
 		{
-			Point QCReview = new Point(57, 368);
+			Point QCReview = new Point(43, 361);
 
 			Mouse.Instance.Location = QCReview;
 			Mouse.LeftDown();
@@ -140,7 +140,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_DocsOut()
         { 
-			Point DocsOut = new Point(82, 369);
+			Point DocsOut = new Point(43, 379);
 
 			Mouse.Instance.Location = DocsOut;
 			Mouse.LeftDown();
@@ -150,7 +150,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_DocsBack()
 		{
-			Point DocsBack = new Point(82, 389);
+			Point DocsBack = new Point(43, 397);
 
 			Mouse.Instance.Location = DocsBack;
 			Mouse.LeftDown();
@@ -160,7 +160,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_FundingReview()
 		{
-			Point FundingReview = new Point(82, 405);
+			Point FundingReview = new Point(43, 415);
 
 			Mouse.Instance.Location = FundingReview;
 			Mouse.LeftDown();
@@ -170,7 +170,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_Funding()
 		{
-			Point Funding = new Point(82, 425);
+			Point Funding = new Point(43, 433);
 
 			Mouse.Instance.Location = Funding;
 			Mouse.LeftDown();
@@ -181,7 +181,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_Shipping()
 		{
-			Point Shipping = new Point(82, 442);
+			Point Shipping = new Point(43, 452);
 
 			Mouse.Instance.Location = Shipping;
 			Mouse.LeftDown();
@@ -191,7 +191,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_Purchase()
 		{
-			Point Purchase = new Point(82, 460);
+			Point Purchase = new Point(43, 470);
 
 			Mouse.Instance.Location = Purchase;
 			Mouse.LeftDown();
@@ -201,7 +201,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void SelectItem_Completion()
 		{
-			Point Completion = new Point(82, 478);
+			Point Completion = new Point(43, 486);
 
 			Mouse.Instance.Location = Completion;
 			Mouse.LeftDown();

@@ -35,13 +35,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new PropertyTaxesReserved();
 		}
-        public static PropertyTaxesReserved OpenFromItemizationQuickEntry()
-        {
-            new ItemizationQuickEntry()
-                .btn_PropertyTaxes_Click();
-
-            return new PropertyTaxesReserved();
-        }
+       
 
         public static PropertyTaxesReserved Initialize()
 		{

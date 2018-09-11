@@ -13,12 +13,12 @@ using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
-	public class AUS_Tracking : BaseScreen
+	public class DisclosureTracking : BaseScreen
 	{
 		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("LoanPage");
-        public static SearchCriteria[] scArray = new SearchCriteria[] { EncompassMain.scWindow };
+		public static SearchCriteria[] scArray = new SearchCriteria[] { EncompassMain.scWindow };//, scWindow };
 		public const bool SET_MAXIMIZED = false;
-		public AUS_Tracking()
+		public DisclosureTracking()
 		{
 			PropertyCondition pcWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "MainForm");
 			PropertyCondition pcsubWindow = new PropertyCondition(AutomationElement.AutomationIdProperty, "LoanPage");
@@ -30,33 +30,30 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 				throw new Exception("Screen is null!!!");
 		}
 
-		public static AUS_Tracking Initialize()
+		public static DisclosureTracking Initialize()
 		{
-			return new AUS_Tracking();
+			return new DisclosureTracking();
 		}
 
-		public static AUS_Tracking OpenForm_FromToolsTab()
+		public static DisclosureTracking OpenForm_FromToolsTab()
 		{
 			new ToolsTab()
-				.lstbx_Tools_SelectTool("AUS Tracking");
+				.lstbx_Tools_SelectTool("Disclosure Tracking");
 
-			return new AUS_Tracking();
+			return new DisclosureTracking();
 		}
 
-        #region Buttons
-
-        private PropertyCondition btn_NewDecision = new PropertyCondition(AutomationElement.AutomationIdProperty, "stdIconNew");
-    
-        //
-        public AUS_Tracking btn_NewDecision_Click()
+        public void btn_InitialDisclosureRecord_Click()
         {
-            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_NewDecision);
-            aElement.ClickCenterOfBounds();
+            Point InitialDisclosure = new Point(352, 539);
 
-            return this;
+            Mouse.Instance.Location = InitialDisclosure;
+            Mouse.LeftDown();
+            Mouse.LeftUp();
+            Mouse.LeftDown();
+            Mouse.LeftUp();
+            Thread.Sleep(1000);
         }
-
-        #endregion
 
     }
 }

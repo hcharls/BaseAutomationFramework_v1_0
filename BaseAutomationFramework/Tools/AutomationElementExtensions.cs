@@ -14,7 +14,29 @@ namespace BaseAutomationFramework
 {
 	public static class AutomationElementExtensions
 	{
-		public static void WaitWhileBusy(this AutomationElement ae)
+        private static TogglePattern _TogglePattern;
+        private static LegacyIAccessiblePattern _LegacyIAccessiblePattern;
+
+        public static bool xtGetCheckedState(this AutomationElement element)
+        {
+            bool IsChecked;
+            _TogglePattern = Retry.For(() =>
+                ((TogglePattern)element.GetCurrentPattern(TogglePattern.Pattern)),
+                TimeSpan.FromSeconds(10));
+
+            return IsChecked = _TogglePattern.Current.ToggleState == ToggleState.On;
+        }
+        public static string xtGetDefaultAction(this AutomationElement element)
+        {
+            _LegacyIAccessiblePattern = Retry.For(() =>
+                ((LegacyIAccessiblePattern)element.GetCurrentPattern(LegacyIAccessiblePattern.Pattern)),
+                TimeSpan.FromSeconds(10));
+
+            return _LegacyIAccessiblePattern.Current.DefaultAction;
+        }
+
+
+        public static void WaitWhileBusy(this AutomationElement ae)
 		{
 			Retry.For(() => ShellIsBusy(ae), isBusy => isBusy, TimeSpan.FromSeconds(30));
 

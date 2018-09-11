@@ -55,7 +55,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         public EncompassDialog btn_OKtoCertify_Click()
 		{
 			GetButton(btn_OKtoCertify).Click();
-			Thread.Sleep(5000);
+			Thread.Sleep(1000);
 			return new EncompassDialog();
 		}
 	}

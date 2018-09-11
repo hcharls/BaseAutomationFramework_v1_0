@@ -29,21 +29,8 @@ namespace BaseAutomationFramework.Tests.Encompass
 		{
             // AttachToProcess(Processes.Encompass, 5);
 
-            //BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://encompass.mortgage-application.net/EncompassAccount/AccountLogin.aspx");
+            TestConsole.Initialize().btn_CreateNewLoan_Click(MasterData.TestDescription);
 
-            //LoanOfficerLoanCenterLogIn.Initialize().txt_ClientID_SendKeys("3011141905").txt_UserID_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
-
-            //CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click(); DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver(); 
-
-            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
-
-            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys(MasterData.HomeEmail).txt_Password_SendKeys("P@ramount1").btn_Login_Click();
-
-            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
-
-            VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys(MasterData.AuthorizationCode).btn_Next_Click();
-
-            DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
 
         }
 
@@ -160,30 +147,99 @@ namespace BaseAutomationFramework.Tests.Encompass
         }
 
         [Test]
-        public void WestVM()
+        public void TonyTest()
         {
 
-            AttachToProcess(Processes.Encompass, 5);
-            WVM_LogOn
-                  .Initialize()
-                  .txt_Username_SendKeys("PEMAdmin")
-                  .txt_Password_SendKeys("Pemadmin1")
-                  .btn_LogOn_Click();
+            //Dictionary<string, string> creds = new Dictionary<string, string>();
+            //Dictionary<string, string> testID = new Dictionary<string, string>();
 
-            WVM_PropertyAndOrderInformation.Initialize().chk_Appraisal_included_Check(false).btn_UploadFees_Click(); EncompassMain.Initialize().tab_Loan_Select();
+            //creds.Add("Username", "tpaolini");
+            //creds.Add("Password", "Paramount2");
+
+            //EnvironmentLogin.LaunchAndLogin_2_STAGE stg = new EnvironmentLogin.LaunchAndLogin_2_STAGE();
+
+            //stg.UserLogin(creds);
+
+            //LoanCreation.Conventional.Conv_CashOutRefi loan = new LoanCreation.Conventional.Conv_CashOutRefi();
+
+            //testID.Add("Test ID", "Hannah - Stage");
+            //loan.EncompassNewLoanCreation(testID);
+
+
 
         }
+
 
         [Test, TestCaseSource(typeof(BaseTest.TestData), "DataforThisThing")]
         public void dummy1(IDictionary<string, string> data)
         {
 
         }
-        [Test, TestCaseSource(typeof(BaseTest.TestData), "dummy2")]
-        public void dummy2(IDictionary<string, string> data)
+        [Test]
+        public void DocuSignTest()
+
         {
-           
+            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://encompass.mortgage-application.net/EncompassAccount/AccountLogin.aspx");
+
+            LoanOfficerLoanCenterLogIn.Initialize().txt_ClientID_SendKeys("3011141905").txt_UserID_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click(); DocuSign.Initialize().fn_ESignWholeDocument();
+
+            BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+
+            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys("hcpemtesting@gmail.com").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
+
+            VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys("13188").btn_Next_Click();
+
+            DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
+
         }
+        [Test]
+        public void DocuSignStage()
+
+        {
+            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://encompass.mortgage-application.net/EncompassAccount/AccountLogin.aspx");
+
+            LoanOfficerLoanCenterLogIn.Initialize().txt_ClientID_SendKeys("3011166948").txt_UserID_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click(); DocuSign.Initialize().fn_ESignWholeDocument();
+
+            BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+
+            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys("hcpemtesting@gmail.com").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
+
+            VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys("13188").btn_Next_Click();
+
+            DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
+
+        }
+        [Test]
+        public void DocuSignProd()
+
+        {
+            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://encompass.mortgage-application.net/EncompassAccount/AccountLogin.aspx");
+
+            LoanOfficerLoanCenterLogIn.Initialize().txt_ClientID_SendKeys("3000799584").txt_UserID_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click(); DocuSign.Initialize().fn_ESignWholeDocument();
+
+            BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+
+            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys("hcpemtesting@gmail.com").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
+
+            VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys("13188").btn_Next_Click();
+
+            DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
+
+        }
+
+
         [Test]
         public void eConsent()
         {
@@ -217,7 +273,7 @@ namespace BaseAutomationFramework.Tests.Encompass
 
 
         }
-      
+    
 
         [TestFixtureSetUp]
 		public void OnFixtureSetup()

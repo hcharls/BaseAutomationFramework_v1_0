@@ -1,21 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Automation;
 using BaseAutomationFramework.PageObjects.Encompass;
 using NUnit.Framework;
-using TestStack.White.InputDevices;
-using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.ListBoxItems;
 using BaseAutomationFramework.Tools;
 using BaseAutomationFramework.DataObjects;
-using System.Threading;
 using System.IO;
 using BaseAutomationFramework.HTML_Report;
+using BaseAutomationFramework.PageObjects;
+using BaseAutomationFramework.PageObjects.EncompassLoanCenter;
+using System.Threading;
+
 
 namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv_NoCashOutRefi
 {
@@ -49,42 +43,21 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 
                 #region Disclosure Prep (TRID) 
 
-                DisclosurePrep
-                    .OpenForm_FromFormsTab()
-                    .cmb_WillThereBeSubordination_SendKeys("No")
-                    .cmb_BetterRateWarranty_SendKeys("No")
-                    .cmb_ImpoundsWaivedOrNotWaived_SendKeys("Not Waived")
-                    .cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
-                    .cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
-                    .btn_GenerateEstimatedClosingDatesandStandardFees_Click()
-                    .btn_WestVM_Click();
+                //DisclosurePrep
+                //.OpenForm_FromFormsTab()
+                //.cmb_WillThereBeSubordination_SendKeys("No")
+                //.cmb_BetterRateWarranty_SendKeys("No")
+                //.cmb_ImpoundsWaivedOrNotWaived_SendKeys("Not Waived")
+                //.cmb_ImpoundsWillBeFor_SendKeys("Taxes and Insurance (T & I)")
+                //.cmb_AddingRemovingSomeoneFromTitle_SendKeys("No")
+                //.btn_GenerateEstimatedClosingDatesandStandardFees_Click()
+                //.btn_WestVM_Click();
 
-                WVM_LogOn
-                    .Initialize()
-                    .txt_Username_SendKeys("PEMAdmin")
-                    .txt_Password_SendKeys("Pemadmin1")
-                    .btn_LogOn_Click();
+                //EncompassMain.Initialize().ExecuteQuickWestVM().tab_Loan_Select();
 
-                WVM_PropertyAndOrderInformation.Initialize().chk_Appraisal_included_Check(false).btn_UploadFees_Click(); EncompassMain.Initialize().tab_Loan_Select();
+                DisclosurePrep.Initialize().btn_Review2015Itemization_Click(); Itemization.OpenForm_FromFormsTab(); PropertyTaxesReserved.OpenFromItemization().cmb_ReserveBasedOn_SendKeys("B").txt_RatePercentage_SendKeys(".25").btn_OK_Click(); AggregateSetup.OpenFromItemization().btn_OK_Click();
 
-                DisclosurePrep.Initialize().btn_Review2015Itemization_Click(); Itemization.OpenForm_FromFormsTab();
-
-                PropertyTaxesReserved
-                    .OpenFromItemization()
-                    .cmb_ReserveBasedOn_SendKeys("B")
-                    .txt_RatePercentage_SendKeys(".25")
-                    .btn_OK_Click();
-
-                AggregateSetup.OpenFromItemization().btn_OK_Click();
-
-                DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click();
-
-                DisclosurePrep
-                    .OpenForm_FromFormsTab()
-                    .btn_NotNowContinue_Click()
-                    .cmb_DocumentDeliveryPreference_SendKeys("Email - eSign")
-                    .btn_ReadytoDisclose_Click()
-                    .btn_GenerateDisclosures_Click();
+                DisclosurePrep.OpenForm_FromFormsTab().btn_RunComplianceReport_Click(); DisclosurePrep.OpenForm_FromFormsTab().btn_NotNowContinue_Click().cmb_DocumentDeliveryPreference_SendKeys("Email - eSign").btn_ReadytoDisclose_Click().btn_GenerateDisclosures_Click();
 
                 #endregion Disclosure Prep (TRID)
 
@@ -94,43 +67,46 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation.Conventional.Conv
 
                 SelectDocuments.Initialize().btn_Send_Click();
 
-                SendDisclosures
-                    .Initialize()
-                    .cmb_BorrowerAuthenticationMethod_SendKeys("Authorization Code")
-                    .txt_BorrowerAuthorization_SendKeys("13188")
-                    .btn_Send_Click();
+                SendDisclosures.Initialize().cmb_BorrowerAuthenticationMethod_SendKeys("a").txt_BorrowerAuthorization_SendKeys(MasterData.AuthorizationCode).btn_Send_Click();
 
-                //EncompassDialog.Initialize().btn_Yes_Click();
+                DisclosuresDialog.Initialize().btn_No_Click(); EncompassDialog.Initialize().btn_OK_Click();
 
-                //eSignDocuments
-                //    .Initialize()
-                //    .btn_Next_Click()
-                //    .btn_Start_Click()
-                //    .btn_eSign_Click()
-                //    .btn_eSign_Click()
-                //    .btn_Finish_Click();
+                BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://encompass.mortgage-application.net/EncompassAccount/AccountLogin.aspx");
 
-                //EncompassDialog.Initialize().btn_OK_Click();
+                LoanOfficerLoanCenterLogIn.Initialize().txt_ClientID_SendKeys("3011141905").txt_UserID_SendKeys("test_qa_lo").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
 
-    //            Retrieve.OpenFrom_eFolder().btn_Download_Click();FileManager.Initialize().btn_Close_Click();Encompass_eFolder.Initialize().btn_Close_Click();
+                CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click(); DocuSign.Initialize().fn_ESignWholeDocument();
 
-               #endregion Initial Disclosures 
+                BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
 
-    //            #region Application milestone 
+                BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys(MasterData.BorrowerEmail).txt_Password_SendKeys("P@ramount1").btn_Login_Click();
 
-    //            LoanEstimatePage1.OpenForm_FromFormsTab().chk_IntentToProceed_Check(true);
+                CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
 
-				//DisclosedLESnapshot.Initialize().btn_OK_Click();
+                VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys(MasterData.AuthorizationCode).btn_Next_Click();
 
-				//Application.Open_FromLogTab().cmb_UnderwritingRiskAccessType_SendKeys("DU").btn_ProcessingMgr_Click();
+                DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
 
-				//SelectLoanTeamMember.Initialize().Application_SelectProcessingMgr();
+                Retrieve.OpenFrom_eFolder().btn_Download_Click(); FileManager.Initialize().btn_Close_Click(); Encompass_eFolder.Initialize().btn_Close_Click();
 
-				//Application.Initialize().chk_Finish_Check();
+                #endregion Initial Disclosures
 
-				//EncompassMain.Initialize().ExitEncompass();EncompassDialog.Initialize().btn_Yes_Click();ComplianceAlert.Initialize().btn_Close_Click();
+                //LoanEstimatePage1.OpenForm_FromFormsTab().chk_IntentToProceed_Check(true);
 
-    //            #endregion Application milestone 
+                //DisclosedLESnapshot.Initialize().btn_OK_Click();
+
+
+
+                //BankerLoanSubmission.OpenForm_FromFormsTab().btn_CopyCashBackSTC_Click(); EncompassDialog.Initialize().btn_OKtoCertify_Click(); BankerLoanSubmission.Initialize().btn_BankerCertificationBLS_Click();
+
+                //Application.Open_FromLogTab().cmb_UnderwritingRiskAccessType_SendKeys("DU").cmb_LoanInfoRefiPurpose_SendKeys("Cash-Out Other").btn_ProcessingMgr_Click();
+
+                //SelectLoanTeamMember.Initialize().Application_SelectProcessingMgr();
+
+                //Application.Initialize().chk_Finish_Check();
+
+                //EncompassMain.Initialize().ExitEncompass(); EncompassDialog.Initialize().btn_Yes_Click(); ComplianceAlert.Initialize().btn_Close_Click();
+
 
             }
 

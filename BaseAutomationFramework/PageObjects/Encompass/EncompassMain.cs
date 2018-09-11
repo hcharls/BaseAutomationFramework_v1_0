@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Automation;
 using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
@@ -150,7 +151,10 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		}
 
-		#endregion
+       
+        #endregion
 
-	}
+
+
+    }
 }
