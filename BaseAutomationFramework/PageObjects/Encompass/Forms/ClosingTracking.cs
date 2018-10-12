@@ -46,8 +46,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		#region Text Boxes
 
 		private PropertyCondition txt_EarliestClosingDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "TextBox6");
-		
-		public ClosingTracking txt_EarliestClosingDate_SendKeys(string Input)
+        private PropertyCondition txt_CD_Ordered = new PropertyCondition(AutomationElement.AutomationIdProperty, "TextBox9");
+
+        public ClosingTracking txt_EarliestClosingDate_CopyField()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_EarliestClosingDate);
 			aElement.SetFocus();
@@ -58,13 +59,27 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Thread.Sleep(1000);
 			Keyboard.Instance.LeaveAllKeys();
 			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.Enter("c");
 			Keyboard.Instance.LeaveAllKeys();
 			Thread.Sleep(2000);
 
 			return this;
 		}
+        public ClosingTracking txt_CD_Ordered_SetTodaysDate()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_CD_Ordered);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(1500);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("d");
+            Thread.Sleep(1000);
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(2000);
 
-		#endregion
-	}
+            return this;
+        }
+
+        #endregion
+    }
 }

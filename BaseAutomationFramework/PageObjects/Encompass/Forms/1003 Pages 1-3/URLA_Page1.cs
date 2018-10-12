@@ -34,6 +34,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			new FormsTab()
 				.lstbx_Forms_SelectForm("1003 Page 1");
+            Thread.Sleep(2000);
 
 			return new URLA_Page1();
 		}
@@ -155,9 +156,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Keyboard.Instance.Enter(Input);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 			aElement.WaitWhileBusy();
-			Thread.Sleep(1000);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
-			Thread.Sleep(3000);
+            Thread.Sleep(1000);
 
 		}
 		public URLA_Page1 txt_SubjectProperty_County_SendKeys(string Input)

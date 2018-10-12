@@ -48,7 +48,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_ApprovedByDate = new PropertyCondition(AutomationElement.NameProperty, "2301: The date the underwriter recommended approval of the loan.");
 		private PropertyCondition txt_ApprovalExpiresDate = new PropertyCondition(AutomationElement.NameProperty, "2302: The expiration date of the underwriter's approval.");
 
-		public UnderwriterSummary txt_ApprovedByDate_SendKeys()
+		public UnderwriterSummary txt_ApprovedByDate_SetDate()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_ApprovedByDate);
 			aElement.SetFocus();
@@ -64,11 +64,14 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return this;
 		}
 
-			public UnderwriterSummary txt_ApprovalExpiresDate_SendKeys(string Input)
+			public UnderwriterSummary txt_ApprovalExpiresDate_SetDate()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_ApprovalExpiresDate);
+            DateTime date = DateTime.Now;
+            date = date.AddDays(30);
+
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_ApprovalExpiresDate);
 			aElement.SetFocus();
-			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.Enter(date.ToString("mm/dd/yyyy"));
 			Thread.Sleep(500);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
 			Thread.Sleep(500);

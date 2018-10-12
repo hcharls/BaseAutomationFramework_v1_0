@@ -68,78 +68,83 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return this;
 		}
-		public RegZCD txt_DocumentDate_SendKeys(string Input)
+		public RegZCD txt_DocumentDate_SendKeys()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DocumentDate);
 			aElement.SetFocus();
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(500);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter("a");
-			Keyboard.Instance.LeaveAllKeys();
-			Thread.Sleep(250);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter(Input);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-			aElement.WaitWhileBusy();
-			Thread.Sleep(1000);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("a");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+			Keyboard.Instance.Enter("v");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+			Thread.Sleep(2000);
 
 			return this;
 		}
-		public RegZCD txt_ClosingDate_SendKeys(string Input)
+		public RegZCD txt_ClosingDate_SendKeys()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_ClosingDate);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(500);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter("a");
-			Keyboard.Instance.LeaveAllKeys();
-			Thread.Sleep(250);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter(Input);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-			aElement.WaitWhileBusy();
-			Thread.Sleep(1000);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_ClosingDate);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(500);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("a");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("v");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Thread.Sleep(2000);
 
-			return this;
+            return this;
 		}
-		public RegZCD txt_DocSigningDate_SendKeys(string Input)
+		public RegZCD txt_DocSigningDate_SendKeys()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DocSigningDate);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(500);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter("a");
-			Keyboard.Instance.LeaveAllKeys();
-			Thread.Sleep(250);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter(Input);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-			aElement.WaitWhileBusy();
-			Thread.Sleep(1000);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DocSigningDate);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(500);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("a");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("v");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            Thread.Sleep(2000);
 
-			return this;
+            return this;
 
 		}
-		public RegZCD txt_DisbursementDate_SendKeys(string Input)
+		public RegZCD txt_DisbursementDate_SendKeys()
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DisbursementDate);
-			aElement.SetFocus();
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(500);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter("a");
-			Keyboard.Instance.LeaveAllKeys();
-			Thread.Sleep(250);
-			Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
-			Keyboard.Instance.Enter(Input);
-			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-			aElement.WaitWhileBusy();
-			Thread.Sleep(1000);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_DisbursementDate);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(500);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("a");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("v");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            aElement.WaitWhileBusy();
+            Thread.Sleep(1000);
 
-			return this;
+            return this;
 
 		}
 

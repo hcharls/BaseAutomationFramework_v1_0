@@ -9,6 +9,7 @@ using TestStack.White.InputDevices;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.WindowsAPI;
+using EllieMae.Encompass.BusinessObjects.Loans;
 
 namespace BaseAutomationFramework.PageObjects.Encompass
 {
@@ -45,84 +46,181 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
         #region Radio Buttons
 
-        private SearchCriteria rdb_Conventional = SearchCriteria.ByAutomationId("__cid_RadioButton4_Ctrl");
-        private SearchCriteria rdb_FHA = SearchCriteria.ByAutomationId("__cid_RadioButton5_Ctrl");
-        private SearchCriteria rdb_VA = SearchCriteria.ByAutomationId("__cid_RadioButton6_Ctrl");
-        private SearchCriteria rdb_Purchase = SearchCriteria.ByAutomationId("__cid_RadioButton1_Ctrl");
-        private SearchCriteria rdb_CashOutRefi = SearchCriteria.ByAutomationId("__cid_RadioButton2_Ctrl");
-        private SearchCriteria rdb_NoCashOutRefi = SearchCriteria.ByAutomationId("__cid_RadioButton3_Ctrl");
-        private SearchCriteria rdb_Direct = SearchCriteria.ByAutomationId("__cid_RadioButton7_Ctrl");
-        private SearchCriteria rdb_Partners = SearchCriteria.ByAutomationId("__cid_RadioButton9_Ctrl");
-        private SearchCriteria rdb_Phoenix = SearchCriteria.ByAutomationId("__cid_RadioButton10_Ctrl");
-        private SearchCriteria rdb_FixedRate = SearchCriteria.ByAutomationId("__cid_RadioButton8_Ctrl");
-        private SearchCriteria rdb_ARM = SearchCriteria.ByAutomationId("__cid_RadioButton11_Ctrl");
+        private PropertyCondition rdb_NoCashOutRefi = new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_RadioButton3_Ctrl");
+        private PropertyCondition rdb_Direct = new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_RadioButton7_Ctrl");
+        private PropertyCondition rdb_FixedRate = new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_RadioButton8_Ctrl");
+
         //
-        public TestConsole rdb_Conventional_Select()
+        public TestConsole rdb_Conventional_Select(int retryFind = 90)
         {
-            GetRadioButton(rdb_Conventional).Click();
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, rdb_NoCashOutRefi);
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(2000);
 
-            return new TestConsole();
-        }
-        public TestConsole rdb_FHA_Select()
-        {
-            GetRadioButton(rdb_FHA).Click();
-
-            return new TestConsole();
-        }
-        public TestConsole rdb_VA_Select()
-        {
-            GetRadioButton(rdb_VA).Click();
-
-            return new TestConsole();
-        }
-        public TestConsole rdb_Purchase_Select()
-        {
-            GetRadioButton(rdb_Purchase).Click();
-
-            return new TestConsole();
-        }
-        public TestConsole rdb_CashOutRefi_Select()
-        {
-            GetRadioButton(rdb_CashOutRefi).Click();
-
-            return new TestConsole();
+            return this;
         }
         public TestConsole rdb_NoCashOutRefi_Select()
         {
-            GetRadioButton(rdb_NoCashOutRefi).Click();
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, rdb_NoCashOutRefi);
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(2000);
 
-            return new TestConsole();
+            return this;
         }
         public TestConsole rdb_Direct_Select()
         {
-            GetRadioButton(rdb_Direct).Click();
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, rdb_Direct);
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(2000);
 
-            return new TestConsole();
-        }
-        public TestConsole rdb_Partners_Select()
-        {
-            GetRadioButton(rdb_Partners).Click();
-
-            return new TestConsole();
-        }
-        public TestConsole rdb_Phoenix_Select()
-        {
-            GetRadioButton(rdb_Phoenix).Click();
-
-            return new TestConsole();
+            return this;
         }
         public TestConsole rdb_FixedRate_Select()
         {
-            GetRadioButton(rdb_FixedRate).Click();
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, rdb_FixedRate);
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(2000);
 
-            return new TestConsole();
+            return this;
         }
-        public TestConsole rdb_ARM_Select()
-        {
-            GetRadioButton(rdb_ARM).Click();
 
-            return new TestConsole();
-        }
+        //public TestConsole rdb_FHA_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.NameProperty, "1172: Loan type: Conventional, FHA, VA, US or other."),
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_FHA_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_VA_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.NameProperty, "1172: Loan type: Conventional, FHA, VA, US or other."),
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_VA_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_Purchase_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.NameProperty, "19: The purpose (purchase, refinance, construction, or other) for which the loan funds will be used."),
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_Purchase_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_CashOutRefi_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.NameProperty, "19: The purpose (purchase, refinance, construction, or other) for which the loan funds will be used."),
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_CashOutRefinance_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_NoCashOutRefi_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.NameProperty, "19: The purpose (purchase, refinance, construction, or other) for which the loan funds will be used."),
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_NoCashOutRefinance_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_Direct_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_Direct_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_Partners_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_Partners_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_Phoenix_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_Phoenix_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_FixedRate_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.NameProperty, "608"),
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_Fixed_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
+        //public TestConsole rdb_ARM_Select()
+        //{
+        //    AndCondition andCond = new AndCondition(
+        //            new PropertyCondition(AutomationElement.NameProperty, "608"),
+        //            new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_ARM_Ctrl"),
+        //            new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "radio button")
+        //        );
+        //    aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+        //    AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //    item.ClickCenterOfBounds();
+        //    Thread.Sleep(2000);
+
+        //    return this;
+        //}
         #endregion
 
         #region Buttons
@@ -154,16 +252,13 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
             return new TestConsole();
         }
-        public TestConsole btn_GoToDisclosurePrep_Click()
+        public void btn_GoToDisclosurePrep_Click()
         {
             aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_GoToDisclosurePrep);
             aElement.ClickCenterOfBounds();
-            new TestConsole();
-            Thread.Sleep(1000);
-
-            return new TestConsole();
+           
         }
-        public TestConsole btn_CreateNewLoan_Click(string input)
+        public void btn_CreateNewLoan_Click(string input)
         {
             AndCondition andCond = new AndCondition(
                     new PropertyCondition(AutomationElement.NameProperty, input),
@@ -175,7 +270,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
             new TestConsole();
             Thread.Sleep(1000);
 
-            return new TestConsole();
+            EncompassDialog.Initialize().btn_OK_Click();
         }
         public TestConsole btn_AddCoBorrower_Click()
         {
@@ -229,7 +324,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         private PropertyCondition txt_DownPayment = new PropertyCondition(AutomationElement.NameProperty, "1335: The portion of the purchase price paid by the borrower that is not covered by the loan amount or other financing. The Down Payment % (field 1771) will be calculated for you.");
         private PropertyCondition txt_Refinance = new PropertyCondition(AutomationElement.NameProperty, "1092: If this is a refinance loan, the total liens and other debts to be paid from the loan proceeds. Liabilities included in the total are marked as 'to be paid off' on the VOL.");
         private PropertyCondition txt_BorrowerEmail = new PropertyCondition(AutomationElement.NameProperty, "1240: The borrower's home email address.");
-
+        
         public TestConsole txt_SubjectProperty_Address_SendKeys(string Input)
         {
             aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SubjectProperty_Address);
@@ -281,7 +376,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
             return this;
         }
-        public void txt_SubjectProperty_ZipCode_SendKeys(string Input)
+        public TestConsole txt_SubjectProperty_ZipCode_SendKeys(string Input)
         {
             aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SubjectProperty_ZipCode);
             aElement.SetFocus();
@@ -297,6 +392,8 @@ namespace BaseAutomationFramework.PageObjects.Encompass
             Thread.Sleep(1000);
             Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
             Thread.Sleep(3000);
+
+            return this;
 
         }
         public TestConsole txt_SubjectProperty_County_SendKeys(string Input)
@@ -414,35 +511,47 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         #endregion
 
         #region Checkboxes
-        private SearchCriteria chk_UnderwritingBypass = SearchCriteria.ByAutomationId("__cid_CheckBox1_Ctrl");
-        private SearchCriteria chk_CreditReportBypass = SearchCriteria.ByAutomationId("__cid_CheckBox3_Ctrl");
-        private SearchCriteria chk_WestVM_Bypass = SearchCriteria.ByAutomationId("__cid_CheckBox2_Ctrl");
-        private SearchCriteria chk_SmartGFE_Bypass = SearchCriteria.ByAutomationId("__cid_CheckBox4_Ctrl");
+        private PropertyCondition chk_UnderwritingBypass = new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_CheckBox1_Ctrl");
+        private PropertyCondition chk_CreditReportBypass = new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_CheckBox3_Ctrl");
+        private PropertyCondition chk_WestVM_Bypass = new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_CheckBox2_Ctrl");
+        private PropertyCondition chk_SmartGFE_Bypass = new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_CheckBox4_Ctrl");
 
-        public TestConsole chk_UnderwritingBypass_Check(bool Check)
+        public TestConsole chk_UnderwritingBypass_Check()
         {
-            ClickCheckBox(Check, chk_UnderwritingBypass);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, chk_UnderwritingBypass);
+            setLegacyIAccessiblePattern(aElement);
+            if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
+                DoDefaultAction(aElement);
             Thread.Sleep(2000);
 
             return this;
         }
-        public TestConsole chk_CreditReportBypass_Check(bool Check)
+        public TestConsole chk_CreditReportBypass_Check()
         {
-            ClickCheckBox(Check, chk_CreditReportBypass);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, chk_CreditReportBypass);
+            setLegacyIAccessiblePattern(aElement);
+            if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
+                DoDefaultAction(aElement);
             Thread.Sleep(2000);
 
             return this;
         }
-        public TestConsole chk_WestVM_Bypass_Check(bool Check)
+        public TestConsole chk_WestVM_Bypass_Check()
         {
-            ClickCheckBox(Check, chk_WestVM_Bypass);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, chk_WestVM_Bypass);
+            setLegacyIAccessiblePattern(aElement);
+            if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
+                DoDefaultAction(aElement);
             Thread.Sleep(2000);
 
             return this;
         }
-        public TestConsole chk_SmartGFE_Bypass_Check(bool Check)
+        public TestConsole chk_SmartGFE_Bypass_Check()
         {
-            ClickCheckBox(Check, chk_SmartGFE_Bypass);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, chk_SmartGFE_Bypass);
+            setLegacyIAccessiblePattern(aElement);
+            if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
+                DoDefaultAction(aElement);
             Thread.Sleep(2000);
 
             return this;
@@ -450,5 +559,6 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
         #endregion
 
+        
     }
 }

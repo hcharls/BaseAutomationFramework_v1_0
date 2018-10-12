@@ -86,11 +86,11 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		#region Checkboxes
 
-		internal object chk_Requested_Check(bool v)
+		internal object Chk_Requested_Check(bool v)
 		{
 			throw new NotImplementedException();
 		}
-		internal object chk_Reviewed_Check(bool v)
+		internal object Chk_Reviewed_Check(bool v)
 		{
 			throw new NotImplementedException();
 		}
@@ -98,13 +98,13 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private SearchCriteria chk_Requested = SearchCriteria.ByAutomationId("chkRequested");
 		private SearchCriteria chk_Reviewed = SearchCriteria.ByAutomationId("chkReviewed");
 
-		public DocumentDetails Chk_Requested_Check(bool Check)
+		public DocumentDetails chk_Requested_Check(bool Check)
 		{
 			ClickCheckBox(Check, chk_Requested);
 
 			return this;
 		}
-		public DocumentDetails Chk_Reviewed_Check(bool Check)
+		public DocumentDetails chk_Reviewed_Check(bool Check)
 		{
 			ClickCheckBox(Check, chk_Reviewed);
 

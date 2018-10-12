@@ -694,6 +694,7 @@ namespace BaseAutomationFramework.PageObjects
 		}
 
 
+
         //public static void clickElement_Rectangle(UIItem uiItem)
         //{
         //    Mouse.Instance.Click(CenterOfBounds(uiItem.AutomationElement.Current.BoundingRectangle));
@@ -716,7 +717,7 @@ namespace BaseAutomationFramework.PageObjects
         //    return new System.Drawing.Point((bounds.Left + bounds.Right) / 2.0, (bounds.Top + bounds.Bottom) / 2.0);
         //}
 
-		public static string transformValidDateString(string DateTime_ShortDateString)
+        public static string transformValidDateString(string DateTime_ShortDateString)
 		{
 			string[] dtArray = DateTime_ShortDateString.Split('/');
 			if (dtArray[0].Length == 1)

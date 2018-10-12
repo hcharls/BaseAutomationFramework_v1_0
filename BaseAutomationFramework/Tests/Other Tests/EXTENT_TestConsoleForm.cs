@@ -108,7 +108,7 @@ namespace BaseAutomationFramework.Tests.Encompass
 
                 TestConsole
                      .Initialize()
-                     .rdb_CashOutRefi_Select()
+                     .rdb_NoCashOutRefi_Select()
                      .rdb_Direct_Select()
                      .txt_BorrowerEmail_SendKeys(MasterData.BorrowerEmail);
 

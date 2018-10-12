@@ -185,8 +185,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_SubjectProperty_ZipCode = new PropertyCondition(AutomationElement.NameProperty, "15: The zip code in which the subject property is located.");
 		private PropertyCondition txt_EstimatedValue = new PropertyCondition(AutomationElement.NameProperty, "1821: The estimated value of the subject property. The value can be estimated based on information such as the list price, recent sales of similar properties in the area, or recent property tax assessments.");
 		private PropertyCondition txt_AppraisedValue = new PropertyCondition(AutomationElement.NameProperty, "356: The appraised value of the subject property.");
-		//Transaction Details
-		private PropertyCondition txt_DownPaymentPercent = new PropertyCondition(AutomationElement.NameProperty, "1771: Percent of the purchase price paid by the borrower that is not covered by the loan amount or other financing. The dollar value of the down payment (field 1335) will be calculated for you.");
+        //Transaction Details
+        private PropertyCondition txt_LoanNumber = new PropertyCondition(AutomationElement.NameProperty, "364: The alpha-numeric identifier assigned to the loan. You can use the Auto Loan Numbering feature to automatically create a loan number when a loan is started or sent to processing, or you can type a loan number.");
+        private PropertyCondition txt_DownPaymentPercent = new PropertyCondition(AutomationElement.NameProperty, "1771: Percent of the purchase price paid by the borrower that is not covered by the loan amount or other financing. The dollar value of the down payment (field 1335) will be calculated for you.");
 		private PropertyCondition txt_DownPayment = new PropertyCondition(AutomationElement.NameProperty, "1335: The portion of the purchase price paid by the borrower that is not covered by the loan amount or other financing. The Down Payment % (field 1771) will be calculated for you.");
 		private PropertyCondition txt_DueIn = new PropertyCondition(AutomationElement.NameProperty, "325: Length of time in months before the principal balance is due. For a fully amortizing loan, this field is equal to the amortization term (field 4). For a balloon loan, this field is less than the amortization term.");
 		private PropertyCondition txt_EstClosingDate = new PropertyCondition(AutomationElement.NameProperty, "763: The loan's estimated closing date.");
@@ -469,8 +470,22 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
             return this;
 		}
-		//Purchase - Additional Information
-		public BorrowerSummary txt_SellingAgentName_SendKeys(string Input)
+        public BorrowerSummary CopyLoanNumber()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_LoanNumber);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds(); Thread.Sleep(500);
+            Mouse.LeftDown(); Mouse.LeftUp(); Mouse.LeftDown(); Mouse.LeftUp(); Thread.Sleep(1000);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("c");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(1000);
+
+            return this;
+        }
+
+        //Purchase - Additional Information
+        public BorrowerSummary txt_SellingAgentName_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_SellingAgentName);
 			aElement.SetFocus();

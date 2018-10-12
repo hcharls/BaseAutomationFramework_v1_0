@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BaseAutomationFramework",
+    "\\BaseAutomationFramework\\Tests",
+    "\\BaseAutomationFramework\\Tests\\Loan Creation",
+    "\\BaseAutomationFramework\\Tests\\Loan Creation\\Conventional",
+    "\\BaseAutomationFramework\\Tests\\Loan Creation\\Conventional\\Conv_NoCashOutRefi"
   ],
+  "SelectedNode": "\\BaseAutomationFramework\\Tests\\CodeChecker.cs",
   "PreviewInSolutionExplorer": false
 }

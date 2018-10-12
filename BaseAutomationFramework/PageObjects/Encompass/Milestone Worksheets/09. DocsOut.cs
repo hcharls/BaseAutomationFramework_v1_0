@@ -66,13 +66,13 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		#region Tasks
 
-		public DocsOut chk_QCReviewTasks_Check()
+		public DocsOut chk_ReviewTasks_Check()
 		{
 			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("gridViewTasks"));
 
-			Point AllComplianceReportsAndCertificatesCleared = new Point(1131, 314);
+			Point Task1 = new Point(1131, 314);
 
-			Mouse.Instance.Location = AllComplianceReportsAndCertificatesCleared;
+			Mouse.Instance.Location = Task1;
 			Mouse.LeftDown();
 			Mouse.LeftUp();
 			Thread.Sleep(1000);
@@ -101,12 +101,12 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		private PropertyCondition txt_PropertyInfoParcelNumber = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_1894");
 
-		public DocsOut txt_PropertyInfoParcelNumber_SendKeys(string Input)
+		public DocsOut txt_PropertyInfoParcelNumber_SendKeys()
 		{
 			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_PropertyInfoParcelNumber);
 			aElement.SetFocus();
-			Keyboard.Instance.Enter(Input);
+			Keyboard.Instance.Enter("76876786");
 			Thread.Sleep(500);
 
 			return this;

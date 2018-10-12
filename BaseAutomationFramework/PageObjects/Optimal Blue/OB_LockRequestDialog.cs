@@ -14,7 +14,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 {
 	public class OB_LockRequestDialog : BaseScreen
 	{
-		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("QuickEntryPopupDialog");
+		public static SearchCriteria scWindow = SearchCriteria.ByAutomationId("LockRequestProcessDialog");
 		public static SearchCriteria[] scArray = { EncompassMain.scWindow, scWindow };
 		public const bool SET_MAXIMIZED = true;
 		private AutomationElement aePanel = null;

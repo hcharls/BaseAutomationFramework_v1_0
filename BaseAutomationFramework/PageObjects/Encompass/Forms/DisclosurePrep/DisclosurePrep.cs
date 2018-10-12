@@ -51,9 +51,11 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition cmb_ImpoundsWillBeFor = new PropertyCondition(AutomationElement.AutomationIdProperty, "impoundTypesDropdown");
 		private PropertyCondition cmb_AddingRemovingSomeoneFromTitle = new PropertyCondition(AutomationElement.AutomationIdProperty, "addRemoveTitleDropdown");
 		private PropertyCondition cmb_DocumentDeliveryPreference = new PropertyCondition(AutomationElement.AutomationIdProperty, "docPrefBox");
-		//
+        private PropertyCondition cmb_PropertyInspectionWaiver = new PropertyCondition(AutomationElement.AutomationIdProperty, "piwDropdown");
 
-		public DisclosurePrep cmb_WillThereBeSubordination_SendKeys(string Input)
+        //
+
+        public DisclosurePrep cmb_WillThereBeSubordination_SendKeys(string Input)
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_WillThereBeSubordination);
 			aElement.SetFocus();
@@ -119,16 +121,27 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_DocumentDeliveryPreference);
 			aElement.SetFocus();
-			Keyboard.Instance.Enter(Input);
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.Enter(Input);
 			Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
 			Thread.Sleep(1000);
 
 			return this;
 		}
-		#endregion
+        public DisclosurePrep cmb_PropertyInspectionWaiver_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_PropertyInspectionWaiver);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
+            Thread.Sleep(1000);
 
-		#region Buttons
-		private PropertyCondition btn_GenerateEstimatedClosingDatesandStandardFees = new PropertyCondition(AutomationElement.AutomationIdProperty, "disclosureDatesButton");
+            return this;
+        }
+        #endregion
+
+        #region Buttons
+        private PropertyCondition btn_GenerateEstimatedClosingDatesandStandardFees = new PropertyCondition(AutomationElement.AutomationIdProperty, "disclosureDatesButton");
 		private PropertyCondition btn_SmartGFE = new PropertyCondition(AutomationElement.AutomationIdProperty, "gfeButton");
         private PropertyCondition btn_WestVM = new PropertyCondition(AutomationElement.AutomationIdProperty, "gfeButton");
         private PropertyCondition btn_Review2015Itemization = new PropertyCondition(AutomationElement.AutomationIdProperty, "reviewItemizationButton");
@@ -167,18 +180,21 @@ namespace BaseAutomationFramework.PageObjects.Encompass
         {
             aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_WestVM);
             aElement.ClickCenterOfBounds();
-            Thread.Sleep(500);
+            Thread.Sleep(5000);
 
         }
         public DisclosurePrep btn_Review2015Itemization_Click()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Review2015Itemization);
 			aElement.ClickCenterOfBounds();
-			Thread.Sleep(10000);
-            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE);
-            Thread.Sleep(8000);
-
-            return new DisclosurePrep();
+			Thread.Sleep(5000);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.ALT);
+            Thread.Sleep(500);
+            Keyboard.Instance.Enter("c");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(5000);
+            
+            return this;
 		}
 		public DisclosurePrep btn_RunComplianceReport_Click()
 		{

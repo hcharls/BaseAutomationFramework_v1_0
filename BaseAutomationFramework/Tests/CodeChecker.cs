@@ -1,21 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Automation;
 using BaseAutomationFramework.PageObjects.Encompass;
 using NUnit.Framework;
-using TestStack.White.InputDevices;
-using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.ListBoxItems;
-using BaseAutomationFramework.Tools;
-using BaseAutomationFramework.DataObjects;
 using System.Threading;
-using System.IO;
-using BaseAutomationFramework.PageObjects.Yahoo;
 using BaseAutomationFramework.PageObjects;
 using BaseAutomationFramework.PageObjects.EncompassLoanCenter;
 
@@ -27,10 +16,9 @@ namespace BaseAutomationFramework.Tests.Encompass
 		[Test]
 		public void ControlChecker()	
 		{
-            // AttachToProcess(Processes.Encompass, 5);
+            AttachToProcess(Processes.Encompass, 5);
 
-            TestConsole.Initialize().btn_CreateNewLoan_Click(MasterData.TestDescription);
-
+            
 
         }
 
@@ -168,7 +156,17 @@ namespace BaseAutomationFramework.Tests.Encompass
 
 
         }
+        [Test]
+        public void SmartFees()
+        {
+           // AttachToProcess(Processes.Encompass, 5);
 
+            string one = "Five";
+            string two = "Fove";
+
+            Assert.AreEqual(one, two);
+
+        }
 
         [Test, TestCaseSource(typeof(BaseTest.TestData), "DataforThisThing")]
         public void dummy1(IDictionary<string, string> data)
@@ -243,37 +241,26 @@ namespace BaseAutomationFramework.Tests.Encompass
         [Test]
         public void eConsent()
         {
-            AttachToProcess(Processes.Encompass, 5);
+            #region eConsent
 
             eConsentNotYetReceived.Open_FromAlertsandMessagesTab().btn_Request_eConsent_Click();
 
-            SendConsent
-                .Initialize()
-                        .chk_BorrowerConsent_Check(true)
-                        .chk_NotifyWhenBorrowerReceives_Check(true)
-                        .btn_Send_Click();
+            SendConsent.Initialize().chk_BorrowerConsent_Check(true).chk_NotifyWhenBorrowerReceives_Check(true).btn_Send_Click();
 
-            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome);
-            BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
+            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
 
-            BorrowerLoanCenterLogIn.Initialize()
-                .txt_Email_SendKeys("hcpemtesting@gmail.com")
-                .txt_Password_SendKeys("P@ramount1")
-                .btn_Login_Click();
+            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys(MasterData.BorrowerEmail).txt_Password_SendKeys("P@ramount1").btn_Login_Click();
 
-            CheckLoanStatus.Initialize().fn_SelectFirstRow();
-
-            LoanDetail
-                .Initialize()
-                .btn_View_Click();
+            CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
 
             AgreeToReceiveDisclosuresElectronically.Initialize().btn_Agree_Click(); BaseSeleniumPage.CloseDriver();
 
             eConsentNotYetReceived.Initialize().btn_View_eConsent_Click();
 
+            #endregion eConsent
 
         }
-    
+
 
         [TestFixtureSetUp]
 		public void OnFixtureSetup()

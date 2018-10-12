@@ -90,9 +90,13 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private PropertyCondition txt_SellerState = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_1249");
 		private PropertyCondition txt_SellerName = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_638");
 
+        private PropertyCondition cmb_PropertyInfoFloodZone = new PropertyCondition(AutomationElement.AutomationIdProperty, "l_541");
+        private PropertyCondition txt_FloodInfoDeterminationDate = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_2365");
+        private PropertyCondition txt_FloodInfoCertNumber = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_2363");
+        private PropertyCondition txt_PropertyInfoFloodCertification = new PropertyCondition(AutomationElement.AutomationIdProperty, "b_2977");
+        
 
-
-		public ConditionsSent txt_HazardInsCoName_SendKeys(string Input)
+        public ConditionsSent txt_HazardInsCoName_SendKeys(string Input)
 		{
 			Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_HazardInsCoName);
@@ -516,12 +520,52 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return this;
 		}
+        public ConditionsSent cmb_PropertyInfoFloodZone_SendKeys(string Input)
+        {
+            Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_PropertyInfoFloodZone);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
 
-		#endregion
+            return this;
+        }
+        public ConditionsSent txt_FloodInfoDeterminationDate_SendKeys(string Input)
+        {
+            Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_FloodInfoDeterminationDate);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
 
-		#region Checkboxes
+            return this;
+        }
+        public ConditionsSent txt_FloodInfoCertNumber_SendKeys(string Input)
+        {
+            Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_FloodInfoCertNumber);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
 
-		private SearchCriteria chk_Finish = SearchCriteria.ByAutomationId("checkBoxFinished");
+            return this;
+        }
+        public ConditionsSent txt_PropertyInfoFloodCertification_SendKeys(string Input)
+        {
+            Panel thing = PageObjects.BaseScreen.Screen.Get<Panel>(SearchCriteria.ByAutomationId("panelFields"));
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_PropertyInfoFloodCertification);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
+
+            return this;
+        }
+
+        #endregion
+
+        #region Checkboxes
+
+        private SearchCriteria chk_Finish = SearchCriteria.ByAutomationId("checkBoxFinished");
 
 		public ConditionsSent chk_Finish_Check()
 		{
@@ -537,7 +581,19 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return this;
 		}
 
-		#endregion
+        #endregion
 
-	}
+        #region Loan Type Methods
+
+        public ConditionsSent CompleteReqFields_DirectConvNoCashOutRefi()
+        {
+            txt_HazardInsCoRef_SendKeys("7676565576")
+            .txt_TaxPayHazardInsurance_SendKeys("100,000")
+            .txt_HazardInsLastPaidDate_SendKeys("09/01/2018");
+            
+            return this;
+        }
+        #endregion
+
+    }
 }

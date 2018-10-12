@@ -56,6 +56,22 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			return new URLA_Page2();
 		}
 
-		#endregion
-	}
+        #endregion
+
+        #region Combo Boxes
+
+        private PropertyCondition cmb_MortgageType1 = new PropertyCondition(AutomationElement.AutomationIdProperty, "DropdownBox9");
+
+        public URLA_Page2 cmb_MortgageType1_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_MortgageType1);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
+
+            return this;
+        }
+
+        #endregion
+    }
 }

@@ -16,23 +16,27 @@ namespace BaseAutomationFramework.DataObjects
 		private string colTestID = @"Test ID";
 		private string colTestDescription = @"Test Description";
         private string colLoanCreator = @"Loan Creator";
+        private string colEnvironmentName = @"Environment Name";
         private string colEnvironmentID = @"Environment ID";
         private string colClientID = @"Client ID";
-		private string colLoanNumber = @"[364] Loan Number";
+		private string colLoanOfficer = @"Loan Officer";
 		private string colOB_Login = @"OB Login";
 		private string colOB_Password = @"OB Password";
         private string colAuthorizationCode = @"Authorization Code";
-        private string colLoanCenterPassword = @"Loan Center Password";
-		private string colBorrowerEmail = @"[1240] Borrower Email";
+        private string colBorrowerEmail = @"[1240] Borrower Email";
 		private string colAddress = @"[11] Address";
 		private string colCity = @"[12] City";
 		private string colState = @"[14] State";
 		private string colZip = @"[15] Zip";
 		private string colCounty = @"[13] County";
-        //private string colImpoundsDueDates = @"Impounds Due Date(s)";
-        //private string colImpoundsFirstPayment = @"Impounds First Payment";
-        //private string colImpoundsMonths = @"Impounds Months";
-        //private string colImpounds904Months = @"Impounds 904 Months";
+        private string colExpirationDate = @"Expiration Date";
+        //private string colFirstBoxChecked = @"FirstBoxChecked";
+        //private string colSecondBoxChecked = @"SecondBoxChecked";
+        //private string colLoanCenterPassword = @"Loan Center Password";
+        private string colImpoundsDueDates = @"Impounds Due Date(s)";
+        private string colImpoundsFirstPayment = @"Impounds First Payment";
+        private string colImpoundsMonths = @"Impounds Months";
+        private string colImpounds904Months = @"Impounds 904 Months";
         //private string colLoanFolder = @"Loan Folder";
         //private string colLoanProgram = @"[1401] Loan Program";
         //private string colBorrowerFirstName = @"[4000] Borrower First Name";
@@ -54,7 +58,7 @@ namespace BaseAutomationFramework.DataObjects
         //private string colAmortizationType = @"[608] Amortization Type";
         //private string colPurchasePrice = @"[136] Purchase Price";
         //private string colLoanAmount = @"[1109] Loan Amount";
-        //private string colFirstPaymentDate = @"[682] First Payment Date";
+        private string colFirstPaymentDate = @"[682] First Payment Date";
         //private string colVAAppraisalFee = @"VA Appraisal Fee";
         //private string colCoBorrowerFirstName = @"[4004] CoBorrower First Name";
         //private string colCoBorrowerLastName = @"[4005] CoBorrower Last Name";
@@ -72,25 +76,28 @@ namespace BaseAutomationFramework.DataObjects
 		public string TestID { get; private set; }
 		public string TestDescription { get; set; }
         public string LoanCreator { get; set; }
-		public string Environment { get; private set; }
+		public string EnvironmentName { get; private set; }
 		public string EnvironmentID { get; set; }
         public string ClientID { get; set; }
-		public string LoanNumber { get; set; }
+		public string LoanOfficer { get; set; }
 		public string OB_Login { get; set; }
 		public string OB_Password { get; set; }
         public string AuthorizationCode { get; set; }
-        public string LoanCenterPassword { get; set; }
-        public string LoanProgram { get; set; }
 		public string BorrowerEmail { get; set; }
 		public string Address { get; set; }
 		public string City { get; set; }
 		public string State { get; set; }
 		public string Zip { get; set; }
 		public string County { get; set; }
-        //public string ImpoundsDueDates { get; set; }
-        //public string ImpoundsFirstPayment { get; set; }
-        //public string ImpoundsMonths { get; set; }
-        //public string Impounds904Months { get; set; }
+        public string ExpirationDate { get; set; }
+        //public string FirstBoxChecked { get; set; }
+        //public string SecondBoxChecked { get; set; }
+        //public string LoanProgram { get; set; }
+        //public string LoanCenterPassword { get; set; }
+        public string ImpoundsDueDates { get; set; }
+        public string ImpoundsFirstPayment { get; set; }
+        public string ImpoundsMonths { get; set; }
+        public string Impounds904Months { get; set; }
         //public string LoanFolder { get; set; }
         //public string BorrowerFirstName { get; set; }
         //public string BorrowerLastName { get; set; }
@@ -111,7 +118,7 @@ namespace BaseAutomationFramework.DataObjects
         //public string NoUnits { get; set; }
         //public string PropertyType { get; set; }
         //public string TransPropertyType { get; set; }
-        //public string FirstPaymentDate { get; set; }
+        public string FirstPaymentDate { get; set; }
         //public string VAAppraisalFee { get; set; }
         //public string CoBorrowerFirstName { get; set; }
         //public string CoBorrowerLastName { get; set; }
@@ -127,23 +134,27 @@ namespace BaseAutomationFramework.DataObjects
 			this.TestID = TestData[colTestID];
 			this.TestDescription = TestData[colTestDescription];
             this.LoanCreator = TestData[colLoanCreator];
-			this.EnvironmentID = TestData[colEnvironmentID];
+            this.EnvironmentName = TestData[colEnvironmentName];
+            this.EnvironmentID = TestData[colEnvironmentID];
             this.ClientID = TestData[colClientID];
-			this.LoanNumber = TestData[colLoanNumber];
+			this.LoanOfficer = TestData[colLoanOfficer];
 			this.OB_Login = TestData[colOB_Login];
 			this.OB_Password = TestData[colOB_Password];
             this.AuthorizationCode = TestData[colAuthorizationCode];
-            this.LoanCenterPassword = TestData[colLoanCenterPassword];
-			this.BorrowerEmail = TestData[colBorrowerEmail];
+            this.BorrowerEmail = TestData[colBorrowerEmail];
 			this.Address = TestData[colAddress];
 			this.City = TestData[colCity];
 			this.State = TestData[colState];
 			this.Zip = TestData[colZip];
 			this.County = TestData[colCounty];
-            //this.ImpoundsDueDates = TestData[colImpoundsDueDates];
-            //this.ImpoundsFirstPayment = TestData[colImpoundsFirstPayment];
-            //this.ImpoundsMonths = TestData[colImpoundsMonths];
-            //this.Impounds904Months = TestData[colImpounds904Months];
+            this.ExpirationDate = TestData[colExpirationDate];
+            //this.FirstBoxChecked = TestData[colFirstBoxChecked];
+            //this.SecondBoxChecked = TestData[colSecondBoxChecked];
+            //this.LoanCenterPassword = TestData[colLoanCenterPassword];
+            this.ImpoundsDueDates = TestData[colImpoundsDueDates];
+            this.ImpoundsFirstPayment = TestData[colImpoundsFirstPayment];
+            this.ImpoundsMonths = TestData[colImpoundsMonths];
+            this.Impounds904Months = TestData[colImpounds904Months];
             //this.LoanFolder = TestData[colLoanFolder];
             //this.LoanProgram = TestData[colLoanProgram];
             //this.BorrowerFirstName = TestData[colBorrowerFirstName];
@@ -165,7 +176,7 @@ namespace BaseAutomationFramework.DataObjects
             //this.NoUnits = TestData[colNoUnits];
             //this.PropertyType = TestData[colPropertyType];
             //this.TransPropertyType = TestData[colTransPropertyType];
-            //this.FirstPaymentDate = TestData[colFirstPaymentDate];
+            this.FirstPaymentDate = TestData[colFirstPaymentDate];
             //this.VAAppraisalFee = TestData[colVAAppraisalFee];
             //this.CoBorrowerFirstName = TestData[colCoBorrowerFirstName];
             //this.CoBorrowerLastName = TestData[colCoBorrowerLastName];
@@ -178,7 +189,7 @@ namespace BaseAutomationFramework.DataObjects
             #endregion
 
         }
-        
+
 
     }
 }

@@ -30,19 +30,19 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 		string pathStem;
 		string testMethodName;
 		string path;
-		string TestReportName = "EITQ-3276 Maryland Tax Impounds Primary Retest";
+		string TestReportName = "EITQ-3794 Massachusetts Impounds 1 of 2";
 
 
 		[GetTestSet("Test")]
 		[TestCaseSource(typeof(GetTestData), "Screen")]
 
-		public void EITQ_3276_Maryland_Tax_Impounds_Primary_Retest(IDictionary<string, string> data)
+		public void EITQ_3794(IDictionary<string, string> data)
 		{
 			MasterData = new objMasterData(data);
 			className = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name;
 			testMethodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
-			//MasterData.TestResultPathStem = string.Format(FileUtilities.DefaultTestResultDirectory, className);
-			MasterData.TestResultPathStem = string.Format("{0}\\{1}\\{2}\\{3} - {4}", FileUtilities.DefaultTestResultDirectory_ShareDrive, className, testMethodName, Environment.UserName, runTime);
+			MasterData.TestResultPathStem = string.Format(FileUtilities.DefaultTestResultDirectory, className);
+			//MasterData.TestResultPathStem = string.Format("{0}\\{1}\\{2}\\{3} - {4}", FileUtilities.DefaultTestResultDirectory_ShareDrive, className, testMethodName, Environment.UserName, runTime);
 			path = string.Format("{0}\\{1}.html", MasterData.TestResultPathStem, TestReportName);
 
 			if (!Directory.Exists(string.Format("{0}", MasterData.TestResultPathStem)))
@@ -51,55 +51,55 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 			if (BaseTest.HtmlReport == null)
 				InitializeExtentReports(path, TestReportName);
 
-			//BaseTest.extentTest = ExtentReport.CreateTest(MasterData.TestID + " (First Payment Month = " + MasterData.ImpoundsFirstPayment + ")");
+			BaseTest.extentTest = ExtentReport.CreateTest(MasterData.TestID + " (First Payment Month = " + MasterData.ImpoundsFirstPayment + ")");
 
 			string StepDetails = string.Format("Impounds Testing");
 			bool StepStatus = true;
 			string MethodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
 			try
 			{
-				//Impounds (unlocked loan must be up to Step 4 of Disclosure Prep (TRID) form)
+                //Impounds(unlocked loan must be up to Step 4 of Disclosure Prep(TRID) form)
 
-				//extentTest.Pass("Pass step description.");
 
-				//AttachToProcess(Processes.Encompass, 5);
+                //extentTest.Pass("Pass step description.");
 
-				//URLA_Page1
-				//	.OpenForm_FromFormsTab()
-				//	.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
-				////extentTest.Pass("Verified Subject Property Address is in " + MasterData.County + " County, " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_address"), true)).Build());
-				//extentTest.Pass("Verified Subject Property Address is in " + MasterData.County + " County, " + MasterData.State + " and Property Will Be field [1811] = " + MasterData.PropertyWillBe, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_address"), true)).Build());
+                AttachToProcess(Processes.Encompass, 5);
 
-				//RegZCD
-				//	.OpenForm_FromFormsTab()
-				//	.txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
-				//extentTest.Pass("Populated First Payment Date field [682] on RegZ-CD with " + MasterData.FirstPaymentDate, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FirstPaymentDate"), true)).Build());
+                URLA_Page1
+                    .OpenForm_FromFormsTab()
+                    .txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
+                extentTest.Pass("Verified Subject Property is in " + MasterData.City + ", " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_address"), true)).Build());
 
-				//Itemization
-				//	.OpenForm_FromFormsTab()
-				//	.btn_ScrollDown1100_Click()
-				//	.btn_AggregateSetup_Click();
+                RegZCD
+                    .OpenForm_FromFormsTab()
+                    .txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
+                extentTest.Pass("Populated First Payment Date field [682] on RegZ-CD with " + MasterData.FirstPaymentDate, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FirstPaymentDate"), true)).Build());
 
-				//AggregateSetup
-				//	.Initialize()
-				//	.DragWindow_AggregateSetup();
-				//extentTest.Pass("Opened Aggregate Setup window and verified Due Date(s) = " + MasterData.ImpoundsDueDates + " and verified Property Taxes mths field [1386] = " + MasterData.ImpoundsMonths + " when First Payment Month = " + MasterData.ImpoundsFirstPayment, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_impounds"), true)).Build());
+                Itemization
+                    .OpenForm_FromFormsTab()
+                    .btn_ScrollDown1100_Click()
+                    .btn_AggregateSetup_Click();
 
-				//AggregateSetup
-				//	.Initialize()
-				//	.btn_OK_Click();
-				//extentTest.Pass("Verified line 1004 Property Taxes mths field [1386] remains populated with '" + MasterData.ImpoundsMonths + "' after Aggregate Setup window is closed", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_AggregateSetupClosed"), true)).Build());
+                AggregateSetup
+                    .Initialize()
+                    .DragWindow_AggregateSetup();
+                extentTest.Pass("Opened Aggregate Setup window and verified Due Date(s) = " + MasterData.ImpoundsDueDates + " and verified Property Taxes mths field [1386] = " + MasterData.ImpoundsMonths + " when First Payment Month = " + MasterData.ImpoundsFirstPayment, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_impounds"), true)).Build());
 
-				//Itemization
-				//	.Initialize()
-				//	.btn_ScrollUp900_Click();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                AggregateSetup
+                    .Initialize()
+                    .btn_OK_Click();
+                extentTest.Pass("Verified line 1004 Property Taxes mths field [1386] remains populated with '" + MasterData.ImpoundsMonths + "' after Aggregate Setup window is closed", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_AggregateSetupClosed"), true)).Build());
 
-				//Itemization
-				//	.Initialize()
-				//	.txt_PropertyTaxesMths_SendKeys(" ");
+                Itemization
+                    .Initialize()
+                    .btn_ScrollUp900_Click();
+                extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
 
-			}
+                Itemization
+                    .Initialize()
+                    .txt_PropertyTaxesMths_SendKeys(" ");
+
+            }
 
 			catch (Exception ex)
 			{

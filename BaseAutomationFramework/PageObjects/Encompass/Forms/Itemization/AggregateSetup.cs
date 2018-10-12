@@ -76,7 +76,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public void btn_OK_Click()
 		{
-			GetButton(btn_OK).Click();
+            GetButton(btn_OK).Click();
 			Thread.Sleep(5000);
 		}
 

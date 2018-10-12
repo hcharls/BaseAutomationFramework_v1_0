@@ -104,7 +104,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 		public void tab_Loan_Select()
 		{
-			tab_MainTabs_Return().SelectTabPage("Loan");
+            tab_MainTabs_Return().SelectTabPage("Loan");
 		}
         public void tab_ServicesView_Select()
         {

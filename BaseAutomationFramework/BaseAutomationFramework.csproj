@@ -116,29 +116,35 @@
     <Compile Include="PageObjects\DocuSign\AgreeToReceiveDisclosuresElectronically.cs" />
     <Compile Include="PageObjects\DocuSign\DocuSign.cs" />
     <Compile Include="PageObjects\DocuSign\LoanOfficerLoanCenterLogIn.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\AUS_DetailsQuickEntry.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\AUS_DetailsQuickEntry.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\DisclosuresAudit.cs" />
+    <Compile Include="PageObjects\Encompass\Forms\FloodInformation.cs" />
+    <Compile Include="PageObjects\Encompass\Forms\AdditionalRequestsInformation.cs" />
     <Compile Include="PageObjects\Encompass\Forms\ClosingDisclosure\ClosingDisclosurePage5.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\EncompassDialogCDSent.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SelectDocumentsClosing.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SendDisclosuresClosing.cs" />
     <Compile Include="PageObjects\Equifax Credit\CreditReport.cs" />
     <Compile Include="PageObjects\Equifax Credit\CreditReportRequest.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\ClosingDocsAudit.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\ComplianceAlert.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\ComplianceReview.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\DisclosedLESnapshot.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\DisclosureDetails.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\DisclosurePlanCode.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\DisclosuresDialog.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\ExitEncompass.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\PaymentProcessing.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\QuickEntryBankerLoanSubmission.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\SelectDocuments.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\SelectLoanTeamMember.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\SelectPlanCode.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\SelectReportType.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\SendDisclosures.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\Order_eDisclosures.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\ClosingDocsAudit.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\ComplianceAlert.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\CompliancePreview.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\DisclosedLESnapshot.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\DisclosureDetails.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\DisclosurePlanCode.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\DisclosuresDialog.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\ExitEncompass.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\PaymentProcessing.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\QuickEntryBankerLoanSubmission.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SelectDocumentsInitial.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SelectLoanTeamMember.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SelectPlanCode.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SelectReportType.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SendDisclosuresInitial.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\Order_eDisclosures.cs" />
     <Compile Include="PageObjects\Encompass\eConsent\eConsentNotYetReceived.cs" />
     <Compile Include="PageObjects\Encompass\eConsent\SendConsent.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\EncompassDialog.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\EncompassDialog.cs" />
     <Compile Include="PageObjects\Encompass\eFolder\AddDocument.cs" />
     <Compile Include="PageObjects\Encompass\eFolder\DocumentDetails.cs" />
     <Compile Include="PageObjects\Encompass\eFolder\Encompass_eFolder.cs" />
@@ -169,7 +175,7 @@
     <Compile Include="PageObjects\Encompass\Forms\MortgagePayoff.cs" />
     <Compile Include="PageObjects\Encompass\Forms\1003 Pages 1-3\URLA_Page2_CalculateBaseIncome.cs" />
     <Compile Include="PageObjects\Encompass\EncompassMain.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\Launcher.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\Launcher.cs" />
     <Compile Include="PageObjects\Encompass\Forms\PreFundingQCCustomForm.cs" />
     <Compile Include="PageObjects\Encompass\Forms\RegZCD.cs" />
     <Compile Include="PageObjects\Encompass\Forms\TestConsole.cs" />
@@ -199,12 +205,12 @@
     <Compile Include="PageObjects\Optimal Blue\OB_LockRequestDialog.cs" />
     <Compile Include="PageObjects\Optimal Blue\OB_PricingImportEncompassUpdate.cs" />
     <Compile Include="PageObjects\Optimal Blue\OB_SearchResults.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\SelectaCity.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\SelectaCity.cs" />
     <Compile Include="PageObjects\Encompass\Tabs\AlertsandMessagesTab.cs" />
     <Compile Include="PageObjects\Encompass\Tabs\FormsTab.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\Login.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\Login.cs" />
     <Compile Include="PageObjects\Encompass\Forms\1003 Pages 1-3\VOE_NewEmployment.cs" />
-    <Compile Include="PageObjects\Encompass\Dialog Windows\NewLoan.cs" />
+    <Compile Include="PageObjects\Encompass\Other Windows\NewLoan.cs" />
     <Compile Include="PageObjects\Optimal Blue\OB_ProductSearch.cs" />
     <Compile Include="PageObjects\Encompass\Pipeline.cs" />
     <Compile Include="PageObjects\Optimal Blue\OB_ProductandPricing.cs" />
@@ -228,53 +234,31 @@
     <Compile Include="PageObjects\DocuSign\VerifyIdentity.cs" />
     <Compile Include="PageObjects\DocuSign\LoanDetail.cs" />
     <Compile Include="PageObjects\YahooMain.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Tests\LaunchAndLogin\PROD_LaunchAndLogin.cs" />
     <Compile Include="Tests\LaunchAndLogin\STAGE_LaunchAndLogin.cs" />
     <Compile Include="Tests\LaunchAndLogin\TEST_LaunchAndLogin.cs" />
+    <Compile Include="Tests\Loan Creation\EndToEnd.cs" />
     <Compile Include="Tests\Other Tests\EXTENT_TestConsoleForm.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\01. LO_AfterPricing.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Partners_Conv_CashOutRefi.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Partners_Conv_NoCashOutRefi.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Partners_Conv_Purchase.cs" />
-    <Compile Include="Tests\Loan Creation\FHA\Partners_FHA_CashOutRefi.cs" />
-    <Compile Include="Tests\Loan Creation\FHA\Partners_FHA_NoCashOutRefi.cs" />
-    <Compile Include="Tests\Loan Creation\FHA\Partners_FHA_Purchase.cs" />
-    <Compile Include="Tests\Loan Creation\VA\Partners_VA_CashOutRefi.cs" />
-    <Compile Include="Tests\Loan Creation\VA\Partners_VA_Purchase.cs" />
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="PageObjects\Encompass\Forms\1003 Pages 1-3\URLA_Page1.cs" />
     <Compile Include="Tests\Other Tests\ExtentTestSample.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\02. Admin.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\11. Completion.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\05. ConditionsSent.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\08. DocsAndFunding.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\06. FinalUWApproval.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\04. InitialUWDecision.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\03. ProcessingMgr.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\10. Purchase.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\07. QCReview.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\09. Shipping.cs" />
     <Compile Include="Tests\TicketTesting\TEST_ExtentOtherDisclosures.cs" />
     <Compile Include="Tests\TicketTesting\TEST_ExtentImpounds.cs" />
     <Compile Include="Tests\TicketTesting\TEST_Extent_VA_Appraisal_Fees.cs" />
     <Compile Include="Tests\TicketTesting\TEST_Extent_VA_Appraisal.cs" />
     <Compile Include="Tests\TicketTesting\TEST_Old_VA_Appraisal.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_CashOutRefi.cs" />
-    <Compile Include="Tests\Regression\TEST_FloatingEndToEndConvRefi.cs" />
+    <Compile Include="Tests\Other Tests\MasterDataTest.cs" />
     <Compile Include="PageObjects\Encompass\Forms\1003 Pages 1-3\VerificationOfEmployment.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_Purchase.cs" />
-    <Compile Include="Tests\Loan Creation\FHA\FHA_CashOutRefi.cs" />
-    <Compile Include="Tests\Loan Creation\FHA\FHA_Purchase.cs" />
-    <Compile Include="Tests\Loan Creation\FHA\FHA_Streamline.cs" />
     <Compile Include="Tests\TicketTesting\TEST_Old_Impounds.cs" />
-    <Compile Include="Tests\Loan Creation\Conventional\Conv_NoCashOutRefi\0. LO_BeforePricing.cs" />
+    <Compile Include="Tests\Other Tests\TEST_WithoutTestConsole.cs" />
     <Compile Include="Tests\CodeChecker.cs" />
     <Compile Include="Tests\KillEncompass.cs" />
-    <Compile Include="Tests\Loan Creation\FHA\FHA_NoCashOutRefi.cs" />
     <Compile Include="Tests\Other Tests\NewTestTemplate.cs" />
-    <Compile Include="Tests\Loan Creation\VA\VA_CashOutRefi.cs" />
-    <Compile Include="Tests\Loan Creation\VA\VA_Purchase.cs" />
-    <Compile Include="Tests\Loan Creation\VA\VA_IRRRL.cs" />
     <Compile Include="Tests\Other Tests\YahooSearch.cs" />
     <Compile Include="Tools\AutomationElementExtensions.cs" />
     <Compile Include="Tools\ByExtensions.cs" />
@@ -303,6 +287,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

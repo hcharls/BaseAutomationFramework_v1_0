@@ -84,13 +84,11 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new ItemizationQuickEntry();
 		}
-        public ItemizationQuickEntry btn_Close_Click()
+        public void btn_Close_Click()
         {
             aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_Close);
             aElement.ClickCenterOfBounds();
             Thread.Sleep(5000);
-
-            return new ItemizationQuickEntry();
         }
 
         #endregion

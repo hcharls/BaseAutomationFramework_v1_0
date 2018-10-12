@@ -21,9 +21,10 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		}
 
 		public static FormsTab Initialize()
-		{
-			return new FormsTab();
-		}
+        { 
+            return new FormsTab();
+       
+        }
 
         public FormsTab OpenFormsTab()
 		{
@@ -33,8 +34,9 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			Mouse.LeftDown();
 			Mouse.LeftUp();
 			Thread.Sleep(1000);
+            chk_Show_Check(true).chk_ShowInAlpha_Check(true);
 
-			return this;
+            return this;
 	
 		}
 
@@ -59,8 +61,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private SearchCriteria chk_ShowInAlpha = SearchCriteria.ByAutomationId("chkAlphaForms");
 
 		public FormsTab chk_Show_Check(bool Check)
-		{
-			OpenFormsTab();
+        { 
 			ClickCheckBox(Check, chk_Show);
 
 			return this;

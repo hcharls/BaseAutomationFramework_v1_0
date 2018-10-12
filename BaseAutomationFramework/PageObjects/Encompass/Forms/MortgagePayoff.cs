@@ -32,10 +32,36 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		public static MortgagePayoff OpenForm_FromFormsTab()
 		{
 			new FormsTab()
-				.lstbx_Forms_SelectForm("Mortgage Payoff");
+				.lstbx_Forms_SelectForm("Mortgage Payoff v2");
+            Thread.Sleep(2000);
 
 			return new MortgagePayoff();
 		}
-	}
+
+        #region MortgagePayoff1
+        private PropertyCondition cmb_LenderName1 = new PropertyCondition(AutomationElement.AutomationIdProperty, "lenderNameDropdownBoxUI");
+        private PropertyCondition txt_PrincipalBalance1 = new PropertyCondition(AutomationElement.AutomationIdProperty, "principalBalanceTextBox");
+
+        public MortgagePayoff cmb_LenderName1_Select()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_LenderName1);
+            aElement.ClickCenterOfBounds();
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN); Thread.Sleep(500);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN); Thread.Sleep(500);
+
+            return this;
+        }
+        public MortgagePayoff txt_PrincipalBalance1_SendKeys(string Input)
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_PrincipalBalance1);
+            aElement.SetFocus();
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(500);
+
+            return this;
+        }
+
+        #endregion
+    }
 }
 	

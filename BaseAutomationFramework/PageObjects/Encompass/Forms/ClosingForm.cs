@@ -97,18 +97,21 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		//
 		public ClosingForm btn_ProcessorAddData_Click()
-		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_ProcessorAddData);
-			aElement.ClickCenterOfBounds();
-			Thread.Sleep(20000);
+        {
 
-			return new ClosingForm();
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_ProcessorAddData);
+			aElement.ClickCenterOfBounds();
+            Thread.Sleep(35000);
+
+            return new ClosingForm();
 		}
 		public ClosingForm btn_ProcessorClicktoCertify_Click()
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_ProcessorClicktoCertify);
 			aElement.ClickCenterOfBounds();
-			Thread.Sleep(10000);
+			Thread.Sleep(1000);
+
+            new EncompassDialog().btn_OKtoCertify_Click();
 
 			return new ClosingForm();
 		}
@@ -116,7 +119,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		{
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_DocsAddData);
 			aElement.ClickCenterOfBounds();
-			Thread.Sleep(20000);
+			Thread.Sleep(25000);
 
 			return new ClosingForm();
 		}
@@ -155,54 +158,64 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_IsFileReadyForUnderwriting);
 			aElement.SetFocus();
 			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(1000);
+			Thread.Sleep(3000);
 
 			return this;
 		}
 
 
 
-		//public void SelectFromComboBox(UIItem box, string Option, int numberOfOptions = 150)
-		//{
-		//	string currentOption = null;
-		//	AutomationElement ae = box.AutomationElement;
-		//	Option = Option.ToLower();
-		//	// Pressing space should set the option to the blank default
-		//	ae.SetFocus();
-		//	Thread.Sleep(250);
-		//	Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.SPACE);
+        //public void SelectFromComboBox(UIItem box, string Option, int numberOfOptions = 150)
+        //{
+        //	string currentOption = null;
+        //	AutomationElement ae = box.AutomationElement;
+        //	Option = Option.ToLower();
+        //	// Pressing space should set the option to the blank default
+        //	ae.SetFocus();
+        //	Thread.Sleep(250);
+        //	Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.SPACE);
 
-		//	for (int i = 0; i < numberOfOptions; i++)
-		//	{
-		//		ae.SetFocus();
-		//		Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
-		//		Thread.Sleep(10);
-		//		currentOption = getLegacyIAccessiblePattern_Value(AutomationElement.FocusedElement).ToLower();
-		//		if (currentOption == Option)
-		//			return;
-		//	}
-		//	throw new Exception("Did not find intended ComboBox Option or reached the end of the list of Options!!!");
-		//}
+        //	for (int i = 0; i < numberOfOptions; i++)
+        //	{
+        //		ae.SetFocus();
+        //		Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+        //		Thread.Sleep(10);
+        //		currentOption = getLegacyIAccessiblePattern_Value(AutomationElement.FocusedElement).ToLower();
+        //		if (currentOption == Option)
+        //			return;
+        //	}
+        //	throw new Exception("Did not find intended ComboBox Option or reached the end of the list of Options!!!");
+        //}
 
 
-		//{
-		//	AndCondition andCond = new AndCondition(
-		//			new PropertyCondition(AutomationElement.NameProperty, Input),
-		//			new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
-		//		);
+        //{
+        //	AndCondition andCond = new AndCondition(
+        //			new PropertyCondition(AutomationElement.NameProperty, Input),
+        //			new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "combo box")
+        //		);
 
-		//	aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_IsFileReadyForUnderwriting);
-		//	aElement.ClickCenterOfBounds();
-		//	Thread.Sleep(500);
-		//	new ClosingForm();
-		//	AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
-		//	item.ClickCenterOfBounds();
+        //	aElement = aeScreen.FindFirst(TreeScope.Descendants, cmb_IsFileReadyForUnderwriting);
+        //	aElement.ClickCenterOfBounds();
+        //	Thread.Sleep(500);
+        //	new ClosingForm();
+        //	AutomationElement item = AutomationElement.RootElement.FindFirst(TreeScope.Descendants, andCond);
+        //	item.ClickCenterOfBounds();
 
-		//	return this;
-		//}
+        //	return this;
+        //}
 
-		#endregion
+        #endregion
 
+        public ClosingForm CompleteCurrentVesting()
+        {
+            txt_CurrentVesting_SendKeys("n")
+            .cmb_ChangeVesting_SendKeys("n")
+            .txt_VestingForDocs_SendKeys("n")
+            .txt_GrantDeedRequested_SendKeys("n")
+            .txt_NonObligorSigning_SendKeys("n");
+           
+            return this;
+        }
 
 	}
 }

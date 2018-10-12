@@ -41,15 +41,15 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new FundingWorksheet();
 		}
+        
+        #region Text Boxes
 
-		#region Text Boxes
-
-		private PropertyCondition txt_FundsOrdered = new PropertyCondition(AutomationElement.NameProperty, "2301: The date the underwriter recommended approval of the loan.");
+        private PropertyCondition txt_FundsOrdered = new PropertyCondition(AutomationElement.NameProperty, "2301: The date the underwriter recommended approval of the loan.");
 		private PropertyCondition txt_FundsSent = new PropertyCondition(AutomationElement.NameProperty, "2302: The expiration date of the underwriter's approval.");
 
 		public FundingWorksheet txt_FundsOrdered_SendKeys(string Input)
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_FundsOrdered);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_FundsOrdered);
 			aElement.SetFocus();
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(500);
