@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Automation;
+﻿using System.Collections.Generic;
 using BaseAutomationFramework.PageObjects.Encompass;
 using NUnit.Framework;
-using TestStack.White.InputDevices;
-using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.ListBoxItems;
-using BaseAutomationFramework.Tools;
-using BaseAutomationFramework.DataObjects;
 using System.Threading;
-using System.IO;
 
 namespace BaseAutomationFramework.Tests.Encompass.EnvironmentLogin
 {

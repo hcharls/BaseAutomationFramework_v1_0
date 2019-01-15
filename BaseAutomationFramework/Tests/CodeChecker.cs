@@ -13,12 +13,22 @@ namespace BaseAutomationFramework.Tests.Encompass
 	[TestFixture]
 	public class CodeChecker : BaseTest
 	{
-		[Test]
-		public void ControlChecker()	
+        [Test]
+        public void CodeCheck()
+        {
+            BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://paramountequity.testrail.com/index.php?/suites/overview/21");
+
+
+        }
+
+        [Test]
+		public void WestVM()	
 		{
             AttachToProcess(Processes.Encompass, 5);
 
-            
+            DisclosurePrep.Initialize().btn_WestVM_Click();
+
+            WVM_LogOn.Initialize().txt_Username_SendKeys("Pemadmin").txt_Password_SendKeys("Pemadmin1");
 
         }
 
@@ -249,7 +259,7 @@ namespace BaseAutomationFramework.Tests.Encompass
 
             BaseSeleniumPage.CreateDriver(BaseSeleniumPage.WebDrivers.Chrome); BaseSeleniumPage.NavigateToURL(@"https://www.mortgage-application.net/myaccount/accountlogin.aspx");
 
-            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys(MasterData.BorrowerEmail).txt_Password_SendKeys("P@ramount1").btn_Login_Click();
+            BorrowerLoanCenterLogIn.Initialize().txt_Email_SendKeys("hcpemtesting@gmail.com").txt_Password_SendKeys("P@ramount1").btn_Login_Click();
 
             CheckLoanStatus.Initialize().fn_SelectFirstRow(); LoanDetail.Initialize().btn_View_Click();
 

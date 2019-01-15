@@ -76,22 +76,22 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 
 
                 //Subject Property State trigger
-                ClosingDisclosurePage5
-                    .Initialize()
-                    .chk_StateLawMayProtect_Check()
-                    .chk_StateLawDoesNotProtect_Check();
-				extentTest.Pass("Other Disclosures fields are not populated", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FieldsBlank"), true)).Build());
+    //            ClosingDisclosurePage5
+    //                .Initialize()
+    //                .chk_StateLawMayProtect_Check()
+    //                .chk_StateLawDoesNotProtect_Check();
+				//extentTest.Pass("Other Disclosures fields are not populated", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FieldsBlank"), true)).Build());
 
-				URLA_Page1
-					.OpenForm_FromFormsTab()
-					.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
-				extentTest.Pass("Changed Subject Property State field [14] to " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_StateChange"), true)).Build());
+				//URLA_Page1
+				//	.OpenForm_FromFormsTab()
+				//	.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
+				//extentTest.Pass("Changed Subject Property State field [14] to " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_StateChange"), true)).Build());
 
-                ClosingDisclosurePage5
-                    .OpenForm_FromFormsTab(); Thread.Sleep(2000);
-					//.GetFirstCheckBoxState(out actualFirstBoxChecked)
-     //               .GetSecondCheckBoxState(out actualSecondBoxChecked);
-                extentTest.Pass("Verified Other Disclosures field [CD5.X6] is set to '" + MasterData.TestDescription + "' when Subject Property State field [14] is changed to " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FieldSet"), true)).Build());
+    //            ClosingDisclosurePage5
+    //                .OpenForm_FromFormsTab(); Thread.Sleep(2000);
+				//	//.GetFirstCheckBoxState(out actualFirstBoxChecked)
+    // //               .GetSecondCheckBoxState(out actualSecondBoxChecked);
+    //            extentTest.Pass("Verified Other Disclosures field [CD5.X6] is set to '" + MasterData.TestDescription + "' when Subject Property State field [14] is changed to " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FieldSet"), true)).Build());
 
 
                 ////Document Date field trigger

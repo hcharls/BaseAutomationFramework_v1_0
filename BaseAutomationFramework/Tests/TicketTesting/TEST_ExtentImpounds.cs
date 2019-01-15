@@ -51,7 +51,7 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 			if (BaseTest.HtmlReport == null)
 				InitializeExtentReports(path, TestReportName);
 
-			BaseTest.extentTest = ExtentReport.CreateTest(MasterData.TestID + " (First Payment Month = " + MasterData.ImpoundsFirstPayment + ")");
+			//BaseTest.extentTest = ExtentReport.CreateTest(MasterData.TestID + " (First Payment Month = " + MasterData.ImpoundsFirstPayment + ")");
 
 			string StepDetails = string.Format("Impounds Testing");
 			bool StepStatus = true;
@@ -63,41 +63,41 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 
                 //extentTest.Pass("Pass step description.");
 
-                AttachToProcess(Processes.Encompass, 5);
+                //AttachToProcess(Processes.Encompass, 5);
 
-                URLA_Page1
-                    .OpenForm_FromFormsTab()
-                    .txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
-                extentTest.Pass("Verified Subject Property is in " + MasterData.City + ", " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_address"), true)).Build());
+                //URLA_Page1
+                //    .OpenForm_FromFormsTab()
+                //    .txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
+                //extentTest.Pass("Verified Subject Property is in " + MasterData.City + ", " + MasterData.State, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_address"), true)).Build());
 
-                RegZCD
-                    .OpenForm_FromFormsTab()
-                    .txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
-                extentTest.Pass("Populated First Payment Date field [682] on RegZ-CD with " + MasterData.FirstPaymentDate, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FirstPaymentDate"), true)).Build());
+                //RegZCD
+                //    .OpenForm_FromFormsTab()
+                //    .txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
+                //extentTest.Pass("Populated First Payment Date field [682] on RegZ-CD with " + MasterData.FirstPaymentDate, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_FirstPaymentDate"), true)).Build());
 
-                Itemization
-                    .OpenForm_FromFormsTab()
-                    .btn_ScrollDown1100_Click()
-                    .btn_AggregateSetup_Click();
+                //Itemization
+                //    .OpenForm_FromFormsTab()
+                //    .btn_ScrollDown1100_Click()
+                //    .btn_AggregateSetup_Click();
 
-                AggregateSetup
-                    .Initialize()
-                    .DragWindow_AggregateSetup();
-                extentTest.Pass("Opened Aggregate Setup window and verified Due Date(s) = " + MasterData.ImpoundsDueDates + " and verified Property Taxes mths field [1386] = " + MasterData.ImpoundsMonths + " when First Payment Month = " + MasterData.ImpoundsFirstPayment, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_impounds"), true)).Build());
+                //AggregateSetup
+                //    .Initialize()
+                //    .DragWindow_AggregateSetup();
+                //extentTest.Pass("Opened Aggregate Setup window and verified Due Date(s) = " + MasterData.ImpoundsDueDates + " and verified Property Taxes mths field [1386] = " + MasterData.ImpoundsMonths + " when First Payment Month = " + MasterData.ImpoundsFirstPayment, MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_impounds"), true)).Build());
 
-                AggregateSetup
-                    .Initialize()
-                    .btn_OK_Click();
-                extentTest.Pass("Verified line 1004 Property Taxes mths field [1386] remains populated with '" + MasterData.ImpoundsMonths + "' after Aggregate Setup window is closed", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_AggregateSetupClosed"), true)).Build());
+                //AggregateSetup
+                //    .Initialize()
+                //    .btn_OK_Click();
+                //extentTest.Pass("Verified line 1004 Property Taxes mths field [1386] remains populated with '" + MasterData.ImpoundsMonths + "' after Aggregate Setup window is closed", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_AggregateSetupClosed"), true)).Build());
 
-                Itemization
-                    .Initialize()
-                    .btn_ScrollUp900_Click();
-                extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Itemization
+                //    .Initialize()
+                //    .btn_ScrollUp900_Click();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
 
-                Itemization
-                    .Initialize()
-                    .txt_PropertyTaxesMths_SendKeys(" ");
+                //Itemization
+                //    .Initialize()
+                //    .txt_PropertyTaxesMths_SendKeys(" ");
 
             }
 

@@ -14,7 +14,10 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
         //string EnvironmentID = "TEBE11141905";
         string EnvironmentID = "TEBE11166948";
         //string EnvironmentID = "BE799584";
+        public string EnvID { get; set; }
+        public string userID { get; set; }
         string LoanOfficer = "test_qa_lo";
+        public int MyProperty { get; set; }
 
         [Test]
         public void DirectConvRefinance()
@@ -23,13 +26,16 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
         {
             AttachToProcess(Processes.Encompass, 5);
 
-            LaunchApplication(DesktopApps.Encompass); Launcher.Initialize().cmb_EnvironmentID_SelectByText(EnvironmentID).btn_Login_Click(); AttachToProcess(Processes.Encompass, 5);
+            LaunchApplication(DesktopApps.Encompass); Launcher.Initialize().cmb_EnvironmentID_SelectByText(EnvID).btn_Login_Click(); AttachToProcess(Processes.Encompass, 5);
 
-            Login.Initialize().Login_Username_SendKeys(LoanOfficer);
+            Login.Initialize().Login_Username_SendKeys(userID);
 
             Pipeline.Initialize().btn_NewLoan_Click(); NewLoan.Initialize().SelectItem_DirectConvRefinance();
 
-            FormsTab.Initialize().OpenFormsTab();
+            //FormsTab.Initialize().OpenFormsTab();
+
+            Regression test = new Regression();
+            test._01_TestConsole();
 
         }
     }
@@ -37,6 +43,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
     [TestFixture]
     public class Regression : BaseTest
     {
+
         string LoanNumber = "5472130STG";
         string LoanCreator = "Hannah";
         string BorrowerEmail = "hcpemtesting@gmail.com";
@@ -78,6 +85,12 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
         string Secondary = "test_qa_sec";
         string PostCloser = "test_qa_pc";
         string DocFunder = "test_qa_fundd";
+        public string LoanType { get; set; }
+        public string LoanPurpose { get; set; }
+        public string Amort { get; set; }
+
+
+
 
         [Test]
         public void _01_TestConsole()
@@ -86,15 +99,15 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
             AttachToProcess(Processes.Encompass, 5);
 
             TestConsole.OpenForm_FromFormsTab()
-               .rdb_Conventional_Select()
-               .rdb_NoCashOutRefi_Select()
-               .rdb_Direct_Select()
-               .rdb_FixedRate_Select()
-               .btn_CreateNewLoan_Click(LoanCreator);
+                .rdb_NoCashOutRefi_Select()
+                .rdb_FixedRate_Select()
+                .rdb_Direct_Select()
+                .rdb_FixedRate_Select()
+                .btn_CreateNewLoan_Click(LoanCreator);
 
             CreditReport.Initialize().lstbx_Provider_Select("Equifax Mortgage Solutions")//.btn_Submit_Click();
             .btn_Cancel_Click();
-           
+
             //CreditReportRequest.Initialize().txt_UserName_SendKeys(EquifaxLogin).txt_Password_SendKeys(EquifaxPassword).chk_SaveLoginInformation_Check(true).chk_Equifax_Check(true).chk_Experian_Check(true).chk_TransUnion_Check(true).btn_Finish_Click();
 
             TestConsole.Initialize()
@@ -130,7 +143,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
             //OB_LockRequestDialog.Initialize().btn_ExitLoan_Click();
 
             //Thread.Sleep(20000); Pipeline.Initialize().Pipeline_SelectCurrentLoan(LoanNumber);
-            
+
             #endregion
 
         }
@@ -333,7 +346,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
                 .chk_Finish_Check();
 
             EncompassMain.Initialize().ExitEncompass(); ExitEncompass.Initialize().btn_Yes_Click(); CompliancePreview.Initialize().btn_Close_Click(); TestedApplication.Kill();
-            
+
         }
 
         [Test]
@@ -350,7 +363,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
             QCReview.Open_FromLogTab().chk_QCReviewTasks_Check().chk_Finish_Check();
 
             EncompassMain.Initialize().ExitEncompass(); ExitEncompass.Initialize().btn_Yes_Click(); CompliancePreview.Initialize().btn_Close_Click(); TestedApplication.Kill();
-        
+
         }
 
         [Test]
@@ -393,7 +406,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
             VerifyIdentity.Initialize().txt_AuthorizationCode_SendKeys(AuthorizationCode).btn_Next_Click();
 
             DocuSign.Initialize().fn_ESignWholeDocument(); BaseSeleniumPage.CloseDriver();
-                        
+
             DocsOut.Open_FromLogTab().txt_PropertyInfoParcelNumber_SendKeys().chk_ReviewTasks_Check().chk_Finish_Check();
 
         }
@@ -496,7 +509,7 @@ namespace BaseAutomationFramework.Tests.Encompass.LoanCreation
         [TearDown]
         public void AfterEachTest()
         {
-            
+
         }
 
         [TestFixtureTearDown]

@@ -661,24 +661,26 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		private SearchCriteria chk_TransactionDetailsBRW = SearchCriteria.ByAutomationId("__cid_CheckBox38_Ctrl");
 		private SearchCriteria chk_TransactionDetailsMCC = SearchCriteria.ByAutomationId("__cid_CheckBox37_Ctrl");
 		private SearchCriteria chk_BorrowerVerbalAuthForCreditPull = SearchCriteria.ByAutomationId("__cid_CheckBox26_Ctrl");
-		//Present Address
-		//public BorrowerSummary chk_PresentAddress_OwnRent_Check(string OwnOrRent)
-		//{
-		//	string id = "";
-		//	switch (OwnOrRent.ToLower())
-		//	{
-		//		case "Own": id = "__cid_CheckBox1_Ctrl"; break;
-		//		case "Rent": id = "__cid_CheckBox2_Ctrl"; break;
-		//		default: throw new Exception("Did not specify a proper input!!!");
-		//	}
-		//	aElement = aeScreen.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.AutomationIdProperty, id));
-		//	setLegacyIAccessiblePattern(aElement);
-		//	if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
-		//		DoDefaultAction(aElement);
+        private SearchCriteria chk_DisclosureMailedCertification = SearchCriteria.ByAutomationId("__cid_cbDisclosureMailedCertification_Ctrl");
 
-		//	return this;
-		//}
-		public BorrowerSummary chk_PresentAddress_OwnRent_Check(string PresentAddress_OwnRent)
+        //Present Address
+        //public BorrowerSummary chk_PresentAddress_OwnRent_Check(string OwnOrRent)
+        //{
+        //	string id = "";
+        //	switch (OwnOrRent.ToLower())
+        //	{
+        //		case "Own": id = "__cid_CheckBox1_Ctrl"; break;
+        //		case "Rent": id = "__cid_CheckBox2_Ctrl"; break;
+        //		default: throw new Exception("Did not specify a proper input!!!");
+        //	}
+        //	aElement = aeScreen.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.AutomationIdProperty, id));
+        //	setLegacyIAccessiblePattern(aElement);
+        //	if (patt_LegacyIAccessiblePattern.Current.DefaultAction == "Check")
+        //		DoDefaultAction(aElement);
+
+        //	return this;
+        //}
+        public BorrowerSummary chk_PresentAddress_OwnRent_Check(string PresentAddress_OwnRent)
 		{
 			AndCondition andCond = new AndCondition(
 					new PropertyCondition(AutomationElement.NameProperty, PresentAddress_OwnRent),
@@ -736,24 +738,31 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new BorrowerSummary();
 		}
-		//Credit Pull
-			public BorrowerSummary chk_BorrowerVerbalAuthForCreditPull_Check(bool Check)
-			{
-				ClickCheckBox(Check, chk_BorrowerVerbalAuthForCreditPull);
-				Thread.Sleep(2000);
+		
+		public BorrowerSummary chk_BorrowerVerbalAuthForCreditPull_Check(bool Check)
+		{
+			ClickCheckBox(Check, chk_BorrowerVerbalAuthForCreditPull);
+			Thread.Sleep(2000);
 
-			return this;
-			}
+		    return this;
+		}
 
-		#endregion
+        public BorrowerSummary chk_DisclosureMailedCertification_Check(bool Check)
+        {
+            ClickCheckBox(Check, chk_DisclosureMailedCertification);
+            Thread.Sleep(1000);
 
-		#endregion
+            return this;
+        }
+        #endregion
 
-		#region Co-Borrower Fields
+        #endregion
 
-		#region Text Boxes
-		//Co-Borrower Information
-		private PropertyCondition txt_CoBorrowerFirstName = new PropertyCondition(AutomationElement.NameProperty, "4004: The co-borrower's first name. A co-borrower (along with the borrower) accepts responsibility for repaying the loan.");
+        #region Co-Borrower Fields
+
+        #region Text Boxes
+        //Co-Borrower Information
+        private PropertyCondition txt_CoBorrowerFirstName = new PropertyCondition(AutomationElement.NameProperty, "4004: The co-borrower's first name. A co-borrower (along with the borrower) accepts responsibility for repaying the loan.");
 		private PropertyCondition txt_CoBorrowerSocialSecurityNumber = new PropertyCondition(AutomationElement.NameProperty, "97: The co-borrower's social security number.");
 		private PropertyCondition txt_CoBorrowerDOB = new PropertyCondition(AutomationElement.NameProperty, "1403: The co-borrower's date of birth.");
 		private PropertyCondition txt_CoBorrowerHomeEmail = new PropertyCondition(AutomationElement.NameProperty, "1268: The co-borrower's home email address.");
@@ -879,10 +888,44 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return this;
 		}
-		
-		#endregion
 
-		#endregion
+        #endregion
 
-	}
+        #endregion
+
+        #region Methods
+
+        private PropertyCondition txt_BorrowerInformation = new PropertyCondition(AutomationElement.NameProperty, "Borrower Information");
+
+
+        //Borrower Information
+        public BorrowerSummary txt_BorrowerInformation_Click()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_BorrowerInformation);
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(1000);
+
+            return new BorrowerSummary();
+        }
+        public BorrowerSummary NavigateToTransactionDetails()
+        {
+            txt_BorrowerInformation_Click();
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.DOWN);
+            Thread.Sleep(2000);
+
+            return this;
+        }
+
+        #endregion
+
+    }
 }

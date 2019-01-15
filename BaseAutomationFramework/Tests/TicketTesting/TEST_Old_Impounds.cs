@@ -1,22 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Automation;
 using BaseAutomationFramework.PageObjects.Encompass;
 using NUnit.Framework;
 using TestStack.White.InputDevices;
-using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.ListBoxItems;
 using BaseAutomationFramework.Tools;
 using BaseAutomationFramework.DataObjects;
 using System.Threading;
 using System.IO;
 using BaseAutomationFramework.HTML_Report;
-using AventStack.ExtentReports;
 using TestStack.White.WindowsAPI;
 
 namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
@@ -39,7 +30,7 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 			className = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name;
 			Step step = new Step();
 
-			step.Action = string.Format("Test: {0}", MasterData.TestDescription);
+			//step.Action = string.Format("Test: {0}", MasterData.TestDescription);
 			step.ExpectedResult = string.Format("");
 			step.ActualResult = string.Format("");
 			step.Status = "Pass";
@@ -48,43 +39,44 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 			try
 			{
 
-				AttachToProcess(Processes.Encompass, 5);
+				//AttachToProcess(Processes.Encompass, 5);
 
-                //Impounds (unlocked loan must be up to Step 4 of Disclosure Prep (TRID) form)
+    //            //Impounds (unlocked loan must be up to Step 4 of Disclosure Prep (TRID) form)
 
-                URLA_Page1
-                    .OpenForm_FromFormsTab()            
-                    //.txt_SubjectProperty_City_SendKeys(MasterData.City)
-                    //.txt_SubjectProperty_County_SendKeys(MasterData.County)
-                    .txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
-                //Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE); Thread.Sleep(3000); //when Select a City window needs to be bypassed (must populate City, State, County, AND Zip Code beforehand)
-                Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN); Thread.Sleep(3000); //when zip code or top entry of Select a City window will populate City/State/County (City, State, and County can be commented out)
+    //            URLA_Page1
+    //                .OpenForm_FromFormsTab()
+    //                .txt_SubjectProperty_City_SendKeys(MasterData.City)
+    //                .txt_SubjectProperty_County_SendKeys(MasterData.County)
+    //                .txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
+    //            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.ESCAPE); Thread.Sleep(3000); //when Select a City window needs to be bypassed (must populate City, State, County, AND Zip Code beforehand)
+    //            //Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN); Thread.Sleep(3000); //when zip code or top entry of Select a City window will populate City/State/County (City, State, and County can be commented out)
 
-                RegZCD
-                    .OpenForm_FromFormsTab()
-                    .txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
+    //            RegZCD
+    //                .OpenForm_FromFormsTab()
+    //                .txt_FirstPaymentDate_SendKeys(MasterData.FirstPaymentDate);
                 
-                Itemization
-                    .OpenForm_FromFormsTab()
-                    .btn_ScrollDown1100_Click()
-                    .btn_AggregateSetup_Click();
+    //            Itemization
+    //                .OpenForm_FromFormsTab()
+    //                .btn_ScrollDown1100_Click()
+    //                .btn_AggregateSetup_Click();
 
-                AggregateSetup
-                    .Initialize()
-                    .DragWindow_AggregateSetup();
-                Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + " " + MasterData.State + " - Due date(s) " + MasterData.ImpoundsDueDates + " and field [1386] is set to " + MasterData.ImpoundsMonths + " when first payment date is " + MasterData.FirstPaymentDate);
+    //            AggregateSetup
+    //                .Initialize()
+    //                .DragWindow_AggregateSetup();
 
-                Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);Thread.Sleep(2000);
-                Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + " " + MasterData.State + " - Field [1386] remains populated with " + MasterData.ImpoundsMonths + " after aggregate setup is closed");
+    //            Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + " " + MasterData.State + " - Due date(s) " + MasterData.ImpoundsDueDates + " and field [1386] is set to " + MasterData.ImpoundsMonths + " when first payment date is " + MasterData.FirstPaymentDate);
 
-                Itemization
-                    .Initialize()
-                    .btn_ScrollUp900_Click();
-                Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + " " + MasterData.State + " - Line 904 is populated with " + MasterData.Impounds904Months + " only when first payment month " + MasterData.ImpoundsFirstPayment + " is in due date(s) " + MasterData.ImpoundsDueDates);
+    //            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);Thread.Sleep(2000);
+    //            Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + " " + MasterData.State + " - Field [1386] remains populated with " + MasterData.ImpoundsMonths + " after aggregate setup is closed");
 
-                Itemization
-                    .Initialize()
-                    .txt_PropertyTaxesMths_SendKeys(" ");
+    //            Itemization
+    //                .Initialize()
+    //                .btn_ScrollUp900_Click();
+    //            Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + MasterData.TestID + " " + MasterData.State + " - Line 904 is populated with " + MasterData.Impounds904Months + " only when first payment month " + MasterData.ImpoundsFirstPayment + " is in due date(s) " + MasterData.ImpoundsDueDates);
+
+    //            Itemization
+    //                .Initialize()
+    //                .txt_PropertyTaxesMths_SendKeys(" ");
 
 
             }

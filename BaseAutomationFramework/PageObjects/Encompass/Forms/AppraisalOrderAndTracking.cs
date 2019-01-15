@@ -61,8 +61,19 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 			aElement.SetFocus();
 			aElement.ClickCenterOfBounds();
 			Thread.Sleep(250);
-			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(1000);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.UP);
+            Thread.Sleep(250);
+            Keyboard.Instance.Enter(Input);
+            Thread.Sleep(1000);
 
 			return this;
 		}
@@ -75,12 +86,20 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		
 		public AppraisalOrderAndTracking txt_NoUnits_SendKeys(string Input)
 		{
-			aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_NoUnits);
-			aElement.SetFocus();
-			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(100);
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_NoUnits);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(100);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("a");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(250);
+            Keyboard.Instance.Enter(Input);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            aElement.WaitWhileBusy();
+            Thread.Sleep(500);
 
-			return this;
+            return this;
 		}
 
 		#endregion
@@ -89,10 +108,18 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		private SearchCriteria chk_EnterPaymentInfoForBorrower = SearchCriteria.ByAutomationId("__cid_getPaymentLinkCheckbox_Ctrl");
 
-		public AppraisalOrderAndTracking chk_EnterPaymentInfoForBorrower_Check(bool Check)
+		public AppraisalOrderAndTracking chk_EnterPaymentInfoForBorrower_(string input)
 		{
-			ClickCheckBox(Check, chk_EnterPaymentInfoForBorrower);
-			Thread.Sleep(3000);
+            AndCondition andCond = new AndCondition(
+                        new PropertyCondition(AutomationElement.AutomationIdProperty, "__cid_getPaymentLinkCheckbox_Ctrl"),
+                        new PropertyCondition(AutomationElement.LocalizedControlTypeProperty, "check box")
+                    );
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, andCond);
+            setLegacyIAccessiblePattern(aElement);
+            if (patt_LegacyIAccessiblePattern.Current.DefaultAction == (input))
+                DoDefaultAction(aElement);
+
+            Thread.Sleep(3000);
 
 			return this;
 		}

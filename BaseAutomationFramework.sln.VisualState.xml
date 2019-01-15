@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
-  <TopNode>[0-1204]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST</TopNode>
-  <SelectedNode>[0-1218]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST.Login - Doc Drawer/Funder</SelectedNode>
+  <TopNode>[0-1000]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln</TopNode>
+  <SelectedNode>[0-1008]BaseAutomationFramework.TestRail._2_CreateTestCases.TestCases</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" Expanded="true" />
-    <Node UniqueName="[0-1231]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" Expanded="true" />
-    <Node UniqueName="[0-1232]BaseAutomationFramework" Expanded="true" />
-    <Node UniqueName="[0-1233]BaseAutomationFramework.Tests" Expanded="true" />
-    <Node UniqueName="[0-1235]BaseAutomationFramework.Tests.Encompass" Expanded="true" />
-    <Node UniqueName="[0-1049]BaseAutomationFramework.Tests.Encompass.CodeChecker" Expanded="true" />
-    <Node UniqueName="[0-1238]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin" Expanded="true" />
-    <Node UniqueName="[0-1204]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST" Expanded="true" />
-    <Node UniqueName="[0-1205]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin.LaunchAndLogin_1_TEST.UserLogin" Expanded="true" />
-    <Node UniqueName="[0-1237]BaseAutomationFramework.Tests.Encompass.LoanCreation" Expanded="true" />
-    <Node UniqueName="[0-1130]BaseAutomationFramework.Tests.Encompass.LoanCreation.LaunchCreateNew" Expanded="true" />
-    <Node UniqueName="[0-1132]BaseAutomationFramework.Tests.Encompass.LoanCreation.Regression" Expanded="true" />
-    <Node UniqueName="[0-1038]BaseAutomationFramework.Tests.Encompass.Smoke_Test" Expanded="true" />
-    <Node UniqueName="[0-1039]BaseAutomationFramework.Tests.Encompass.Smoke_Test.Loan_Creation" Expanded="true" />
-    <Node UniqueName="[0-1236]BaseAutomationFramework.Tests.Encompass.TicketTesting" Expanded="true" />
-    <Node UniqueName="[0-1234]BaseAutomationFramework.Tests.OtherTests" Expanded="true" />
+    <Node UniqueName="[0-1101]C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" Expanded="true" />
+    <Node UniqueName="[0-1102]BaseAutomationFramework" Expanded="true" />
+    <Node UniqueName="[0-1104]BaseAutomationFramework.Confluence" Expanded="true" />
+    <Node UniqueName="[0-1103]BaseAutomationFramework.TestRail" Expanded="true" />
+    <Node UniqueName="[0-1004]BaseAutomationFramework.TestRail._1_CreateSections" Expanded="true" />
+    <Node UniqueName="[0-1005]BaseAutomationFramework.TestRail._1_CreateSections.Sections" Expanded="true" />
+    <Node UniqueName="[0-1007]BaseAutomationFramework.TestRail._2_CreateTestCases" Expanded="true" />
+    <Node UniqueName="[0-1008]BaseAutomationFramework.TestRail._2_CreateTestCases.TestCases" Expanded="true" />
+    <Node UniqueName="[0-1010]BaseAutomationFramework.TestRail._3_CreateTestRuns" Expanded="true" />
+    <Node UniqueName="[0-1011]BaseAutomationFramework.TestRail._3_CreateTestRuns.TestRuns" Expanded="true" />
+    <Node UniqueName="[0-1105]BaseAutomationFramework.Tests" Expanded="true" />
+    <Node UniqueName="[0-1107]BaseAutomationFramework.Tests.Encompass" Expanded="true" />
+    <Node UniqueName="[0-1110]BaseAutomationFramework.Tests.Encompass.EnvironmentLogin" Expanded="true" />
+    <Node UniqueName="[0-1109]BaseAutomationFramework.Tests.Encompass.LoanCreation" Expanded="true" />
+    <Node UniqueName="[0-1108]BaseAutomationFramework.Tests.Encompass.TicketTesting" Expanded="true" />
+    <Node UniqueName="[0-1106]BaseAutomationFramework.Tests.OtherTests" Expanded="true" />
   </Nodes>
 </VisualState>

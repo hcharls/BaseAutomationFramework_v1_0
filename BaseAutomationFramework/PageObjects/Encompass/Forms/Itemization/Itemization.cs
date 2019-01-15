@@ -316,8 +316,16 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 			return new Itemization();
 		}
+        public Itemization btn_line804_Click()
+        {
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_line804);
+            aElement.ClickCenterOfBounds();
 
-		#endregion
+            return this;
+        }
 
-	}
+
+        #endregion
+
+    }
 }

@@ -48,7 +48,7 @@ namespace BaseAutomationFramework.Tests.OtherTests
 				Console.WriteLine(path);
 				InitializeExtentReports(path, TestReportName);
 			}
-			BaseTest.extentTest = ExtentReport.CreateTest(MasterData.TestID + " - " + MasterData.TestDescription);
+			//BaseTest.extentTest = ExtentReport.CreateTest(MasterData.TestID + " - " + MasterData.TestDescription);
 
 			//extentTest.Pass("Pass step description.");
 			//extentTest.AddScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format("Failure\\{0}", testMethodName), true));

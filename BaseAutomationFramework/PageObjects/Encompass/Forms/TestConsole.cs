@@ -304,7 +304,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
             aElement = aeScreen.FindFirst(TreeScope.Descendants, btn_FancyMilestones);
             aElement.ClickCenterOfBounds();
             new TestConsole();
-            Thread.Sleep(1000);
+            Thread.Sleep(10000);
 
             return new TestConsole();
         }

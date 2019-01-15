@@ -42,7 +42,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 		//
 		public Login Login_Username_SendKeys(string Username)
 		{
-			GetTextBox(txt_Username).Text = Username;
+            GetTextBox(txt_Username).Text = Username;
             txt_Password_SendKeys("P@ramount1").btn_Login_Click(); Thread.Sleep(10000);
             EncompassMain.Initialize().Resize().tab_Pipeline_Select();
             return this;

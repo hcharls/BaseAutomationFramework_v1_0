@@ -30,13 +30,13 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 		string pathStem;
 		string testMethodName;
 		string path;
-		string TestReportName = "EITQ-3276 Maryland Tax Impounds Primary Retest";
+		string TestReportName = "EITQ-3803 Massachusetts VA Appraisal Fees";
 
 
 		[GetTestSet("Test")]
 		[TestCaseSource(typeof(GetTestData), "Screen")]
 
-		public void EITQ_3276_Maryland_Tax_Impounds_Primary_Retest(IDictionary<string, string> data)
+		public void EITQ_3803_Massachusetts_Appraisal_Fees(IDictionary<string, string> data)
 		{
 			MasterData = new objMasterData(data);
 			className = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -53,204 +53,204 @@ namespace BaseAutomationFramework.Tests.Encompass.TicketTesting
 
 			//BaseTest.extentTest = ExtentReport.CreateTest(MasterData.TestID + " (First Payment Month = " + MasterData.ImpoundsFirstPayment + ")");
 
-			string StepDetails = string.Format("Impounds Testing");
+			string StepDetails = string.Format("Appraisal Fee Testing");
 			bool StepStatus = true;
 			string MethodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
 			try
 			{
-				//extentTest.Pass("Pass step description.");
+                //extentTest.Pass("Pass step description.");
 
-				//#region VA Appraisals: 2015 Itemization (loan has already clicked Generate Estimated Closing Dates and Standard Fees)
+                //#region VA Appraisals: 2015 Itemization (loan has already clicked Generate Estimated Closing Dates and Standard Fees)
 
-				////1 unit (set address)
-				//URLA_Page1
-				//	.OpenForm_FromFormsTab()
-				//	.txt_NoUnits_SendKeys("1")
-				//	.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 1 unit");
+                ////1 unit (set address)
+                //URLA_Page1
+                //    .OpenForm_FromFormsTab()
+                //    .txt_NoUnits_SendKeys(MasterData.NoUnits)
+                //    .txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 1 unit");
 
-				//TransmittalSummary
-				//	.OpenForm_FromFormsTab()
-				//	.cmb_PropertyType_SendKeys("Detached");
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " Detached");
+                //TransmittalSummary
+                //    .OpenForm_FromFormsTab()
+                //    .cmb_PropertyType_SendKeys("Detached");
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " Detached");
 
-				//DisclosurePrep
-				//	.OpenForm_FromFormsTab()
-				//	.btn_GenerateEstimatedClosingDatesandStandardFees_Click();
+                //DisclosurePrep
+                //    .OpenForm_FromFormsTab()
+                //    .btn_GenerateEstimatedClosingDatesandStandardFees_Click();
 
-				//Itemization
-				//	.OpenForm_FromFormsTab()
-				//	.btn_ScrollDownToAppraisal_Click();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 1 unit " + MasterData.TestDescription);
+                //Itemization
+                //    .OpenForm_FromFormsTab()
+                //    .btn_ScrollDownToAppraisal_Click();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 1 unit " + MasterData.TestDescription);
 
-				////2 unit
-				//URLA_Page1
-				//	.OpenForm_FromFormsTab()
-				//	.txt_NoUnits_SendKeys("2");
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 2 unit");
+                ////2 unit
+                //URLA_Page1
+                //    .OpenForm_FromFormsTab()
+                //    .txt_NoUnits_SendKeys("2");
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 2 unit");
 
-				//DisclosurePrep
-				//	.OpenForm_FromFormsTab()
-				//	.btn_GenerateEstimatedClosingDatesandStandardFees_Click();
+                //DisclosurePrep
+                //    .OpenForm_FromFormsTab()
+                //    .btn_GenerateEstimatedClosingDatesandStandardFees_Click();
 
-				//Itemization
-				//	.OpenForm_FromFormsTab()
-				//	.btn_ScrollDownToAppraisal_Click();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 2 unit " + MasterData.TestDescription);
+                //Itemization
+                //    .OpenForm_FromFormsTab()
+                //    .btn_ScrollDownToAppraisal_Click();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 2 unit " + MasterData.TestDescription);
 
-				////3 unit
-				//URLA_Page1
-				//	.OpenForm_FromFormsTab()
-				//	.txt_NoUnits_SendKeys("3");
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 3 unit");
+                ////3 unit
+                //URLA_Page1
+                //    .OpenForm_FromFormsTab()
+                //    .txt_NoUnits_SendKeys("3");
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 3 unit");
 
-				//DisclosurePrep
-				//	.OpenForm_FromFormsTab()
-				//	.btn_GenerateEstimatedClosingDatesandStandardFees_Click();
+                //DisclosurePrep
+                //    .OpenForm_FromFormsTab()
+                //    .btn_GenerateEstimatedClosingDatesandStandardFees_Click();
 
-				//Itemization
-				//	.OpenForm_FromFormsTab()
-				//	.btn_ScrollDownToAppraisal_Click();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 3 unit " + MasterData.TestDescription);
+                //Itemization
+                //    .OpenForm_FromFormsTab()
+                //    .btn_ScrollDownToAppraisal_Click();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 3 unit " + MasterData.TestDescription);
 
-				////4 unit
-				//URLA_Page1
-				//	.OpenForm_FromFormsTab()
-				//	.txt_NoUnits_SendKeys("4");
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 4 unit");
+                ////4 unit
+                //URLA_Page1
+                //    .OpenForm_FromFormsTab()
+                //    .txt_NoUnits_SendKeys("4");
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 4 unit");
 
-				//DisclosurePrep
-				//	.OpenForm_FromFormsTab()
-				//	.btn_GenerateEstimatedClosingDatesandStandardFees_Click();
+                //DisclosurePrep
+                //    .OpenForm_FromFormsTab()
+                //    .btn_GenerateEstimatedClosingDatesandStandardFees_Click();
 
-				//Itemization
-				//	.OpenForm_FromFormsTab()
-				//	.btn_ScrollDownToAppraisal_Click();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 4 unit " + MasterData.TestDescription);
+                //Itemization
+                //    .OpenForm_FromFormsTab()
+                //    .btn_ScrollDownToAppraisal_Click();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "Detached 4 unit " + MasterData.TestDescription);
 
-				////Condo
-				//URLA_Page1
-				//	.OpenForm_FromFormsTab()
-				//	.txt_NoUnits_SendKeys("1");
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 1 unit condo");
+                ////Condo
+                //URLA_Page1
+                //    .OpenForm_FromFormsTab()
+                //    .txt_NoUnits_SendKeys("1");
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " 1 unit condo");
 
-				//TransmittalSummary
-				//	.OpenForm_FromFormsTab()
-				//	.cmb_PropertyType_SendKeys("Condominium");
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " condo");
+                //TransmittalSummary
+                //    .OpenForm_FromFormsTab()
+                //    .cmb_PropertyType_SendKeys("Condominium");
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + " condo");
 
-				//DisclosurePrep
-				//	.OpenForm_FromFormsTab()
-				//	.btn_GenerateEstimatedClosingDatesandStandardFees_Click();
+                //DisclosurePrep
+                //    .OpenForm_FromFormsTab()
+                //    .btn_GenerateEstimatedClosingDatesandStandardFees_Click();
 
-				//Itemization
-				//	.OpenForm_FromFormsTab()
-				//	.btn_ScrollDownToAppraisal_Click();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "condo " + MasterData.TestDescription);
-
-
-				//#endregion
+                //Itemization
+                //    .OpenForm_FromFormsTab()
+                //    .btn_ScrollDownToAppraisal_Click();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "2015 Itemization " + MasterData.TestID + "condo " + MasterData.TestDescription);
 
 
-				//#region VA Appraisals: Appraisal Order and Tracking (loan must have Intent to Proceed)
+                //#endregion
 
-				////1 unit (set address)
-				//URLA_Page1
-				//	.OpenForm_FromFormsTab()
-				//	.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID);
 
-				//AppraisalOrderAndTracking
-				//	.OpenForm_FromFormsTab()
-				//	.cmb_PropertyType_SendKeys("Detached")
-				//	.txt_NoUnits_SendKeys("1")
-				//	.chk_EnterPaymentInfoForBorrower_Check(false)
-				//	.chk_EnterPaymentInfoForBorrower_Check(true)
-				//	.DragPaymentProcessingWindow();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 1 unit " + MasterData.TestDescription);
+                //#region VA Appraisals: Appraisal Order and Tracking (loan must have Intent to Proceed)
 
-				//PaymentProcessing
-				//	.Initialize()
-				//	.btn_Close_Click();
+                ////1 unit (set address)
+                //URLA_Page1
+                //	.OpenForm_FromFormsTab()
+                //	.txt_SubjectProperty_ZipCode_SendKeys(MasterData.Zip);
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID);
 
-				////2 unit
-				//AppraisalOrderAndTracking
-				//	.Initialize()
-				//	.cmb_PropertyType_SendKeys("Detached")
-				//	.txt_NoUnits_SendKeys("2")
-				//	.chk_EnterPaymentInfoForBorrower_Check(false)
-				//	.chk_EnterPaymentInfoForBorrower_Check(true)
-				//	.DragPaymentProcessingWindow();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 2 unit " + MasterData.TestDescription);
+                //AppraisalOrderAndTracking
+                //	.OpenForm_FromFormsTab()
+                //	.cmb_PropertyType_SendKeys("Detached")
+                //	.txt_NoUnits_SendKeys("1")
+                //	.chk_EnterPaymentInfoForBorrower_Check(false)
+                //	.chk_EnterPaymentInfoForBorrower_Check(true)
+                //	.DragPaymentProcessingWindow();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 1 unit " + MasterData.TestDescription);
 
-				//PaymentProcessing
-				//	.Initialize()
-				//	.btn_Close_Click();
+                //PaymentProcessing
+                //	.Initialize()
+                //	.btn_Close_Click();
 
-				////3 unit
-				//AppraisalOrderAndTracking
-				//	.OpenForm_FromFormsTab()
-				//	.cmb_PropertyType_SendKeys("Detached")
-				//	.txt_NoUnits_SendKeys("3")
-				//	.chk_EnterPaymentInfoForBorrower_Check(false)
-				//	.chk_EnterPaymentInfoForBorrower_Check(true)
-				//	.DragPaymentProcessingWindow();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 3 unit " + MasterData.TestDescription);
+                ////2 unit
+                //AppraisalOrderAndTracking
+                //	.Initialize()
+                //	.cmb_PropertyType_SendKeys("Detached")
+                //	.txt_NoUnits_SendKeys("2")
+                //	.chk_EnterPaymentInfoForBorrower_Check(false)
+                //	.chk_EnterPaymentInfoForBorrower_Check(true)
+                //	.DragPaymentProcessingWindow();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 2 unit " + MasterData.TestDescription);
 
-				//PaymentProcessing
-				//	.Initialize()
-				//	.btn_Close_Click();
+                //PaymentProcessing
+                //	.Initialize()
+                //	.btn_Close_Click();
 
-				////4 unit
-				//AppraisalOrderAndTracking
-				//	.OpenForm_FromFormsTab()
-				//	.txt_NoUnits_SendKeys("4")
-				//	.chk_EnterPaymentInfoForBorrower_Check(false)
-				//	.chk_EnterPaymentInfoForBorrower_Check(true)
-				//	.DragPaymentProcessingWindow();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 4 unit " + MasterData.TestDescription);
+                ////3 unit
+                //AppraisalOrderAndTracking
+                //	.OpenForm_FromFormsTab()
+                //	.cmb_PropertyType_SendKeys("Detached")
+                //	.txt_NoUnits_SendKeys("3")
+                //	.chk_EnterPaymentInfoForBorrower_Check(false)
+                //	.chk_EnterPaymentInfoForBorrower_Check(true)
+                //	.DragPaymentProcessingWindow();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 3 unit " + MasterData.TestDescription);
 
-				//PaymentProcessing
-				//	.Initialize()
-				//	.btn_Close_Click();
+                //PaymentProcessing
+                //	.Initialize()
+                //	.btn_Close_Click();
 
-				////condo
-				//AppraisalOrderAndTracking
-				//	.OpenForm_FromFormsTab()
-				//	.cmb_PropertyType_SendKeys("Condominium")
-				//	.txt_NoUnits_SendKeys("1")
-				//	.chk_EnterPaymentInfoForBorrower_Check(false)
-				//	.chk_EnterPaymentInfoForBorrower_Check(true)
-				//	.DragPaymentProcessingWindow();
-				//extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
-				//Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " condo " + MasterData.TestDescription);
+                ////4 unit
+                //AppraisalOrderAndTracking
+                //	.OpenForm_FromFormsTab()
+                //	.txt_NoUnits_SendKeys("4")
+                //	.chk_EnterPaymentInfoForBorrower_Check(false)
+                //	.chk_EnterPaymentInfoForBorrower_Check(true)
+                //	.DragPaymentProcessingWindow();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " 4 unit " + MasterData.TestDescription);
 
-				//PaymentProcessing
-				//	.Initialize()
-				//	.btn_Close_Click();
+                //PaymentProcessing
+                //	.Initialize()
+                //	.btn_Close_Click();
 
-				//#endregion
+                ////condo
+                //AppraisalOrderAndTracking
+                //	.OpenForm_FromFormsTab()
+                //	.cmb_PropertyType_SendKeys("Condominium")
+                //	.txt_NoUnits_SendKeys("1")
+                //	.chk_EnterPaymentInfoForBorrower_Check(false)
+                //	.chk_EnterPaymentInfoForBorrower_Check(true)
+                //	.DragPaymentProcessingWindow();
+                //extentTest.Pass("Verified line 904 Property Taxes mths field is populated with '" + MasterData.Impounds904Months + "' only when First Payment Month '" + MasterData.ImpoundsFirstPayment + "' is the same as Due Date(s) '" + MasterData.ImpoundsDueDates + "'", MediaEntityBuilder.CreateScreenCaptureFromPath(Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), string.Format(MasterData.TestID + "_line904"), true)).Build());
+                //Screenshot.TakeScreenShot(Screenshot.TakeSS_FullDesktop(), @"C:\Users\hcharls\Desktop\Test Screenshots\" + "Payment Processing " + MasterData.TestID + " condo " + MasterData.TestDescription);
 
-			}
+                //PaymentProcessing
+                //	.Initialize()
+                //	.btn_Close_Click();
 
-			catch (Exception ex)
+                //#endregion
+
+            }
+
+            catch (Exception ex)
 			{
 				StepStatus = false;
 				BaseTest.ExtentFailStep(ex, StepDetails, "ErrorOccured");

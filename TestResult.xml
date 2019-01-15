@@ -1,36 +1,184 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-10-12" time="09:10:00">
+<test-results name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" total="164" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-12-27" time="08:45:37">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8793" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="D-J6P1NC2" user="hcharls" user-domain="PEM" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" executed="True" result="Failure" success="False" time="364.594" asserts="0">
+  <test-suite type="Project" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework.sln" executed="True" result="Success" success="True" time="4256.007" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" executed="True" result="Failure" success="False" time="364.586" asserts="0">
+      <test-suite type="Assembly" name="C:\Users\hcharls\Documents\Visual Studio 2017\Projects\BaseAutomationFramework_v1_0\BaseAutomationFramework\bin\Debug\BaseAutomationFramework.dll" executed="True" result="Success" success="True" time="4255.998" asserts="0">
         <results>
-          <test-suite type="Namespace" name="BaseAutomationFramework" executed="True" result="Failure" success="False" time="364.585" asserts="0">
+          <test-suite type="Namespace" name="BaseAutomationFramework" executed="True" result="Success" success="True" time="4255.997" asserts="0">
             <results>
-              <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="364.585" asserts="0">
+              <test-suite type="Namespace" name="TestRail" executed="True" result="Success" success="True" time="4255.996" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Encompass" executed="True" result="Failure" success="False" time="364.584" asserts="0">
+                  <test-suite type="TestFixture" name="_2_CreateTestCases" executed="True" result="Success" success="True" time="4255.994" asserts="0">
                     <results>
-                      <test-suite type="Namespace" name="LoanCreation" executed="True" result="Failure" success="False" time="364.584" asserts="0">
+                      <test-suite type="ParameterizedTest" name="TestCases" executed="True" result="Success" success="True" time="4255.745" asserts="0">
                         <results>
-                          <test-suite type="TestFixture" name="Regression" executed="True" result="Failure" success="False" time="364.582" asserts="0">
-                            <results>
-                              <test-case name="BaseAutomationFramework.Tests.Encompass.LoanCreation.Regression._04_InitialDisclosures" executed="True" result="Error" success="False" time="364.429" asserts="0">
-                                <failure>
-                                  <message><![CDATA[TestStack.White.UIItems.UIActionException : Time out happened, after waiting for 120000 ms]]></message>
-                                  <stack-trace><![CDATA[at TestStack.White.UIItems.WindowItems.Window.WaitTill(WaitTillDelegate waitTillDelegate, TimeSpan timeout) in d:\work\White\src\TestStack.White\UIItems\WindowItems\Window.cs:line 311
-at BaseAutomationFramework.PageObjects.BaseScreen.WaitUntilWindowReady(SearchCriteria ParentWindowLocator, SearchCriteria ModalLocator, SearchCriteria ChildModalLocator, Double timeoutSeconds)
-at BaseAutomationFramework.PageObjects.BaseScreen.Set_Screen(SearchCriteria[] scParams, Boolean isMaximized)
-at BaseAutomationFramework.PageObjects.Encompass.Encompass_eFolder..ctor()
-at BaseAutomationFramework.PageObjects.Encompass.Retrieve.OpenFrom_eFolder()
-at BaseAutomationFramework.Tests.Encompass.LoanCreation.Regression._04_InitialDisclosures()
-]]></stack-trace>
-                                </failure>
-                              </test-case>
-                            </results>
-                          </test-suite>
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 1" executed="True" result="Success" success="True" time="22.335" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 2" executed="True" result="Success" success="True" time="21.517" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 3" executed="True" result="Success" success="True" time="21.751" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 4" executed="True" result="Success" success="True" time="21.942" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 5" executed="True" result="Success" success="True" time="23.313" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 6" executed="True" result="Success" success="True" time="24.841" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 7" executed="True" result="Success" success="True" time="27.815" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 8" executed="True" result="Success" success="True" time="21.031" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 9" executed="True" result="Success" success="True" time="24.270" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 10" executed="True" result="Success" success="True" time="21.920" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 11" executed="True" result="Success" success="True" time="21.064" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 12" executed="True" result="Success" success="True" time="25.014" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 13" executed="True" result="Success" success="True" time="22.340" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 14" executed="True" result="Success" success="True" time="25.193" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 15" executed="True" result="Success" success="True" time="22.488" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 16" executed="True" result="Success" success="True" time="24.348" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 17" executed="True" result="Success" success="True" time="21.581" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 18" executed="True" result="Success" success="True" time="24.555" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 19" executed="True" result="Success" success="True" time="21.562" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 20" executed="True" result="Success" success="True" time="22.045" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 21" executed="True" result="Success" success="True" time="24.060" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 22" executed="True" result="Success" success="True" time="22.106" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 23" executed="True" result="Success" success="True" time="20.517" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 24" executed="True" result="Success" success="True" time="19.492" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 25" executed="True" result="Success" success="True" time="27.005" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 26" executed="True" result="Success" success="True" time="24.156" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 27" executed="True" result="Success" success="True" time="25.016" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 28" executed="True" result="Success" success="True" time="25.104" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 29" executed="True" result="Success" success="True" time="29.284" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 30" executed="True" result="Success" success="True" time="28.753" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 31" executed="True" result="Success" success="True" time="25.799" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 32" executed="True" result="Success" success="True" time="26.349" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 33" executed="True" result="Success" success="True" time="25.988" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 34" executed="True" result="Success" success="True" time="24.077" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 35" executed="True" result="Success" success="True" time="23.640" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 36" executed="True" result="Success" success="True" time="23.074" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 37" executed="True" result="Success" success="True" time="23.700" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 38" executed="True" result="Success" success="True" time="21.581" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 39" executed="True" result="Success" success="True" time="25.769" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 40" executed="True" result="Success" success="True" time="28.082" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 41" executed="True" result="Success" success="True" time="31.443" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 42" executed="True" result="Success" success="True" time="27.861" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 43" executed="True" result="Success" success="True" time="28.525" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 44" executed="True" result="Success" success="True" time="28.148" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 45" executed="True" result="Success" success="True" time="28.578" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 46" executed="True" result="Success" success="True" time="25.897" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 47" executed="True" result="Success" success="True" time="28.093" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 48" executed="True" result="Success" success="True" time="30.940" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 49" executed="True" result="Success" success="True" time="27.433" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 50" executed="True" result="Success" success="True" time="27.579" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 51" executed="True" result="Success" success="True" time="25.112" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 52" executed="True" result="Success" success="True" time="30.212" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 53" executed="True" result="Success" success="True" time="27.269" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 54" executed="True" result="Success" success="True" time="25.112" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 55" executed="True" result="Success" success="True" time="28.430" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 56" executed="True" result="Success" success="True" time="26.153" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 57" executed="True" result="Success" success="True" time="25.443" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 58" executed="True" result="Success" success="True" time="24.916" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 59" executed="True" result="Success" success="True" time="25.549" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 60" executed="True" result="Success" success="True" time="30.195" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 61" executed="True" result="Success" success="True" time="22.758" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 62" executed="True" result="Success" success="True" time="25.264" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 63" executed="True" result="Success" success="True" time="25.575" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 64" executed="True" result="Success" success="True" time="24.072" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 65" executed="True" result="Success" success="True" time="26.953" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 66" executed="True" result="Success" success="True" time="28.208" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 67" executed="True" result="Success" success="True" time="29.380" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 68" executed="True" result="Success" success="True" time="25.615" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 69" executed="True" result="Success" success="True" time="26.183" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 70" executed="True" result="Success" success="True" time="25.681" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 71" executed="True" result="Success" success="True" time="29.053" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 72" executed="True" result="Success" success="True" time="30.993" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 73" executed="True" result="Success" success="True" time="25.370" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 74" executed="True" result="Success" success="True" time="28.310" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 75" executed="True" result="Success" success="True" time="25.544" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 76" executed="True" result="Success" success="True" time="26.707" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 77" executed="True" result="Success" success="True" time="25.387" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 78" executed="True" result="Success" success="True" time="27.683" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 79" executed="True" result="Success" success="True" time="27.731" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 80" executed="True" result="Success" success="True" time="30.200" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 81" executed="True" result="Success" success="True" time="26.853" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 82" executed="True" result="Success" success="True" time="25.240" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 83" executed="True" result="Success" success="True" time="25.273" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 84" executed="True" result="Success" success="True" time="26.477" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 85" executed="True" result="Success" success="True" time="31.527" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 86" executed="True" result="Success" success="True" time="27.040" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 87" executed="True" result="Success" success="True" time="26.227" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 88" executed="True" result="Success" success="True" time="25.891" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 89" executed="True" result="Success" success="True" time="28.016" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 90" executed="True" result="Success" success="True" time="27.605" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 91" executed="True" result="Success" success="True" time="26.756" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 92" executed="True" result="Success" success="True" time="25.167" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 93" executed="True" result="Success" success="True" time="28.323" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 94" executed="True" result="Success" success="True" time="25.170" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 95" executed="True" result="Success" success="True" time="27.164" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 96" executed="True" result="Success" success="True" time="25.096" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 97" executed="True" result="Success" success="True" time="26.972" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 98" executed="True" result="Success" success="True" time="28.890" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 99" executed="True" result="Success" success="True" time="25.036" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 100" executed="True" result="Success" success="True" time="25.878" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 101" executed="True" result="Success" success="True" time="25.482" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 102" executed="True" result="Success" success="True" time="29.629" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 103" executed="True" result="Success" success="True" time="28.038" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 104" executed="True" result="Success" success="True" time="27.055" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 105" executed="True" result="Success" success="True" time="25.183" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 106" executed="True" result="Success" success="True" time="25.735" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 107" executed="True" result="Success" success="True" time="28.244" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 108" executed="True" result="Success" success="True" time="27.676" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 109" executed="True" result="Success" success="True" time="26.899" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 110" executed="True" result="Success" success="True" time="27.089" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 111" executed="True" result="Success" success="True" time="26.249" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 112" executed="True" result="Success" success="True" time="25.355" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 113" executed="True" result="Success" success="True" time="25.357" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 114" executed="True" result="Success" success="True" time="27.770" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 115" executed="True" result="Success" success="True" time="27.723" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 116" executed="True" result="Success" success="True" time="25.277" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 117" executed="True" result="Success" success="True" time="25.084" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 118" executed="True" result="Success" success="True" time="28.964" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 119" executed="True" result="Success" success="True" time="27.447" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 120" executed="True" result="Success" success="True" time="27.740" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 121" executed="True" result="Success" success="True" time="26.021" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 122" executed="True" result="Success" success="True" time="27.702" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 123" executed="True" result="Success" success="True" time="28.061" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 124" executed="True" result="Success" success="True" time="27.831" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 125" executed="True" result="Success" success="True" time="25.430" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 126" executed="True" result="Success" success="True" time="25.362" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 127" executed="True" result="Success" success="True" time="26.513" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 128" executed="True" result="Success" success="True" time="26.783" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 129" executed="True" result="Success" success="True" time="24.531" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 130" executed="True" result="Success" success="True" time="26.410" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 131" executed="True" result="Success" success="True" time="25.310" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 132" executed="True" result="Success" success="True" time="30.320" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 133" executed="True" result="Success" success="True" time="26.998" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 134" executed="True" result="Success" success="True" time="25.047" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 135" executed="True" result="Success" success="True" time="26.304" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 136" executed="True" result="Success" success="True" time="24.906" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 137" executed="True" result="Success" success="True" time="25.728" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 138" executed="True" result="Success" success="True" time="24.961" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 139" executed="True" result="Success" success="True" time="29.753" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 140" executed="True" result="Success" success="True" time="28.932" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 141" executed="True" result="Success" success="True" time="27.468" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 142" executed="True" result="Success" success="True" time="25.237" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 143" executed="True" result="Success" success="True" time="25.415" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 144" executed="True" result="Success" success="True" time="27.508" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 145" executed="True" result="Success" success="True" time="25.216" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 146" executed="True" result="Success" success="True" time="27.248" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 147" executed="True" result="Success" success="True" time="24.964" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 148" executed="True" result="Success" success="True" time="24.440" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 149" executed="True" result="Success" success="True" time="27.737" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 150" executed="True" result="Success" success="True" time="28.083" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 151" executed="True" result="Success" success="True" time="27.497" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 152" executed="True" result="Success" success="True" time="29.947" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 153" executed="True" result="Success" success="True" time="27.253" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 154" executed="True" result="Success" success="True" time="24.943" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 155" executed="True" result="Success" success="True" time="24.965" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 156" executed="True" result="Success" success="True" time="18.393" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 157" executed="True" result="Success" success="True" time="28.265" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 158" executed="True" result="Success" success="True" time="24.217" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 159" executed="True" result="Success" success="True" time="24.732" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 160" executed="True" result="Success" success="True" time="22.096" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 161" executed="True" result="Success" success="True" time="22.792" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 162" executed="True" result="Success" success="True" time="20.829" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 163" executed="True" result="Success" success="True" time="24.222" asserts="0" />
+                          <test-case name="BaseAutomationFramework.TestRail._2_CreateTestCases.Test - Test Case 164" executed="True" result="Success" success="True" time="21.647" asserts="0" />
                         </results>
                       </test-suite>
                     </results>

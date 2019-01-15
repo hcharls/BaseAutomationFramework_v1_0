@@ -89,8 +89,8 @@ namespace BaseAutomationFramework.PageObjects
 
 					//ITimeouts time;
 					//time. = TimeSpan.FromSeconds(30);
-					webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
-					webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+					webDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(30));
+					webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
 					break;
 				case "Chrome":
 					OpenQA.Selenium.Remote.DesiredCapabilities cap = new OpenQA.Selenium.Remote.DesiredCapabilities();
@@ -98,7 +98,7 @@ namespace BaseAutomationFramework.PageObjects
 					op.LeaveBrowserRunning = true;
 					webDriver = new ChromeDriver(op);
 					webDriver.Manage().Window.Maximize();
-					webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+					webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
 					break;
 			}
 		}

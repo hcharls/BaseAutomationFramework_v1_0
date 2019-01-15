@@ -74,11 +74,21 @@ namespace BaseAutomationFramework.PageObjects.Encompass
 
 		public URLA_Page1 txt_NoUnits_SendKeys(string Input)
 		{
-			Retry.For(() => aeScreen.FindFirst(TreeScope.Descendants, txt_NoUnits).SetFocus(), TimeSpan.FromSeconds(10));
-			Keyboard.Instance.Enter(Input);
-			Thread.Sleep(500);
+            //Retry.For(() => aeScreen.FindFirst(TreeScope.Descendants, txt_NoUnits).SetFocus(), TimeSpan.FromSeconds(10));
+            aElement = aeScreen.FindFirst(TreeScope.Descendants, txt_NoUnits);
+            aElement.SetFocus();
+            aElement.ClickCenterOfBounds();
+            Thread.Sleep(100);
+            Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
+            Keyboard.Instance.Enter("a");
+            Keyboard.Instance.LeaveAllKeys();
+            Thread.Sleep(250);
+            Keyboard.Instance.Enter(Input);
+            Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            aElement.WaitWhileBusy();
+            Thread.Sleep(1000);
 
-			return this;
+            return this;
 		}
 		public URLA_Page1 txt_YearBuilt_SendKeys(string Input)
 		{

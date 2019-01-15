@@ -68,10 +68,7 @@ namespace BaseAutomationFramework.PageObjects.Encompass
             SearchCriteria LoanNumber = SearchCriteria.ByAutomationId("SizableTextBox").AndIndex(0);
 			Panel pne = GetPanel(LoanNumber);
             pne.AutomationElement.ClickCenterOfBounds(); Thread.Sleep(500);
-            //Mouse.LeftDown(); Mouse.LeftUp(); Mouse.LeftDown(); Mouse.LeftUp(); Thread.Sleep(1000);
-            //Keyboard.Instance.HoldKey(KeyboardInput.SpecialKeys.CONTROL);
             Keyboard.Instance.Enter(input);
-            //Keyboard.Instance.LeaveAllKeys();
             Thread.Sleep(1000);
             Keyboard.Instance.PressSpecialKey(KeyboardInput.SpecialKeys.RETURN);
             Thread.Sleep(1000);
